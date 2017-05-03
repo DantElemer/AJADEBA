@@ -4,7 +4,7 @@
 widgetTestScreen::widgetTestScreen()
 {
     //widgets.push_back(new sliderSetter(makeCoor(100,300),makeCoor(300,360),100,10,"Bigyusz1"));
-    //widgets.push_back(new sliderSetter(makeCoor(100,400),makeCoor(300,460),num,1000,0,"Mennyi"));
+    widgets.push_back(new sliderSetter(makeCoor(100,400),makeCoor(300,460),num,1000,0,"Mennyi"));
     //vector<string> v={"hamizni!","ROFIK","malacok","sertesek","disznok","ekezet rossz:","αινσό","tenyleg","francba","de fajlba jot ir"};
     //vector<string> v={"cortex.itk.ppke.hu"};
     //widgets.push_back(new chooser(makeCoor(500,400),makeCoor(700,460),v,izeke,200, "Bigyusz3"));

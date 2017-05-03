@@ -77,7 +77,7 @@ void screenHandler::addSub(string newSubName)
 void screenHandler::soul() //the soul of the whole game
 {
     gout.open(WINDOW_X,WINDOW_Y);
-    screensAlive.push_back(new menuScreen());
+    screensAlive.push_back(new widgetTestScreen());
     while (!exitAwesomeness)
     {
         event ev;
