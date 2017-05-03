@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GraphicsProject" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/GraphicsProject" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="widgets" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/GraphicsProject" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O2" />
+					<Add option="-g" />
+					<Add directory="widgets" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add library="lib/libgraphics.a" />
+			<Add library="lib/libgraphicsd.a" />
+			<Add library="lib/libsdl_ttf.a" />
+			<Add library="lib/libSDL.dll.a" />
+			<Add library="lib/libSDLmain.a" />
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="coor.cpp" />
+		<Unit filename="coor.h" />
+		<Unit filename="data.cpp" />
+		<Unit filename="data.h" />
+		<Unit filename="graphicsPlus.cpp" />
+		<Unit filename="graphicsPlus.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="randomFuncs.cpp" />
+		<Unit filename="randomFuncs.h" />
+		<Unit filename="screenHandler.cpp" />
+		<Unit filename="screenHandler.h" />
+		<Unit filename="screens/gameScreen/gameScreen.cpp" />
+		<Unit filename="screens/gameScreen/gameScreen.h" />
+		<Unit filename="screens/others/betScreen.cpp" />
+		<Unit filename="screens/others/betScreen.h" />
+		<Unit filename="screens/others/difficultySettingScreen.cpp" />
+		<Unit filename="screens/others/difficultySettingScreen.h" />
+		<Unit filename="screens/others/gameOverScreen.cpp" />
+		<Unit filename="screens/others/gameOverScreen.h" />
+		<Unit filename="screens/others/menuScreen.cpp" />
+		<Unit filename="screens/others/menuScreen.h" />
+		<Unit filename="screens/others/victoryScreen.cpp" />
+		<Unit filename="screens/others/victoryScreen.h" />
+		<Unit filename="screens/screen.cpp" />
+		<Unit filename="screens/screen.h" />
+		<Unit filename="screens/subScreens/confirmExitScreen.cpp" />
+		<Unit filename="screens/subScreens/confirmExitScreen.h" />
+		<Unit filename="screens/subScreens/cutscenes/cutscene.cpp" />
+		<Unit filename="screens/subScreens/cutscenes/cutscene.h" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/alphaDone.cpp" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/alphaDone.h" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/atStart.cpp" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/atStart.h" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/endScene.cpp" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/endScene.h" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/fCutscene.cpp" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/fCutscene.h" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/heightDone.cpp" />
+		<Unit filename="screens/subScreens/cutscenes/fCutscenes/heightDone.h" />
+		<Unit filename="screens/subScreens/howToPlayScreen.cpp" />
+		<Unit filename="screens/subScreens/howToPlayScreen.h" />
+		<Unit filename="screens/subScreens/subScreen.cpp" />
+		<Unit filename="screens/subScreens/subScreen.h" />
+		<Unit filename="screens/widgetTestScreen.cpp" />
+		<Unit filename="screens/widgetTestScreen.h" />
+		<Unit filename="widgets/animation.cpp" />
+		<Unit filename="widgets/animation.h" />
+		<Unit filename="widgets/button.cpp" />
+		<Unit filename="widgets/button.h" />
+		<Unit filename="widgets/checkbox.cpp" />
+		<Unit filename="widgets/checkbox.h" />
+		<Unit filename="widgets/chooser.cpp" />
+		<Unit filename="widgets/chooser.h" />
+		<Unit filename="widgets/complexIndicator.cpp" />
+		<Unit filename="widgets/complexIndicator.h" />
+		<Unit filename="widgets/indicator.cpp" />
+		<Unit filename="widgets/indicator.h" />
+		<Unit filename="widgets/mButton.cpp" />
+		<Unit filename="widgets/mButton.h" />
+		<Unit filename="widgets/needleIndicator.cpp" />
+		<Unit filename="widgets/needleIndicator.h" />
+		<Unit filename="widgets/reachedLED.cpp" />
+		<Unit filename="widgets/reachedLED.h" />
+		<Unit filename="widgets/sliderSetter.cpp" />
+		<Unit filename="widgets/sliderSetter.h" />
+		<Unit filename="widgets/specIndicator.cpp" />
+		<Unit filename="widgets/specIndicator.h" />
+		<Unit filename="widgets/textfield.cpp" />
+		<Unit filename="widgets/textfield.h" />
+		<Unit filename="widgets/widgetBase.cpp" />
+		<Unit filename="widgets/widgetBase.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
