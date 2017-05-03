@@ -1,0 +1,272 @@
+# depslib dependency file v1.0
+1493114174 source:c:\users\ildikó\documents\github\ajadeba\coor.cpp
+	"coor.h"
+	"graphics.hpp"
+
+1493114159 c:\users\ildikó\documents\github\ajadeba\coor.h
+	"data.h"
+	<vector>
+	<string>
+	<fstream>
+	<math.h>
+	<iostream>
+
+1493827663 c:\users\ildikó\documents\github\ajadeba\data.h
+	"coor.h"
+
+1493109050 c:\users\ildikó\documents\github\ajadeba\include\graphics.hpp
+	<string>
+
+1493827663 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
+	"data.h"
+
+1493823670 source:c:\users\ildikó\documents\github\ajadeba\graphicsplus.cpp
+	"graphicsPlus.h"
+
+1493722020 c:\users\ildikó\documents\github\ajadeba\graphicsplus.h
+	"graphics.hpp"
+	"coor.h"
+	"randomFuncs.h"
+
+1493109050 c:\users\ildikó\documents\github\ajadeba\randomfuncs.h
+	<time.h>
+	<math.h>
+	<sstream>
+	<string>
+	"coor.h"
+	"graphics.hpp"
+
+1493109976 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
+	"screenHandler.h"
+
+1493824463 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
+	"screens\screen.h"
+	"screens\widgetTestScreen.h"
+	"screens\others\menuScreen.h"
+	"screens\others\difficultySettingScreen.h"
+	"screens\others\gameOverScreen.h"
+	"screens\others\victoryScreen.h"
+	"screens\gameScreen\gameScreen.h"
+	"screens\subScreens\confirmExitScreen.h"
+	"screens\subScreens\howToPlayScreen.h"
+	"graphics.hpp"
+
+1493824624 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+	"../widgets/widgetBase.h"
+	"../widgets/button.h"
+	"../widgets/indicator.h"
+	"../widgets/specIndicator.h"
+	"../widgets/reachedLED.h"
+	"../widgets/sliderSetter.h"
+	"../widgets/chooser.h"
+	"../widgets/textfield.h"
+	"../widgets/checkbox.h"
+	"../coor.h"
+	"../randomFuncs.h"
+	"../data.h"
+	<vector>
+
+1493109058 c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.h
+	"../coor.h"
+	"../graphicsPlus.h"
+	"graphics.hpp"
+
+1493116999 c:\users\ildikó\documents\github\ajadeba\widgets\button.h
+	"../coor.h"
+	"../randomFuncs.h"
+	"../graphicsPlus.h"
+	"widgetBase.h"
+
+1493109059 c:\users\ildikó\documents\github\ajadeba\widgets\indicator.h
+	"../graphicsPlus.h"
+	"../coor.h"
+	"widgetBase.h"
+
+1493109059 c:\users\ildikó\documents\github\ajadeba\widgets\specindicator.h
+	"indicator.h"
+	"widgetBase.h"
+
+1493109058 c:\users\ildikó\documents\github\ajadeba\widgets\reachedled.h
+	"widgetBase.h"
+	"../graphicsPlus.h"
+
+1493715102 c:\users\ildikó\documents\github\ajadeba\widgets\slidersetter.h
+	"widgetBase.h"
+	"mButton.h"
+
+1493719678 c:\users\ildikó\documents\github\ajadeba\widgets\mbutton.h
+	"button.h"
+
+1493719623 c:\users\ildikó\documents\github\ajadeba\widgets\chooser.h
+	"widgetBase.h"
+	"mButton.h"
+	"textfield.h"
+
+1493115657 c:\users\ildikó\documents\github\ajadeba\widgets\textfield.h
+	"widgetBase.h"
+	<string>
+
+1493719623 c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.h
+	"widgetBase.h"
+	"mButton.h"
+
+1493719427 c:\users\ildikó\documents\github\ajadeba\screens\widgettestscreen.h
+	"screen.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\others\menuscreen.h
+	"../screen.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\others\difficultysettingscreen.h
+	"../screen.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\others\gameoverscreen.h
+	"../screen.h"
+	"../../data.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\others\victoryscreen.h
+	"../screen.h"
+	"../../data.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+	"../../data.h"
+	"../screen.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.h
+	"subScreen.h"
+	"../../graphicsPlus.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\subscreen.h
+	"../screen.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\howtoplayscreen.h
+	"subScreen.h"
+
+1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
+	"randomFuncs.h"
+
+1493824458 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+	"screenHandler.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+	"gameScreen.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\difficultysettingscreen.cpp
+	"difficultySettingScreen.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\gameoverscreen.cpp
+	"gameOverScreen.h"
+
+1493824624 source:c:\users\ildikó\documents\github\ajadeba\screens\others\menuscreen.cpp
+	"menuScreen.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\victoryscreen.cpp
+	"victoryScreen.h"
+
+1493824578 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
+	"screen.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.cpp
+	"confirmExitScreen.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\cutscene.cpp
+	"cutscene.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\cutscene.h
+	"..\subScreen.h"
+	"..\..\..\graphicsPlus.h"
+	"..\..\..\widgets\animation.h"
+
+1493109058 c:\users\ildikó\documents\github\ajadeba\widgets\animation.h
+	"widgetBase.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\alphadone.cpp
+	"alphaDone.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\alphadone.h
+	"fCutscene.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\fcutscene.h
+	"../cutscene.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\atstart.cpp
+	"atStart.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\atstart.h
+	"fCutscene.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\endscene.cpp
+	"endScene.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\endscene.h
+	"fCutscene.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\fcutscene.cpp
+	"fCutscene.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\heightdone.cpp
+	"heightDone.h"
+
+1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\cutscenes\fcutscenes\heightdone.h
+	"fCutscene.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\howtoplayscreen.cpp
+	"howToPlayScreen.h"
+
+1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\subscreen.cpp
+	"subScreen.h"
+
+1493721184 source:c:\users\ildikó\documents\github\ajadeba\screens\widgettestscreen.cpp
+	"widgetTestScreen.h"
+	<windows.h>
+
+1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\animation.cpp
+	"animation.h"
+
+1493116999 source:c:\users\ildikó\documents\github\ajadeba\widgets\button.cpp
+	"button.h"
+
+1493719792 source:c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.cpp
+	"checkbox.h"
+
+1493720978 source:c:\users\ildikó\documents\github\ajadeba\widgets\chooser.cpp
+	"chooser.h"
+
+1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\complexindicator.cpp
+	"complexIndicator.h"
+
+1493109058 c:\users\ildikó\documents\github\ajadeba\widgets\complexindicator.h
+	"widgetBase.h"
+	"needleIndicator.h"
+	"specIndicator.h"
+	"reachedLED.h"
+
+1493109058 c:\users\ildikó\documents\github\ajadeba\widgets\needleindicator.h
+	"widgetBase.h"
+	"../coor.h"
+	"../graphicsPlus.h"
+
+1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\indicator.cpp
+	"indicator.h"
+
+1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\mbutton.cpp
+	"mButton.h"
+
+1493109059 source:c:\users\ildikó\documents\github\ajadeba\widgets\needleindicator.cpp
+	"needleIndicator.h"
+
+1493109059 source:c:\users\ildikó\documents\github\ajadeba\widgets\reachedled.cpp
+	"reachedLED.h"
+	<fstream>
+
+1493715258 source:c:\users\ildikó\documents\github\ajadeba\widgets\slidersetter.cpp
+	"sliderSetter.h"
+
+1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\specindicator.cpp
+	"specIndicator.h"
+
+1493721184 source:c:\users\ildikó\documents\github\ajadeba\widgets\textfield.cpp
+	"textfield.h"
+
+1493666527 source:c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.cpp
+	"widgetBase.h"
+

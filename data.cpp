@@ -14,11 +14,4 @@ coor mouse;
 //FONT
 int loadedFontSize=0;
 
-//BET DATA
-int wolfNumber;
-int wolfMinSpeed;
-int wolfSpeedDelta;
-int sheepNumber;
-int sheepMinSpeed;
-int sheepSpeedDelta;
 
