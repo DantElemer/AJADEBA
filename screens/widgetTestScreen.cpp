@@ -14,7 +14,7 @@ widgetTestScreen::widgetTestScreen()
     //widgets.push_back(new mButton((memberFunctionCall)sIzelj,this,WINDOW_ORIGO,100,50,"kifele"));
     //widgets.push_back(new checkbox(makeCoor(100,100),makeCoor(150,150),isNum));
 
-    mWriteText(WINDOW_ORIGO,"gz\nhuh");
+    lWriteText(WINDOW_ORIGO,"sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs .sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs",150,20);
 
     draw();
 }

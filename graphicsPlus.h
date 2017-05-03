@@ -8,6 +8,8 @@
 #include "coor.h"
 #include "randomFuncs.h"
 
+#include <string>
+
 
 extern int titleFontSize;
 extern int titleFromWindow;
@@ -17,7 +19,7 @@ void darkening(int rate=2); //a simple effect
 void drawRectangle(coor upperLeftCorn,coor downerRightCorn, bool filled=false); //...
 void drawCircle(coor origo, double radius, int accuracy=1000);//...
 void setFont(int fontSize); //...
-void lWriteText(coor startPoint, string texty, int lineLength, int fontSize=0); //prints @texty using multiple lines, its ULC is given (@startPoint), 0 fontSize means no font change
+void lWriteText(coor startPoint, string texty, int lineLength, int fontSize=0); //prints @texty using multiple lines, its ULC is given (@startPoint), 0 fontSize means no font change, cannot handle "too long" words
 void writeText(coor startPoint, string texty, int fontSize=0); //prints @texty, its ULC is given (@startPoint), 0 fontSize means no font change
 void mWriteText(coor origo, string texty, int fontSize=0); //prints @texty, its middle is given (@origo), 0 fontSize means no font change
 void printText(string texty, int fontSize=0); //no movement before printing

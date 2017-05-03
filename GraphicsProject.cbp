@@ -35,13 +35,15 @@
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
-			<Add library="lib/libgraphics.a" />
-			<Add library="lib/libgraphicsd.a" />
-			<Add library="lib/libsdl_ttf.a" />
-			<Add library="lib/libSDL.dll.a" />
-			<Add library="lib/libSDLmain.a" />
+			<Add library="lib\libgraphics.a" />
+			<Add library="lib\libgraphicsd.a" />
+			<Add library="lib\libsdl_ttf.a" />
+			<Add library="lib\libSDL.dll.a" />
+			<Add library="lib\libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="Picture.cpp" />
+		<Unit filename="Picture.h" />
 		<Unit filename="coor.cpp" />
 		<Unit filename="coor.h" />
 		<Unit filename="data.cpp" />
@@ -55,8 +57,6 @@
 		<Unit filename="screenHandler.h" />
 		<Unit filename="screens/gameScreen/gameScreen.cpp" />
 		<Unit filename="screens/gameScreen/gameScreen.h" />
-		<Unit filename="screens/others/betScreen.cpp" />
-		<Unit filename="screens/others/betScreen.h" />
 		<Unit filename="screens/others/difficultySettingScreen.cpp" />
 		<Unit filename="screens/others/difficultySettingScreen.h" />
 		<Unit filename="screens/others/gameOverScreen.cpp" />
