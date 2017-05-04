@@ -11,6 +11,7 @@
 #include "../widgets/textfield.h"
 #include "../widgets/checkbox.h"
 #include "../widgets/lButton.h"
+#include "../Picture.h"
 #include "../coor.h"
 #include "../randomFuncs.h"
 #include "../data.h"

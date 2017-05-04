@@ -5,20 +5,30 @@
 
 #include "graphicsPlus.h"
 
+#include <sstream>
 
 class Picture
 {
     public:
-        Picture(string picFileName);
+        Picture(string picFileName, coor origo);
         virtual ~Picture();
-        void draw(coor xy={0,0});
+        void draw();
+        void clearPic();
         int getWidth(){return width;}
         int getHeight(){return height;}
+        void setScaleX(double sX){scaleX=sX;makeCanvas();};
+        void setScaleY(double sY){scaleY=sY;makeCanvas();};
     protected:
         string picFileName;
         canvas myPic;
         int width;
         int height;
+        double scaleX=1;
+        double scaleY=1;
+        coor origo;
+
+        void makeCanvas();
+        void clearCanvas();
     private:
 };
 
