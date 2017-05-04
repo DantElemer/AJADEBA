@@ -52,7 +52,7 @@
 	"screens\subScreens\howToPlayScreen.h"
 	"graphics.hpp"
 
-1493824624 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1493919418 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -62,6 +62,7 @@
 	"../widgets/chooser.h"
 	"../widgets/textfield.h"
 	"../widgets/checkbox.h"
+	"../widgets/lButton.h"
 	"../coor.h"
 	"../randomFuncs.h"
 	"../data.h"
@@ -277,4 +278,11 @@
 1493908070 c:\users\ildikó\documents\github\ajadeba\picture.h
 	"graphics.hpp"
 	"graphicsPlus.h"
+
+1493919759 c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.h
+	"button.h"
+	<functional>
+
+1493919418 source:c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.cpp
+	"lButton.h"
 

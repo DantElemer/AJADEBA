@@ -10,6 +10,7 @@
 #include "../widgets/chooser.h"
 #include "../widgets/textfield.h"
 #include "../widgets/checkbox.h"
+#include "../widgets/lButton.h"
 #include "../coor.h"
 #include "../randomFuncs.h"
 #include "../data.h"

@@ -99,6 +99,8 @@
 		<Unit filename="widgets/complexIndicator.h" />
 		<Unit filename="widgets/indicator.cpp" />
 		<Unit filename="widgets/indicator.h" />
+		<Unit filename="widgets/lButton.cpp" />
+		<Unit filename="widgets/lButton.h" />
 		<Unit filename="widgets/mButton.cpp" />
 		<Unit filename="widgets/mButton.h" />
 		<Unit filename="widgets/needleIndicator.cpp" />

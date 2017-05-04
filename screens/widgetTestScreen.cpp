@@ -4,7 +4,7 @@
 widgetTestScreen::widgetTestScreen()
 {
     //widgets.push_back(new sliderSetter(makeCoor(100,300),makeCoor(300,360),100,10,"Bigyusz1"));
-    widgets.push_back(new sliderSetter(makeCoor(100,400),makeCoor(300,460),num,1000,0,"Mennyi"));
+    //widgets.push_back(new sliderSetter(makeCoor(100,400),makeCoor(300,460),num,1000,0,"Mennyi"));
     //vector<string> v={"hamizni!","ROFIK","malacok","sertesek","disznok","ekezet rossz:","αινσό","tenyleg","francba","de fajlba jot ir"};
     //vector<string> v={"cortex.itk.ppke.hu"};
     //widgets.push_back(new chooser(makeCoor(500,400),makeCoor(700,460),v,izeke,200, "Bigyusz3"));
@@ -14,7 +14,8 @@ widgetTestScreen::widgetTestScreen()
     //widgets.push_back(new mButton((memberFunctionCall)sIzelj,this,WINDOW_ORIGO,100,50,"kifele"));
     //widgets.push_back(new checkbox(makeCoor(100,100),makeCoor(150,150),isNum));
 
-    lWriteText(WINDOW_ORIGO,"sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs .sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs",150,20);
+    //lWriteText(WINDOW_ORIGO,"sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs .sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs",150,20);
+    widgets.push_back(new lButton([this](){cout<<"hi"<<this->num;},WINDOW_ORIGO,200,50,"Lambda"));
 
     draw();
 }
