@@ -12,9 +12,13 @@ class Picture
         Picture(string picFileName);
         virtual ~Picture();
         void draw(coor xy={0,0});
+        int getWidth(){return width;}
+        int getHeight(){return height;}
     protected:
         string picFileName;
         canvas myPic;
+        int width;
+        int height;
     private:
 };
 
