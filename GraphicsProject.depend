@@ -52,7 +52,7 @@
 	"screens\subScreens\howToPlayScreen.h"
 	"graphics.hpp"
 
-1493920511 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1493986338 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -130,9 +130,10 @@
 	"../screen.h"
 	"../../data.h"
 
-1493109053 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+1493985756 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
 	"../../data.h"
 	"../screen.h"
+	"Fields/field.h"
 
 1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.h
 	"subScreen.h"
@@ -147,10 +148,10 @@
 1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
 	"randomFuncs.h"
 
-1493828086 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+1493985893 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1493985756 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\difficultysettingscreen.cpp
@@ -287,4 +288,12 @@
 
 1493919759 source:c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.cpp
 	"lButton.h"
+
+1493986148 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
+	"../../../coor.h"
+	"../../../graphicsPlus.h"
+	"../../../widgets/lButton.h"
+
+1493985756 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
+	"field.h"
 

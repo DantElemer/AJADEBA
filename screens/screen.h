@@ -46,9 +46,9 @@ class screen
         virtual void draw();
 
 
-
-    protected:
         vector<widgetBase*> widgets;
+    protected:
+
         void mouseMoved(event mE);
         void mouseUp(event mE);
         void mouseDown(event mE);
