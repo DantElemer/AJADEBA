@@ -7,6 +7,11 @@
 
 #include <sstream>
 
+struct pixel
+{
+    int r,g,b;
+};
+
 class Picture
 {
     public:
@@ -16,18 +21,24 @@ class Picture
         void clearPic();
         int getWidth(){return width;}
         int getHeight(){return height;}
-        void setScaleX(double sX){scaleX=sX;makeCanvas();};
-        void setScaleY(double sY){scaleY=sY;makeCanvas();};
+        void setScaleX(double sX){scaleX=sX;remakeCanvas();};
+        void setScaleY(double sY){scaleY=sY;remakeCanvas();};
+
+
     protected:
         string picFileName;
         canvas myPic;
         int width;
         int height;
+        int NORMAL_WIDTH;
+        int NORMAL_HEIGHT;
         double scaleX=1;
         double scaleY=1;
         coor origo;
+        vector<vector<pixel>> pixelData;
 
-        void makeCanvas();
+        void getData();
+        void remakeCanvas();
         void clearCanvas();
     private:
 };

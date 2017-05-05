@@ -273,10 +273,10 @@
 1493666527 source:c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.cpp
 	"widgetBase.h"
 
-1493923408 source:c:\users\ildikó\documents\github\ajadeba\picture.cpp
+1493972858 source:c:\users\ildikó\documents\github\ajadeba\picture.cpp
 	"Picture.h"
 
-1493923408 c:\users\ildikó\documents\github\ajadeba\picture.h
+1493972858 c:\users\ildikó\documents\github\ajadeba\picture.h
 	"graphics.hpp"
 	"graphicsPlus.h"
 	<sstream>

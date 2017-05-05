@@ -1,10 +1,13 @@
 #include "Picture.h"
 
 Picture::Picture(string picFileName, coor origo)
-: picFileName(picFileName), origo(origo)
+: picFileName(picFileName), origo(origo)//, makeCanvas(), NORMAL_HEIGHT(height), NORMAL_WIDTH(width)
 {
     //generateCanvas(myPic, picFileName);
-    makeCanvas();
+    getData();
+    NORMAL_HEIGHT=height;
+    NORMAL_WIDTH=width;
+    remakeCanvas();
 }
 
 Picture::~Picture()
@@ -17,30 +20,47 @@ void Picture::draw()
     gout<<stamp(myPic,origo.X-width/2,origo.Y-height/2);
 }
 
-void Picture::makeCanvas() //TODO time-optimalization: do not read from file every time
+void Picture::getData()
 {
+    cout<<"h";
     ifstream iF(picFileName);
     iF>>width>>height;
+    myPic.open(width,height);
+
+    for (int i=0;i<height;i++)
+    {
+        vector<pixel> newRow;
+        for(int j=0;j<width;j++)
+        {
+            pixel newPixel;
+            iF>>newPixel.r>>newPixel.g>>newPixel.b;
+            newRow.push_back(newPixel);
+        }
+        pixelData.push_back(newRow);
+    }
+    iF.close();
+}
+
+void Picture::remakeCanvas()
+{
     clearCanvas();
-    myPic.open(width*scaleX,height*scaleY);
+    width=NORMAL_WIDTH*scaleX;
+    height=NORMAL_HEIGHT*scaleY;
+    myPic.open(width,height);
 
 
     coor lastPoint=makeCoor(0,0);
     coor aimPoint;
-    for (int i=0;i<height;i++)
+    for (int i=0;i<NORMAL_HEIGHT;i++)
     {
-        for(int j=0;j<width;j++)
+        for(int j=0;j<NORMAL_WIDTH;j++)
         {
-            int r,g,b;
-            iF>>r>>g>>b;
-            //lastPoint=makeCoor(j*scaleX,i*scaleY);
             aimPoint=makeCoor(egyRohadtRendesKerekites(scaleX*j),egyRohadtRendesKerekites(scaleY*i));
-            myPic<<move_to(lastPoint.X,lastPoint.Y)<<color(r,g,b)<<box(aimPoint.X-lastPoint.X,aimPoint.Y-lastPoint.Y);
+            myPic<<move_to(lastPoint.X,lastPoint.Y)<<color(pixelData[i][j].r,pixelData[i][j].g,pixelData[i][j].b)<<box(aimPoint.X-lastPoint.X,aimPoint.Y-lastPoint.Y);
             lastPoint.X=aimPoint.X;
         }
         lastPoint=makeCoor(0,aimPoint.Y);
     }
-    iF.close();
 }
 
 void Picture::clearCanvas()
