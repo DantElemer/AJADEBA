@@ -26,6 +26,7 @@ struct gameScreen : screen
         gameScreen();
         void keyDown(event kE);
         void keyUp(event kE);
+        void fieldClicked(field* f);
 };
 
 #endif // GAMESCREEN_H_INCLUDED

@@ -15,6 +15,11 @@ void gameScreen::initPressedButtons() const
 
 }
 
+void gameScreen::fieldClicked(field* f)
+{
+    cout<<f->getType();
+}
+
 void gameScreen::onTick()
 {
     screen::onTick();
