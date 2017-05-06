@@ -4,6 +4,7 @@
 
 #include "../../data.h"
 #include "../screen.h"
+#include "Fields/field.h"
 
 
 struct gameScreen : screen
@@ -17,6 +18,8 @@ struct gameScreen : screen
         static void subToAlphaDone();
         static void subToHeightDone();
         static void subToEndScene();*/
+
+        vector<field*> fields;
 
     public:
         void onTick();

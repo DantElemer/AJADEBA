@@ -10,6 +10,8 @@
 #include "../widgets/chooser.h"
 #include "../widgets/textfield.h"
 #include "../widgets/checkbox.h"
+#include "../widgets/lButton.h"
+#include "../Picture.h"
 #include "../coor.h"
 #include "../randomFuncs.h"
 #include "../data.h"
@@ -44,9 +46,9 @@ class screen
         virtual void draw();
 
 
-
-    protected:
         vector<widgetBase*> widgets;
+    protected:
+
         void mouseMoved(event mE);
         void mouseUp(event mE);
         void mouseDown(event mE);

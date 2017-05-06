@@ -56,15 +56,26 @@ void printText(string texty, int fontSize)
 
 void lWriteText(coor startPoint, string texty, int lineLength, int fontSize)
 {
-    string linedText;
-    int wordStart;
-    int wordEnd;
-    while (wordStart<texty.length())
+    int lineCounter=0;
+    int lineStart=0;
+    int lineEnd=texty.length()-1;
+    while (lineStart<texty.length()-1)
     {
-        //TODO
+        bool lineDone=false;
+        string line;
+        while (!lineDone)
+        {
+            line=texty.substr(lineStart,lineEnd-lineStart);
+            if ( (countTextWidth(line,fontSize)<lineLength) && ( (texty.at(lineEnd)==' ') || (lineEnd==texty.length()-1) ) ) //todo only space-breake
+                lineDone=true;
+            else
+                lineEnd--;
+        }
+        lineStart=lineEnd+1; //we don't need space at the beginning of a line
+        lineEnd=texty.length()-1;
+        writeText(startPoint+makeCoor(0,lineCounter*countTextHeight(line,fontSize)),line,fontSize);
+        lineCounter++;
     }
-
-    writeText(startPoint,linedText,fontSize);
 }
 
 void writeText(coor startPoint, string texty, int fontSize)

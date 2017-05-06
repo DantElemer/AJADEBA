@@ -59,13 +59,6 @@ extern coor mouse; //...
 //FONT
 extern int loadedFontSize;
 
-//BET DATA
-extern int wolfNumber;
-extern int wolfMinSpeed;
-extern int wolfSpeedDelta;
-extern int sheepNumber;
-extern int sheepMinSpeed;
-extern int sheepSpeedDelta;
 
 
 #endif // DATA_H_INCLUDED

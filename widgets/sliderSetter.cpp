@@ -25,7 +25,7 @@ void sliderSetter::draw()
 void sliderSetter::mouseDown()
 {
     widgetBase::mouseDown();
-    if (mouse.inRect(makeCoor(markerPosX,origo.Y-MARKER_HEIGHT/2),makeCoor(markerPosX+MARKER_WIDTH,origo.Y+MARKER_HEIGHT/2)))
+    if (mouse.inRect(origo-makeCoor(LINE_LENGTH/2,END_MARKER_LENGTH/2), origo+makeCoor(LINE_LENGTH/2,END_MARKER_LENGTH/2)))
         sliding=true;
 }
 

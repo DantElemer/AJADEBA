@@ -14,7 +14,8 @@ widgetTestScreen::widgetTestScreen()
     //widgets.push_back(new mButton((memberFunctionCall)sIzelj,this,WINDOW_ORIGO,100,50,"kifele"));
     //widgets.push_back(new checkbox(makeCoor(100,100),makeCoor(150,150),isNum));
 
-    mWriteText(WINDOW_ORIGO,"gz\nhuh");
+    //lWriteText(WINDOW_ORIGO,"sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs .sdufhsdfh siufhsdi sdjfhsd isdufh idsfhsdifuhs",150,20);
+    //widgets.push_back(new lButton([this](){cout<<"hi"<<this->num;},WINDOW_ORIGO,200,50,"Lambda"));
 
     draw();
 }
@@ -22,6 +23,18 @@ widgetTestScreen::widgetTestScreen()
 void widgetTestScreen::draw()
 {
     addTitle("Ping");
+    Picture pic("pics/csillarmika.bmp.kep",WINDOW_ORIGO);
+    pic.draw();
+    for (double i=0;i<8;i+=0.1)
+    {
+        clearScreen();
+        pic.setScaleX(i);
+        pic.setScaleY(i);
+        pic.draw();
+        gout<<refresh;
+        cout<<i<<endl;
+    }
+
 }
 
 void widgetTestScreen::keyDown(event kE)

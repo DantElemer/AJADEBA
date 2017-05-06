@@ -3,6 +3,11 @@
 gameScreen::gameScreen()
 {
     initPressedButtons();
+
+    for (int i=2;i<10;i++)
+    {
+        fields.push_back(new field(this,makeCoor(i*field::WIDTH,100)));
+    }
 }
 
 void gameScreen::initPressedButtons() const
@@ -13,6 +18,8 @@ void gameScreen::initPressedButtons() const
 void gameScreen::onTick()
 {
     screen::onTick();
+    for (field* f:fields)
+        f->draw();
 }
 
 void gameScreen::keyDown(event kE)
