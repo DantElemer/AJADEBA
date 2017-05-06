@@ -12,12 +12,12 @@ gameScreen::gameScreen()
     players.push_back(new player("Player 1","Ancient 1"));
     players.push_back(new player("Player 2","Ancient 2"));
     currentPlayer=players[0];
-    for (int j=1;j<10;j++) //some fields
+    for (int j=0;j<10;j++) //some fields
     {
         vector<field*> newRow;
-        for (int i=3;i<10;i++)
+        for (int i=0;i<7;i++)
         {
-            field* newField=new field(this,makeCoor(i*field::WIDTH,j*field::WIDTH));
+            field* newField=new field(this,makeCoor(j,i));
             newRow.push_back(newField);
             if (newField->getType()==field::BLANK&&rand()%10<1)
                 newField->addPart(fieldObject::VILLAGE);
@@ -38,12 +38,12 @@ gameScreen::gameScreen()
         }
         fields.push_back(newRow);
     }
-    fields[3][0]->addPart(fieldObject::STRONGHOLD);
-    fields[3][0]->activateStronghold(currentPlayer);
+    fields[5][3]->addPart(fieldObject::STRONGHOLD);
+    fields[5][3]->activateStronghold(currentPlayer);
     fields[4][0]->addPart(fieldObject::BARRACK);
     nextPlayer();
-    fields[3][6]->addPart(fieldObject::STRONGHOLD);
-    fields[3][6]->activateStronghold(currentPlayer);
+    fields[2][6]->addPart(fieldObject::STRONGHOLD);
+    fields[2][6]->activateStronghold(currentPlayer);
     fields[4][6]->addPart(fieldObject::BARRACK);
     nextPlayer();
 }
@@ -62,7 +62,7 @@ void gameScreen::fieldClicked(field* f)
         subToBuildChooserScreen(); //open build options
     }
     else
-        cout<<"enemy territory";
+        cout<<"enemy territory"<<f->owners[0]->name;
 }
 
 void gameScreen::build()
@@ -98,14 +98,39 @@ void gameScreen::nextPlayer()
     cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
 }
 
+void gameScreen::newStronghold(coor coordinate, player* owner)
+{
+    for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
+        for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
+            if (inFields(makeCoor(i,j)))
+                if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
+                    fields[i][j]->addOwner(owner);
+}
+
+bool gameScreen::inFields(coor coordinate)
+{
+    if (coordinate.X<0)
+        return false;
+    if (coordinate.Y<0)
+        return false;
+    if (coordinate.X>=fields.size())
+        return false;
+    if (coordinate.Y>=fields[0].size())
+        return false;
+    return true;
+}
+
 void gameScreen::onTick()
 {
     screen::onTick();
+
     for (vector<field*> fRow:fields)
         for (field* f:fRow)
             f->draw();
+
     if (currentPlayer->finishedTurn)
         nextPlayer();
+
     if (justBuilt)
     {
         build();

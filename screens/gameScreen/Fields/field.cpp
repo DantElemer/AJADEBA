@@ -7,10 +7,10 @@ const string field::BARRACK="barrack";
 const string field::VILLAGE="village";
 const string field::STRONGHOLD="stronghold";
 
+coor OFFSET={100,100};
 
-
-field::field(gameScreen* gS, coor origo)
-: myGameScreen(gS), origo(origo), type(BLANK)
+field::field(gameScreen* gS, coor coordinate)
+: myGameScreen(gS), coordinate(coordinate), type(BLANK), origo(coordinate*WIDTH+OFFSET)
 {
     gS->widgets.push_back(new lButton([this](){this->myGameScreen->fieldClicked(this);},origo,WIDTH,WIDTH));
 }
@@ -22,9 +22,14 @@ field::~field()
 
 void field::draw()
 {
-    drawRectangle(origo-makeCoor(WIDTH/2,WIDTH/2),origo+makeCoor(WIDTH/2,WIDTH/2));
+    //drawRectangle(origo-makeCoor(WIDTH/2,WIDTH/2),origo+makeCoor(WIDTH/2,WIDTH/2));
     for (fieldObject* fO:myParts)
         fO->draw();
+}
+
+void field::addOwner(player* owner)
+{
+    owners.push_back(owner);
 }
 
 void field::addPart(string part)
@@ -74,6 +79,7 @@ void field::activateStronghold(player* owner)
         if (fO->getType()==fieldObject::STRONGHOLD)
         {
             ((stronghold*)fO)->gotOwner(owner);
+            myGameScreen->newStronghold(coordinate,owner);
         }
 
 }

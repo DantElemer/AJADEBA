@@ -132,7 +132,7 @@
 	"../screen.h"
 	"../../data.h"
 
-1494062171 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+1494084503 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
 	"../../data.h"
 	"../screen.h"
 	"Fields/field.h"
@@ -155,7 +155,7 @@
 1494059540 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494079287 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494086024 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	<cstdlib>
@@ -283,7 +283,7 @@
 1494079828 source:c:\users\ildikó\documents\github\ajadeba\picture.cpp
 	"Picture.h"
 
-1494071852 c:\users\ildikó\documents\github\ajadeba\picture.h
+1494083311 c:\users\ildikó\documents\github\ajadeba\picture.h
 	"graphics.hpp"
 	"graphicsPlus.h"
 	<sstream>
@@ -295,7 +295,7 @@
 1493919759 source:c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.cpp
 	"lButton.h"
 
-1494079287 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
+1494084503 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
 	"../../../coor.h"
 	"../../../graphicsPlus.h"
 	"../../../widgets/lButton.h"
@@ -304,7 +304,7 @@
 	"field objects/village.h"
 	"field objects/stronghold.h"
 
-1494079877 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
+1494086112 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
 	"field.h"
 	"../gameScreen.h"
 
@@ -318,7 +318,7 @@
 	"../../../../coor.h"
 	"../../../../Picture.h"
 
-1494076222 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\fieldobject.cpp
+1494083311 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\fieldobject.cpp
 	"fieldObject.h"
 	"../field.h"
 
@@ -341,17 +341,17 @@
 1494079709 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\village.cpp
 	"village.h"
 
-1494079287 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.h
+1494085319 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.h
 	"fieldObject.h"
 	"../../../../coor.h"
 	"../../../../graphicsPlus.h"
 
-1494079902 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
+1494083415 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
 	"stronghold.h"
 	"../../player.h"
 	"../field.h"
 
-1494077592 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.h
+1494080517 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.h
 	<string>
 
 1494077592 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.cpp

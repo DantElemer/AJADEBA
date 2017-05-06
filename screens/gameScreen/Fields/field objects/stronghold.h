@@ -15,9 +15,13 @@ class stronghold : public fieldObject
         virtual void draw();
         void gotOwner(player* owner);
         bool getHasOwner(){return hasOwner;};
+
+        static const int RADIUS=3;
     protected:
         player* owner;
-        bool hasOwner=false;;
+        player* builder;
+        bool hasOwner=false;
+        Picture territory;
     private:
 };
 

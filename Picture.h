@@ -16,6 +16,7 @@ class Picture
 {
     public:
         Picture(string picFileName, coor origo);
+        Picture(){};
         void addNewPic(string picFileName, coor origo);
         virtual ~Picture();
         void draw();
@@ -25,14 +26,14 @@ class Picture
         void setScaleX(double sX){scaleX=sX;remakeCanvas();};
         void setScaleY(double sY){scaleY=sY;remakeCanvas();};
 
+        int NORMAL_WIDTH;
+        int NORMAL_HEIGHT;
 
     protected:
         string picFileName;
         canvas myPic;
         int width;
         int height;
-        int NORMAL_WIDTH;
-        int NORMAL_HEIGHT;
         double scaleX=1;
         double scaleY=1;
         coor origo;

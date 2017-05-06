@@ -17,8 +17,8 @@ const vector<string> fieldObject::EVERY_OBJECT={fieldObject::NORTH_ROAD,fieldObj
 fieldObject::fieldObject(coor origo, string picFileName)
 : origo(origo), pic(picFileName, origo)
 {
-    pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
-    pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());
+    pic.setScaleX((double)field::WIDTH/(double)pic.NORMAL_WIDTH);
+    pic.setScaleY((double)field::WIDTH/(double)pic.NORMAL_HEIGHT);
 }
 
 fieldObject::~fieldObject()

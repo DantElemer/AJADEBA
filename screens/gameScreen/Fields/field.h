@@ -15,11 +15,12 @@ class player;
 class field
 {
     public:
-        field(gameScreen* gS, coor origo);
+        field(gameScreen* gS, coor coordinate);
         virtual ~field();
         void draw();
         string getType(){return type;};
         void addPart(string part);
+        void addOwner(player* owner);
         bool hasPart(string part);
         bool canAct(player* who);
         bool canBuild(string part);
@@ -27,6 +28,7 @@ class field
 
         static const int WIDTH=50; //=height
         coor origo;
+        coor coordinate; //in fields
         vector<player*> owners;
         static const string BLANK;
         static const string ROAD;

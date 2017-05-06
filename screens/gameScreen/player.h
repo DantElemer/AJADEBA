@@ -13,6 +13,7 @@ class player
         string nation;
         bool finishedTurn=false;
         int steps;
+        int strongholdNumber=0;
         static const int MAX_STEPS=4;
     protected:
     private:

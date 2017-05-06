@@ -15,6 +15,7 @@ struct gameScreen : screen
         void initPressedButtons() const;
         void nextPlayer();
         void build();
+        bool inFields(coor coordinate);
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();
@@ -32,6 +33,7 @@ struct gameScreen : screen
         void keyDown(event kE);
         void keyUp(event kE);
         void fieldClicked(field* f);
+        void newStronghold(coor coordinate, player* owner);
 
         player* currentPlayer;
         vector<player*> players;
