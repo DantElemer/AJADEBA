@@ -2,8 +2,8 @@
 #include "../../player.h"
 #include "../field.h"
 
-stronghold::stronghold(coor origo)
-: fieldObject(origo,"pics/game objects/StrongholdBase.kep")
+stronghold::stronghold(coor origo, player* builder)
+: fieldObject(origo,"pics/game objects/StrongholdBase.kep"), builder(builder)
 //"pics/game objects/nations/"+owner->nation+"/Stronghold.kep
 {
     type=STRONGHOLD;
@@ -17,8 +17,8 @@ stronghold::~stronghold()
 void stronghold::draw()
 {
     fieldObject::draw();
-    if (hasOwner)
-        territory.draw();
+    //if (hasOwner)
+    //    territory.draw();
 }
 
 void stronghold::gotOwner(player* bowner)
@@ -29,7 +29,7 @@ void stronghold::gotOwner(player* bowner)
     pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
     pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());
     owner->strongholdNumber++;
-    territory.addNewPic("pics/game objects/Territory"+numToString(RADIUS)+".kep",origo);
-    territory.setScaleX((double)(field::WIDTH*7)/(double)territory.NORMAL_WIDTH);
-    territory.setScaleY((double)(field::WIDTH*7)/(double)territory.NORMAL_HEIGHT);
+    //territory.addNewPic("pics/game objects/Territory"+numToString(RADIUS)+".kep",origo);
+    //territory.setScaleX((double)(field::WIDTH*7)/(double)territory.NORMAL_WIDTH);
+    //territory.setScaleY((double)(field::WIDTH*7)/(double)territory.NORMAL_HEIGHT);
 }

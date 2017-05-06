@@ -32,6 +32,7 @@ struct coor
     void operator*= (double ezzel);
     bool operator> (coor ezzel) const;
     bool operator< (coor ezzel) const;
+    bool operator== (coor ezzel) const;
 
     void movePoint(coor xy); //adds @xy to coor (you can do the same by using the coor + operator)
     void origonizePoint(coor origo);

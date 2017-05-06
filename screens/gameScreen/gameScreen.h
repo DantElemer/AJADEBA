@@ -15,7 +15,7 @@ struct gameScreen : screen
         void initPressedButtons() const;
         void nextPlayer();
         void build();
-        bool inFields(coor coordinate);
+        bool isConnected(field from, field to);
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();
@@ -25,8 +25,6 @@ struct gameScreen : screen
         static void subToHeightDone();
         static void subToEndScene();*/
 
-        vector<vector<field*>> fields;
-
     public:
         void onTick();
         gameScreen();
@@ -34,9 +32,11 @@ struct gameScreen : screen
         void keyUp(event kE);
         void fieldClicked(field* f);
         void newStronghold(coor coordinate, player* owner);
+        bool inFields(coor coordinate);
 
         player* currentPlayer;
         vector<player*> players;
+        vector<vector<field*>> fields;
 
         //for building
         string whatToBuild;

@@ -66,7 +66,7 @@ void field::addPart(string part)
     }
     else if (part==fieldObject::STRONGHOLD)
     {
-        myParts.push_back(new stronghold(origo/*,myGameScreen->currentPlayer*/));
+        myParts.push_back(new stronghold(origo,myGameScreen->currentPlayer));
         type=STRONGHOLD;
     }
     else
