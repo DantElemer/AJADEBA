@@ -10,10 +10,11 @@ class player
         player(string name, string nation);
 
         string name;
-        bool finishedTurn=false;
-    protected:
-
         string nation;
+        bool finishedTurn=false;
+        int steps;
+        static const int MAX_STEPS=4;
+    protected:
     private:
 };
 

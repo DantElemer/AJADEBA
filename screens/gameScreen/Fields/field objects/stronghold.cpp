@@ -1,9 +1,12 @@
 #include "stronghold.h"
+#include "../../player.h"
+#include "../field.h"
 
-stronghold::stronghold(coor origo, string owner)
-: fieldObject(origo), owner(owner)
+stronghold::stronghold(coor origo)
+: fieldObject(origo,"pics/game objects/StrongholdBase.kep")
+//"pics/game objects/nations/"+owner->nation+"/Stronghold.kep
 {
-    //ctor
+    type=STRONGHOLD;
 }
 
 stronghold::~stronghold()
@@ -13,5 +16,14 @@ stronghold::~stronghold()
 
 void stronghold::draw()
 {
-    drawRectangle(origo-makeCoor(10,10),origo+makeCoor(10,10));
+    fieldObject::draw();
+}
+
+void stronghold::gotOwner(player* bowner)
+{
+    owner=bowner;
+    pic.addNewPic("pics/game objects/nations/"+owner->nation+"/Stronghold.kep", origo);
+    hasOwner=true;
+    pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
+    pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());
 }

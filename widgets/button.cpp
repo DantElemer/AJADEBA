@@ -76,7 +76,7 @@ void button::draw()
         nullGrowEffect();
     }
     drawRectangle(upperLeftCorner,downerRightCorner);
-    drawRectangle(upperLeftCorner+borderDiff,downerRightCorner-borderDiff);
+    //drawRectangle(upperLeftCorner+borderDiff,downerRightCorner-borderDiff);
 
     if (hasCanvas)
         gout<<stamp(myPic,upperLeftCorner.X,upperLeftCorner.Y);

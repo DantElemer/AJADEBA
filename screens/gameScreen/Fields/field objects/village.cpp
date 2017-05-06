@@ -1,9 +1,9 @@
 #include "village.h"
 
 village::village(coor origo)
-: fieldObject(origo)
+: fieldObject(origo,"pics/game objects/Village.kep")
 {
-    //ctor
+    type=VILLAGE;
 }
 
 village::~village()
@@ -13,5 +13,5 @@ village::~village()
 
 void village::draw()
 {
-    drawCircle(origo,10);
+    fieldObject::draw();
 }

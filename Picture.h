@@ -16,6 +16,7 @@ class Picture
 {
     public:
         Picture(string picFileName, coor origo);
+        void addNewPic(string picFileName, coor origo);
         virtual ~Picture();
         void draw();
         void clearPic();

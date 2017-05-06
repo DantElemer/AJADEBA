@@ -6,7 +6,7 @@ const string road::SOUTH="south";
 const string road::WEST="west";
 
 road::road(coor origo, string direction)
-: fieldObject(origo), direction(direction)
+: fieldObject(origo,"pics/game objects/"+direction+" road.kep"), direction(direction)
 {
     if (direction==NORTH)
         type=NORTH_ROAD;
@@ -25,13 +25,5 @@ road::~road()
 
 void road::draw()
 {
-    int l=20;
-    if (direction==NORTH)
-        drawRectangle(origo-makeCoor(1,l),origo);
-    else if (direction==EAST)
-        drawRectangle(origo,origo+makeCoor(l,1));
-    else if (direction==SOUTH)
-        drawRectangle(origo,origo+makeCoor(1,l));
-    else if (direction==WEST)
-        drawRectangle(origo,origo-makeCoor(l,1));
+    fieldObject::draw();
 }

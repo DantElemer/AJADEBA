@@ -51,7 +51,7 @@ void field::addPart(string part)
     }
     else if (part==fieldObject::BARRACK)
     {
-        myParts.push_back(new barrack(origo,myGameScreen->currentPlayer->name));
+        myParts.push_back(new barrack(origo,myGameScreen->currentPlayer));
         type=BARRACK;
     }
     else if (part==fieldObject::VILLAGE)
@@ -61,11 +61,21 @@ void field::addPart(string part)
     }
     else if (part==fieldObject::STRONGHOLD)
     {
-        myParts.push_back(new stronghold(origo,myGameScreen->currentPlayer->name));
+        myParts.push_back(new stronghold(origo/*,myGameScreen->currentPlayer*/));
         type=STRONGHOLD;
     }
     else
         cout<<"NINCS ILYEN!!!";
+}
+
+void field::activateStronghold(player* owner)
+{
+    for (fieldObject* fO:myParts)
+        if (fO->getType()==fieldObject::STRONGHOLD)
+        {
+            ((stronghold*)fO)->gotOwner(owner);
+        }
+
 }
 
 bool field::hasPart(string part)
@@ -86,8 +96,16 @@ bool field::canAct(player* who)
 
 bool field::canBuild(string part)
 {
+    if (part==fieldObject::VILLAGE)
+        return false;
     if (type==BLANK)
-        return true;
+        if (part==fieldObject::STRONGHOLD || part==fieldObject::BARRACK)
+            if (myGameScreen->currentPlayer->steps==player::MAX_STEPS)
+                return true;
+            else
+                return false;
+        else //it's a road
+            return true;
     else if (type==ROAD
              && (part==fieldObject::NORTH_ROAD || part==fieldObject::SOUTH_ROAD || part==fieldObject::EAST_ROAD || part==fieldObject::WEST_ROAD)
              && !hasPart(part))

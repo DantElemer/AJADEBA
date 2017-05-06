@@ -4,15 +4,16 @@
 #include <string>
 
 #include "../../../../coor.h"
+#include "../../../../Picture.h"
 
 using namespace std;
 
 class fieldObject
 {
     public:
-        fieldObject(coor origo);
+        fieldObject(coor origo, string picFileName);
         virtual ~fieldObject();
-        virtual void draw()=0;
+        virtual void draw();
         string getType(){return type;};
 
         static const string NORTH_ROAD;
@@ -27,6 +28,7 @@ class fieldObject
     protected:
         string type;
         coor origo;
+        Picture pic;
     private:
 };
 

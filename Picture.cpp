@@ -10,6 +10,18 @@ Picture::Picture(string picFileName, coor origo)
     remakeCanvas();
 }
 
+void Picture::addNewPic(string bpicFileName, coor borigo)
+{
+    picFileName=bpicFileName;
+    origo=borigo;
+    scaleX=1;
+    scaleY=1;
+    getData();
+    NORMAL_HEIGHT=height;
+    NORMAL_WIDTH=width;
+    remakeCanvas();
+}
+
 Picture::~Picture()
 {
     //dtor
@@ -22,7 +34,7 @@ void Picture::draw()
 
 void Picture::getData()
 {
-    cout<<"h";
+    pixelData.clear();
     ifstream iF(picFileName);
     iF>>width>>height;
     myPic.open(width,height);
@@ -39,6 +51,7 @@ void Picture::getData()
         pixelData.push_back(newRow);
     }
     iF.close();
+    myPic.transparent(true);
 }
 
 void Picture::remakeCanvas()

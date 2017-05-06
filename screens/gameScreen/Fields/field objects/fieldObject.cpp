@@ -1,4 +1,5 @@
 #include "fieldObject.h"
+#include "../field.h"
 
 const string fieldObject::NORTH_ROAD="north road";
 const string fieldObject::SOUTH_ROAD="south road";
@@ -13,13 +14,19 @@ const vector<string> fieldObject::EVERY_OBJECT={fieldObject::NORTH_ROAD,fieldObj
                                                 fieldObject::BARRACK, fieldObject::VILLAGE,
                                                 fieldObject::STRONGHOLD};
 
-fieldObject::fieldObject(coor origo)
-: origo(origo)
+fieldObject::fieldObject(coor origo, string picFileName)
+: origo(origo), pic(picFileName, origo)
 {
-    //ctor
+    pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
+    pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());
 }
 
 fieldObject::~fieldObject()
 {
     //dtor
+}
+
+void fieldObject::draw()
+{
+    pic.draw();
 }

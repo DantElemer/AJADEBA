@@ -1,9 +1,10 @@
 #include "barrack.h"
+#include "../../player.h"
 
-barrack::barrack(coor origo, string owner)
-: fieldObject(origo), owner(owner)
+barrack::barrack(coor origo, player* owner)
+: fieldObject(origo,"pics/game objects/nations/"+owner->nation+"/Barrack.kep"), owner(owner)
 {
-    //ctor
+    type=BARRACK;
 }
 
 barrack::~barrack()
@@ -13,5 +14,5 @@ barrack::~barrack()
 
 void barrack::draw()
 {
-    drawCircle(origo,5);
+    fieldObject::draw();
 }

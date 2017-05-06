@@ -1,4 +1,6 @@
 #include "gameScreen.h"
+#include "../subScreens/subScreen.h"
+
 #include <cstdlib>
 
 
@@ -9,7 +11,6 @@ gameScreen::gameScreen()
     srand(time(NULL));
     players.push_back(new player("Player 1","Ancient 1"));
     players.push_back(new player("Player 2","Ancient 2"));
-    players.push_back(new player("Player 3","Ancient 2"));
     currentPlayer=players[0];
     for (int j=1;j<10;j++) //some fields
     {
@@ -18,7 +19,9 @@ gameScreen::gameScreen()
         {
             field* newField=new field(this,makeCoor(i*field::WIDTH,j*field::WIDTH));
             newRow.push_back(newField);
-            if (rand()%10<2)
+            if (newField->getType()==field::BLANK&&rand()%10<1)
+                newField->addPart(fieldObject::VILLAGE);
+            /*if (rand()%10<2)
                 newField->addPart(fieldObject::NORTH_ROAD);
             if (rand()%10<2)
                 newField->addPart(fieldObject::SOUTH_ROAD);
@@ -26,15 +29,23 @@ gameScreen::gameScreen()
                 newField->addPart(fieldObject::WEST_ROAD);
             if (rand()%10<2)
                 newField->addPart(fieldObject::EAST_ROAD);
-            if (newField->getType()==field::BLANK&&rand()%10<3)
+            if (newField->getType()==field::BLANK&&rand()%10<1)
                 newField->addPart(fieldObject::VILLAGE);
-            if (newField->getType()==field::BLANK&&rand()%10<3)
+            if (newField->getType()==field::BLANK&&rand()%10<1)
                 newField->addPart(fieldObject::STRONGHOLD);
-            if (newField->getType()==field::BLANK&&rand()%10<5)
-                newField->addPart(fieldObject::BARRACK);
+            if (newField->getType()==field::BLANK&&rand()%10<1)
+                newField->addPart(fieldObject::BARRACK);*/
         }
         fields.push_back(newRow);
     }
+    fields[3][0]->addPart(fieldObject::STRONGHOLD);
+    fields[3][0]->activateStronghold(currentPlayer);
+    fields[4][0]->addPart(fieldObject::BARRACK);
+    nextPlayer();
+    fields[3][6]->addPart(fieldObject::STRONGHOLD);
+    fields[3][6]->activateStronghold(currentPlayer);
+    fields[4][6]->addPart(fieldObject::BARRACK);
+    nextPlayer();
 }
 
 void gameScreen::initPressedButtons() const
@@ -50,7 +61,6 @@ void gameScreen::fieldClicked(field* f)
     {
         subToBuildChooserScreen(); //open build options
     }
-
     else
         cout<<"enemy territory";
 }
@@ -58,6 +68,16 @@ void gameScreen::fieldClicked(field* f)
 void gameScreen::build()
 {
     selectedField->addPart(whatToBuild);
+    if (whatToBuild!=subScreen::CANCEL) //so he built something
+    {
+        if (selectedField->getType()==field::ROAD)
+            currentPlayer->steps--;
+        else
+            currentPlayer->steps=0;
+
+        if (currentPlayer->steps==0)
+            currentPlayer->finishedTurn=true;
+    }
 }
 
 void gameScreen::nextPlayer()
@@ -74,6 +94,8 @@ void gameScreen::nextPlayer()
         currentPlayer=players[0];
     }
     currentPlayer->finishedTurn=false;
+    currentPlayer->steps=currentPlayer->MAX_STEPS;
+    cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
 }
 
 void gameScreen::onTick()

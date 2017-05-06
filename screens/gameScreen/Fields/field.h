@@ -23,6 +23,7 @@ class field
         bool hasPart(string part);
         bool canAct(player* who);
         bool canBuild(string part);
+        void activateStronghold(player* owner); //if it's a stronghold, it gets owner
 
         static const int WIDTH=50; //=height
         coor origo;
