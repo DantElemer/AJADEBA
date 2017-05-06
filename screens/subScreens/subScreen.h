@@ -8,6 +8,8 @@ class subScreen : public screen
 {
     public:
         subScreen();
+
+        static const string CANCEL;
     protected:
         static void terminateSub();
     private:

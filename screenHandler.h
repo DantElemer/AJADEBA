@@ -11,6 +11,7 @@
 #include "screens\gameScreen\gameScreen.h"
 #include "screens\subScreens\confirmExitScreen.h"
 #include "screens\subScreens\howToPlayScreen.h"
+#include "screens\subScreens\buildChooserScreen.h"
 
 #include "graphics.hpp"
 

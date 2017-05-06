@@ -10,6 +10,7 @@
 #include "field objects/stronghold.h"
 
 class gameScreen;
+class player;
 
 class field
 {
@@ -20,9 +21,12 @@ class field
         string getType(){return type;};
         void addPart(string part);
         bool hasPart(string part);
+        bool canAct(player* who);
+        bool canBuild(string part);
 
         static const int WIDTH=50; //=height
         coor origo;
+        vector<player*> owners;
         static const string BLANK;
         static const string ROAD;
         static const string BARRACK;

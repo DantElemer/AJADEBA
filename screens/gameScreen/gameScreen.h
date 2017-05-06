@@ -6,15 +6,19 @@
 #include "../screen.h"
 #include "Fields/field.h"
 #include "Fields/field objects/road.h"
+#include "player.h"
 
 
 struct gameScreen : screen
 {
     private:
         void initPressedButtons() const;
+        void nextPlayer();
+        void build();
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();
+        static void subToBuildChooserScreen();
         /*static void subToAtStart();
         static void subToAlphaDone();
         static void subToHeightDone();
@@ -28,6 +32,14 @@ struct gameScreen : screen
         void keyDown(event kE);
         void keyUp(event kE);
         void fieldClicked(field* f);
+
+        player* currentPlayer;
+        vector<player*> players;
+
+        //for building
+        string whatToBuild;
+        field* selectedField;
+        bool justBuilt=false; //at least opened and closed build options
 };
 
 #endif // GAMESCREEN_H_INCLUDED

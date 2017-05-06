@@ -31,6 +31,7 @@ class screen
         //subScreens
         static const string CONFIRM_EXIT;
         static const string HOW_TO_PLAY_SCREEN;
+        static const string BUILD_CHOOSER_SCREEN;
         //changing
         static const string TERMINATED;
         static const string STAY;

@@ -1,15 +1,19 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include <string>
+using namespace std;
 
 class player
 {
     public:
-        /** Default constructor */
         player(string name, string nation);
-        /** Default destructor */
-        virtual ~player();
+
+        string name;
+        bool finishedTurn=false;
     protected:
+
+        string nation;
     private:
 };
 

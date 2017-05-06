@@ -7,6 +7,7 @@ const string screen::VICTORY_SCREEN="victory screen";
 const string screen::DIFFICULTY_SETTING_SCREEN="difficulty setting screen";
 const string screen::HOW_TO_PLAY_SCREEN="how to play screen";
 const string screen::CONFIRM_EXIT="confirm exit";
+const string screen::BUILD_CHOOSER_SCREEN="build chooser screen";
 /*const string screen::ALPHA_DONE="alpha done";
 const string screen::HEIGHT_DONE="height done";
 const string screen::AT_START="at start";

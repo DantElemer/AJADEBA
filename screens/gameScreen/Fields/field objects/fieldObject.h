@@ -22,6 +22,8 @@ class fieldObject
         static const string BARRACK;
         static const string VILLAGE;
         static const string STRONGHOLD;
+
+        static const vector<string> EVERY_OBJECT;
     protected:
         string type;
         coor origo;

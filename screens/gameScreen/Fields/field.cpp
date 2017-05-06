@@ -27,7 +27,6 @@ void field::draw()
         fO->draw();
 }
 
-
 void field::addPart(string part)
 {
     if (part==fieldObject::NORTH_ROAD)
@@ -52,7 +51,7 @@ void field::addPart(string part)
     }
     else if (part==fieldObject::BARRACK)
     {
-        myParts.push_back(new barrack(origo,"hihi")); //TODO
+        myParts.push_back(new barrack(origo,myGameScreen->currentPlayer->name));
         type=BARRACK;
     }
     else if (part==fieldObject::VILLAGE)
@@ -62,7 +61,7 @@ void field::addPart(string part)
     }
     else if (part==fieldObject::STRONGHOLD)
     {
-        myParts.push_back(new stronghold(origo,"hihi")); //TODO
+        myParts.push_back(new stronghold(origo,myGameScreen->currentPlayer->name));
         type=STRONGHOLD;
     }
     else
@@ -77,3 +76,21 @@ bool field::hasPart(string part)
     return false;
 }
 
+bool field::canAct(player* who)
+{
+    for (player* p:owners)
+        if (p!=who)
+            return false;
+    return true;
+}
+
+bool field::canBuild(string part)
+{
+    if (type==BLANK)
+        return true;
+    else if (type==ROAD
+             && (part==fieldObject::NORTH_ROAD || part==fieldObject::SOUTH_ROAD || part==fieldObject::EAST_ROAD || part==fieldObject::WEST_ROAD)
+             && !hasPart(part))
+        return true;
+    return false;
+}

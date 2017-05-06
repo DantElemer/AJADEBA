@@ -8,6 +8,11 @@ const string fieldObject::BARRACK="barrack";
 const string fieldObject::VILLAGE="village";
 const string fieldObject::STRONGHOLD="stronghold";
 
+const vector<string> fieldObject::EVERY_OBJECT={fieldObject::NORTH_ROAD,fieldObject::SOUTH_ROAD,
+                                                fieldObject::EAST_ROAD,fieldObject::WEST_ROAD,
+                                                fieldObject::BARRACK, fieldObject::VILLAGE,
+                                                fieldObject::STRONGHOLD};
+
 fieldObject::fieldObject(coor origo)
 : origo(origo)
 {
