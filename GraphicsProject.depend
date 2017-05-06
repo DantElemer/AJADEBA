@@ -130,10 +130,11 @@
 	"../screen.h"
 	"../../data.h"
 
-1493985756 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+1494047197 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
 	"../../data.h"
 	"../screen.h"
 	"Fields/field.h"
+	"Fields/field objects/road.h"
 
 1493109053 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.h
 	"subScreen.h"
@@ -151,8 +152,9 @@
 1493985893 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1493985756 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494049554 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
+	<cstdlib>
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\difficultysettingscreen.cpp
 	"difficultySettingScreen.h"
@@ -289,11 +291,54 @@
 1493919759 source:c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.cpp
 	"lButton.h"
 
-1493986148 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
+1494050345 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
 	"../../../coor.h"
 	"../../../graphicsPlus.h"
 	"../../../widgets/lButton.h"
+	"field objects/road.h"
+	"field objects/barrack.h"
+	"field objects/village.h"
+	"field objects/stronghold.h"
 
-1493985756 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
+1494046983 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
 	"field.h"
+	"../gameScreen.h"
+
+1494049554 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\road.h
+	"fieldObject.h"
+	"../../../../coor.h"
+	"../../../../graphicsPlus.h"
+
+1494050304 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\fieldobject.h
+	<string>
+	"../../../../coor.h"
+
+1494050304 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\fieldobject.cpp
+	"fieldObject.h"
+
+1494049645 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\road.cpp
+	"road.h"
+
+1494049554 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\barrack.h
+	"fieldObject.h"
+	"../../../../coor.h"
+	"../../../../graphicsPlus.h"
+
+1494049662 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\village.h
+	"fieldObject.h"
+	"../../../../graphicsPlus.h"
+
+1494049645 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\barrack.cpp
+	"barrack.h"
+
+1494049645 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\village.cpp
+	"village.h"
+
+1494050304 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.h
+	"fieldObject.h"
+	"../../../../coor.h"
+	"../../../../graphicsPlus.h"
+
+1494050317 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
+	"stronghold.h"
 
