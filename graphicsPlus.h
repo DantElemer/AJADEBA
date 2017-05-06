@@ -9,15 +9,19 @@
 #include "randomFuncs.h"
 
 #include <string>
+#include <cmath>
 
 
 extern int titleFontSize;
 extern int titleFromWindow;
 
+void drawFatLine(coor startPoint, coor endPoint, int width, int r=255, int g=255, int b=255);
+void drawLine(coor startPoint, coor endPoint, int r=255, int g=255, int b=255);
 void clearScreen(coor uLC=makeCoor(0,0), coor dRC=WINDOW_ORIGO*2); //clears the given rectangle, the whole screen by default
 void darkening(int rate=2); //a simple effect
-void drawRectangle(coor upperLeftCorn,coor downerRightCorn, bool filled=false); //...
-void drawCircle(coor origo, double radius, int accuracy=1000);//...
+void drawRectangle(coor upperLeftCorn,coor downerRightCorn, bool filled=false, int r=255, int g=255, int b=255);
+void drawCircle(coor origo, double radius, int r=255, int g=255, int b=255, int accuracy=1000);//...
+void drawFilledCircle(coor origo, double radius, int r=255, int g=255, int b=255);//...
 void setFont(int fontSize); //...
 void lWriteText(coor startPoint, string texty, int lineLength, int fontSize=0); //prints @texty using multiple lines, its ULC is given (@startPoint), 0 fontSize means no font change, cannot handle "too long" words
 void writeText(coor startPoint, string texty, int fontSize=0); //prints @texty, its ULC is given (@startPoint), 0 fontSize means no font change

@@ -18,25 +18,85 @@ void darkening(int rate)
                 gout<<move_to(i,j)<<color(100,100,100)<<dot;
 }
 
-void drawRectangle(coor upperLeftCorner,coor downerRightCorner, bool filled)
+void drawFatLine(coor startPoint, coor endPoint, int width, int r, int g, int b)
 {
+    const double ennyiBiztosEleg=max(abs(startPoint.X-endPoint.X),abs(startPoint.Y-endPoint.Y));
+    if (ennyiBiztosEleg>1000000)
+        return;
+    const coor delta=(endPoint-startPoint)/ennyiBiztosEleg;
+    for (int i=0;i<=ennyiBiztosEleg;i++)
+    {
+        coor testPoint=startPoint+delta*i;
+        if (testPoint.inWindow())
+            drawFilledCircle(testPoint,width,r,g,b);
+    }
+}
+
+void drawLine(coor startPoint, coor endPoint, int r, int g, int b)
+{
+    if (startPoint.inWindow()&&endPoint.inWindow())
+    {
+        gout<<move_to(startPoint.X,startPoint.Y)<<color(r,g,b)<<line_to(endPoint.X,endPoint.Y);
+    }
+
+    else
+    {
+        coor sPoint={-1,-1};
+        coor ePoint={-1,-1};
+        const double ennyiBiztosEleg=max(abs(startPoint.X-endPoint.X),abs(startPoint.Y-endPoint.Y));
+        if (ennyiBiztosEleg>1000000) //hagyjuk má
+            return;
+        const coor delta=(endPoint-startPoint)/ennyiBiztosEleg;
+        for (int i=0;i<=ennyiBiztosEleg;i++)
+        {
+            coor testPoint=startPoint+delta*i;
+            if (testPoint.inWindow())
+                if (sPoint.X==-1)
+                    sPoint=testPoint;
+                ePoint=testPoint;
+        }
+        if (sPoint.X==-1)
+            return;
+        gout<<move_to(sPoint.X,sPoint.Y)<<color(r,g,b)<<line_to(ePoint.X,ePoint.Y);
+    }
+}
+
+void drawRectangle(coor upperLeftCorner,coor downerRightCorner, bool filled, int r, int g, int b)
+{
+    if (upperLeftCorner.X<0)
+        upperLeftCorner.X=0;
+    if (downerRightCorner.X>WINDOW_X)
+        downerRightCorner.X=WINDOW_X;
+    if (upperLeftCorner.Y<0)
+        upperLeftCorner.Y=0;
+    if (downerRightCorner.Y>WINDOW_Y)
+        downerRightCorner.Y=WINDOW_Y;
     int width=downerRightCorner.X-upperLeftCorner.X;
     int height=downerRightCorner.Y-upperLeftCorner.Y;
-    gout<<color(255,255,255)<<move_to(upperLeftCorner.X,upperLeftCorner.Y);
+    gout<<color(r,g,b)<<move_to(upperLeftCorner.X,upperLeftCorner.Y);
     if (filled)
         gout<<box(width,height);
     else
         gout<<line_to(upperLeftCorner.X+width,upperLeftCorner.Y)<<line_to(upperLeftCorner.X+width,upperLeftCorner.Y+height)<<line_to(upperLeftCorner.X,upperLeftCorner.Y+height)<<line_to(upperLeftCorner.X,upperLeftCorner.Y);
 }
 
-void drawCircle(coor origo, double radius, int accuracy)
+void drawCircle(coor origo, double radius, int r, int g, int b, int accuracy)
 {
     float alfa=atan(1)*8.0/accuracy;
-    gout << move_to(origo.X+radius,origo.Y)<<color(255,255,255);
+    gout << move_to(origo.X+radius,origo.Y)<<color(r,g,b);
     for (int i=1;i<=accuracy;i++)
     {
         gout << line_to(origo.X+radius*cos(i*alfa),origo.Y-radius*sin(i*alfa));
     }
+}
+
+void drawFilledCircle(coor origo, double radius, int r, int g, int b)
+{
+    gout<<color(r,g,b);
+    for (int i=-(int)radius;i<=(int)radius;i++)
+        for (int j=-(int)radius;j<=(int)radius;j++)
+            if (pow(i,2)+pow(j,2)<=radius*radius)
+                gout<<move_to(origo.X+i, origo.Y+j)<<dot;
 }
 
 void setFont(int fontSize)

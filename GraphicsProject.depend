@@ -23,11 +23,12 @@
 1493830799 source:c:\users\ildikó\documents\github\ajadeba\graphicsplus.cpp
 	"graphicsPlus.h"
 
-1493830718 c:\users\ildikó\documents\github\ajadeba\graphicsplus.h
+1494063193 c:\users\ildikó\documents\github\ajadeba\graphicsplus.h
 	"graphics.hpp"
 	"coor.h"
 	"randomFuncs.h"
 	<string>
+	<cmath>
 
 1493109050 c:\users\ildikó\documents\github\ajadeba\randomfuncs.h
 	<time.h>
@@ -154,7 +155,7 @@
 1494059540 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494061244 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494062205 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	<cstdlib>
 
