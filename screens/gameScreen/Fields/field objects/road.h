@@ -18,7 +18,6 @@ class road : public fieldObject
         static const string WEST;
     protected:
         string direction;
-        coor origo;
     private:
 };
 

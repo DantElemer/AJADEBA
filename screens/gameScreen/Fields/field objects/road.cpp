@@ -6,9 +6,16 @@ const string road::SOUTH="south";
 const string road::WEST="west";
 
 road::road(coor origo, string direction)
-: direction(direction), origo(origo)
+: fieldObject(origo), direction(direction)
 {
-    //ctor
+    if (direction==NORTH)
+        type=NORTH_ROAD;
+    else if (direction==SOUTH)
+        type=SOUTH_ROAD;
+    else if (direction==EAST)
+        type=EAST_ROAD;
+    else if (direction==WEST)
+        type=WEST_ROAD;
 }
 
 road::~road()
@@ -18,7 +25,7 @@ road::~road()
 
 void road::draw()
 {
-    int l=10;
+    int l=20;
     if (direction==NORTH)
         drawRectangle(origo-makeCoor(1,l),origo);
     else if (direction==EAST)
