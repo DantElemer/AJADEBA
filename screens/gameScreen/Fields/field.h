@@ -26,6 +26,7 @@ class field
         bool canBuild(string part);
         void activateStronghold(player* owner); //if it's a stronghold, it gets owner
         player* objectOwner();
+        player* strongholdBuilder();
 
         static const int WIDTH=50; //=height
         coor origo;
@@ -37,10 +38,6 @@ class field
         static const string VILLAGE;
         static const string STRONGHOLD;
 
-        /*bool northConnection=false;
-        bool southConnection=false;
-        bool eastConnection=false;
-        bool westConnection=false;*/
     protected:
         gameScreen* myGameScreen;
         string type;

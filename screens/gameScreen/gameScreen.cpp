@@ -94,15 +94,35 @@ void gameScreen::build()
                         for (player* p:players)
                             strengths.push_back(strongholdStrength(f,p));
                         int maxStr=0;
-                        int index=-1;
+                        vector<int> indexes={-1};
                         for (int i=0;i<players.size();i++)
+                        {
+                            if (strengths[i]==maxStr)
+                                indexes.push_back(i);
                             if (strengths[i]>maxStr)
                             {
                                 maxStr=strengths[i];
-                                index=i;
+                                indexes.clear();
+                                indexes.push_back(i);
                             }
-                        if (index>-1)
-                            f->activateStronghold(players[index]);
+                        }
+                        if (indexes[0]>-1) //someone gets it
+                        {
+                            if (indexes.size()==1) //1 player sent more soldiers than all the others
+                                f->activateStronghold(players[indexes[0]]);
+                            else
+                            {
+                                bool oneMaxIsBuilder=false;
+                                for (int i=0;i<indexes.size();i++)
+                                    if (players[indexes[i]]==f->strongholdBuilder()) //builder gets it
+                                    {
+                                        f->activateStronghold(players[indexes[i]]);
+                                        oneMaxIsBuilder=true;
+                                    }
+                                if (!oneMaxIsBuilder) //if equality and none of them is builder, the one who connected it
+                                    f->activateStronghold(currentPlayer);
+                            }
+                        }
                     }
     }
 }

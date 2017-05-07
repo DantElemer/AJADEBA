@@ -66,7 +66,10 @@ void field::addPart(string part)
     }
     else if (part==fieldObject::STRONGHOLD)
     {
-        myParts.push_back(new stronghold(origo,myGameScreen->currentPlayer));
+        if (myGameScreen->justBuilt)
+            myParts.push_back(new stronghold(origo,myGameScreen->currentPlayer));
+        else //it wasn't built by a player
+            myParts.push_back(new stronghold(origo,NULL));
         type=STRONGHOLD;
     }
     else
@@ -101,6 +104,14 @@ player* field::objectOwner()
             if (static_cast<stronghold*>(fO)->hasOwner)
                 return static_cast<stronghold*>(fO)->owner;
     }
+    return NULL;
+}
+
+player* field::strongholdBuilder()
+{
+    for (fieldObject* fO:myParts)
+        if (fO->getType()==fieldObject::STRONGHOLD)
+            return static_cast<stronghold*>(fO)->builder;
     return NULL;
 }
 
