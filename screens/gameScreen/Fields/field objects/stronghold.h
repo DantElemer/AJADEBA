@@ -17,10 +17,10 @@ class stronghold : public fieldObject
         bool getHasOwner(){return hasOwner;};
 
         static const int RADIUS=3;
-    protected:
         player* owner;
         player* builder;
         bool hasOwner=false;
+    protected:
         Picture territory;
     private:
 };

@@ -62,7 +62,7 @@ void gameScreen::initPressedButtons() const
 void gameScreen::fieldClicked(field* f)
 {
     cout<<f->getType()<<endl;
-    cout<<"is: "<<isConnected(*f, *fields[4][0])<<endl;
+    cout<<"1-2: "<<isConnected(*fields[5][3], *fields[2][6])<<endl<<"2-1: "<<isConnected(*fields[2][6], *fields[5][3])<<endl;
     selectedField=f;
     if (f->canAct(currentPlayer))
     {
@@ -192,10 +192,65 @@ void gameScreen::subToEndScene()
 }*/
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //GATE OF HELL
 
+
+
+
+
+
+
+
+
+
+
+
+
+//DO NOT GO ON
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//YOU HAVE BEEN WARNED
+
+
+
+
+
+
+
+
+
+
+
+
+
 struct point
-{
+{ //meet: from middle you can reach neighbour's edge
+  //strong: the neighbour can reach your edge
     bool northMeet=false;
     bool northStrong=false;
     bool southMeet=false;
@@ -207,7 +262,7 @@ struct point
     bool checked=false;
     coor coordinate;
 
-    point (coor coordinate, bool useStrongs, gameScreen gS)
+    point (coor coordinate, bool useStrongs, player* who, gameScreen gS)
     : coordinate(coordinate)
     {
         if (gS.inFields(coordinate+makeCoor(0,1)))
@@ -238,12 +293,35 @@ struct point
             if (gS.fields[coordinate.X-1][coordinate.Y]->hasPart(fieldObject::EAST_ROAD))
                 westStrong=true;
         }
-        //TODO friendly stronghs
+
+        if (useStrongs)
+        {
+            if (gS.inFields(coordinate+makeCoor(0,1)))
+                if (gS.fields[coordinate.X][coordinate.Y+1]->hasPart(fieldObject::STRONGHOLD) && gS.fields[coordinate.X][coordinate.Y+1]->objectOwner()==who)
+                    southStrong=true;
+            if (gS.inFields(coordinate+makeCoor(0,-1)))
+                if (gS.fields[coordinate.X][coordinate.Y-1]->hasPart(fieldObject::STRONGHOLD) && gS.fields[coordinate.X][coordinate.Y-1]->objectOwner()==who)
+                    northStrong=true;
+            if (gS.inFields(coordinate+makeCoor(1,0)))
+                if (gS.fields[coordinate.X+1][coordinate.Y]->hasPart(fieldObject::STRONGHOLD) && gS.fields[coordinate.X+1][coordinate.Y]->objectOwner()==who)
+                    eastStrong=true;
+            if (gS.inFields(coordinate+makeCoor(-1,0)))
+                if (gS.fields[coordinate.X-1][coordinate.Y]->hasPart(fieldObject::STRONGHOLD) && gS.fields[coordinate.X-1][coordinate.Y]->objectOwner()==who)
+                    westStrong=true;
+            if (gS.fields[coordinate.X][coordinate.Y]->hasPart(fieldObject::STRONGHOLD) && gS.fields[coordinate.X][coordinate.Y]->objectOwner()==who)
+            {
+                northMeet=true;
+                southMeet=true;
+                eastMeet=true;
+                westMeet=true;
+            }
+        }
+        //TODO takarítás (pl territory majd vissza, kiírások kiszedése
     }
     bool isAimPoint(point* aimPoint, vector<vector<point*>> points) //recursion
     {
-        cout<<coordinate.X<<" "<<coordinate.Y<<endl;
-        cout<<northMeet<<northStrong<<eastMeet<<eastStrong<<southMeet<<southStrong<<westMeet<<westStrong<<endl;
+        //cout<<coordinate.X<<" "<<coordinate.Y<<endl;
+        //cout<<northMeet<<northStrong<<eastMeet<<eastStrong<<southMeet<<southStrong<<westMeet<<westStrong<<endl;
         if (checked)
             return false;
         checked=true;
@@ -280,19 +358,25 @@ bool helperF(field from, field to, vector<vector<field*>> fields, bool useFriend
     if (abs(from.coordinate.X-to.coordinate.X)+abs(from.coordinate.Y-to.coordinate.Y)==1) //next to
         return true;
 
+    player* who=0;
+    if (useFriendlyStrongholds) //barrack to strongh
+        who=from.objectOwner();
+
     vector<vector<point*>> points;
     for (int i=0;i<fields.size();i++) //inicializing points
     {
         vector<point*> newRow;
         for (int j=0;j<fields[0].size();j++)
         {
-            point* newPoint=new point(makeCoor(i,j),useFriendlyStrongholds,gS);
+            point* newPoint=new point(makeCoor(i,j),useFriendlyStrongholds,who, gS);
             newRow.push_back(newPoint);
             newPoint=0;
             delete newPoint;
         }
         points.push_back(newRow);
     }
+    who=0;
+    delete who;
     points[from.coordinate.X][from.coordinate.Y]->northMeet=true;
     points[from.coordinate.X][from.coordinate.Y]->southMeet=true;
     points[from.coordinate.X][from.coordinate.Y]->eastMeet=true;
@@ -310,6 +394,11 @@ bool gameScreen::isConnected(field from, field to)
         return helperF(from, to, fields, true, *this);
     else if (from.getType()==field::STRONGHOLD //assault
           && to.getType()==field::STRONGHOLD) //can use only roads, to target(to)'s territory
-       cout<<"TODO";//TODO
+        for (int i=to.coordinate.X-3;i<=to.coordinate.X+3;i++)
+            for (int j=to.coordinate.Y-3;j<=to.coordinate.Y+3;j++)
+                if (inFields(makeCoor(i,j)))
+                    if (abs(i-to.coordinate.X)+abs(j-to.coordinate.Y)==3) //border field
+                        if (helperF(from,*fields[i][j], fields, false, *this))
+                            return true;
     return false;
 }

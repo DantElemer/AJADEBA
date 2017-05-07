@@ -13,8 +13,10 @@ class barrack : public fieldObject
         barrack(coor origo, player* owner);
         virtual ~barrack();
         virtual void draw();
-    protected:
+
         player* owner;
+    protected:
+
     private:
 };
 

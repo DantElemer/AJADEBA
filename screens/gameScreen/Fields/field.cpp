@@ -92,6 +92,19 @@ bool field::hasPart(string part)
     return false;
 }
 
+player* field::objectOwner()
+{
+    for (fieldObject* fO:myParts)
+    {
+        if (fO->getType()==fieldObject::BARRACK)
+            return static_cast<barrack*>(fO)->owner;
+        else if (fO->getType()==fieldObject::STRONGHOLD)
+            if (static_cast<stronghold*>(fO)->hasOwner)
+                return static_cast<stronghold*>(fO)->owner;
+    }
+    return NULL;
+}
+
 bool field::canAct(player* who)
 {
     for (player* p:owners)
