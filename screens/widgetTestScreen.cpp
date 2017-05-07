@@ -32,7 +32,6 @@ void widgetTestScreen::draw()
         pic.setScaleY(i);
         pic.draw();
         gout<<refresh;
-        cout<<i<<endl;
     }
 
 }

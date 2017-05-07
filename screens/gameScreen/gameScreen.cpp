@@ -62,7 +62,7 @@ void gameScreen::initPressedButtons() const
 void gameScreen::fieldClicked(field* f)
 {
     cout<<f->getType()<<endl;
-    cout<<"1-2: "<<isConnected(*fields[5][3], *fields[2][6])<<endl<<"2-1: "<<isConnected(*fields[2][6], *fields[5][3])<<endl;
+    cout<<"Strength: "<<strongholdStrength(fields[5][3],currentPlayer)<<" "<<currentPlayer->name<<endl;
     selectedField=f;
     if (f->canAct(currentPlayer))
     {
@@ -84,6 +84,26 @@ void gameScreen::build()
 
         if (currentPlayer->steps==0)
             currentPlayer->finishedTurn=true;
+
+        for (vector<field*> fRow:fields) //stronghold base check
+            for (field* f:fRow)
+                if (f->getType()==field::STRONGHOLD)
+                    if (f->objectOwner()==NULL)
+                    {
+                        vector<int> strengths;
+                        for (player* p:players)
+                            strengths.push_back(strongholdStrength(f,p));
+                        int maxStr=0;
+                        int index=-1;
+                        for (int i=0;i<players.size();i++)
+                            if (strengths[i]>maxStr)
+                            {
+                                maxStr=strengths[i];
+                                index=i;
+                            }
+                        if (index>-1)
+                            f->activateStronghold(players[index]);
+                    }
     }
 }
 
@@ -125,6 +145,29 @@ bool gameScreen::inFields(coor coordinate)
     if (coordinate.Y>=fields[0].size())
         return false;
     return true;
+}
+
+int gameScreen::barrackStrength(field* bField)
+{
+    int strength=0;
+    for (vector<field*> fRow:fields)
+        for (field* f:fRow)
+            if (f->getType()==field::VILLAGE)
+                if (isConnected(*f,*bField))
+                    strength++;
+    return strength;
+}
+
+int gameScreen::strongholdStrength(field* shField, player* who)
+{
+    int strength=0;
+    for (vector<field*> fRow:fields)
+        for (field* f:fRow)
+            if (f->getType()==field::BARRACK)
+                if (f->objectOwner()==who)
+                    if (isConnected(*f,*shField))
+                        strength+=barrackStrength(f);
+    return strength;
 }
 
 void gameScreen::onTick()
@@ -316,13 +359,10 @@ struct point
                 westMeet=true;
             }
         }
-        //TODO takarítás (pl territory majd vissza, kiírások kiszedése
     }
     bool isAimPoint(point* aimPoint, vector<vector<point*>> points) //recursion
     {
-        //cout<<coordinate.X<<" "<<coordinate.Y<<endl;
-        //cout<<northMeet<<northStrong<<eastMeet<<eastStrong<<southMeet<<southStrong<<westMeet<<westStrong<<endl;
-        if (checked)
+     if (checked)
             return false;
         checked=true;
         if (northMeet)

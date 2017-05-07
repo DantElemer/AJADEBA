@@ -16,6 +16,8 @@ struct gameScreen : screen
         void nextPlayer();
         void build();
         bool isConnected(field from, field to);
+        int barrackStrength(field* bField);
+        int strongholdStrength(field* shField, player* who);
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();

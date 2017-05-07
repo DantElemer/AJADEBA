@@ -81,7 +81,6 @@ void field::activateStronghold(player* owner)
             ((stronghold*)fO)->gotOwner(owner);
             myGameScreen->newStronghold(coordinate,owner);
         }
-
 }
 
 bool field::hasPart(string part)

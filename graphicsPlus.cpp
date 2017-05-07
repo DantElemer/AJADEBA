@@ -126,7 +126,7 @@ void lWriteText(coor startPoint, string texty, int lineLength, int fontSize)
         while (!lineDone)
         {
             line=texty.substr(lineStart,lineEnd-lineStart);
-            if ( (countTextWidth(line,fontSize)<lineLength) && ( (texty.at(lineEnd)==' ') || (lineEnd==texty.length()-1) ) ) //todo only space-breake
+            if ( (countTextWidth(line,fontSize)<lineLength) && ( (texty.at(lineEnd)==' ') || (lineEnd==texty.length()-1) ) )
                 lineDone=true;
             else
                 lineEnd--;
