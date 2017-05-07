@@ -151,7 +151,27 @@ void gameScreen::newStronghold(coor coordinate, player* owner)
         for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
             if (inFields(makeCoor(i,j)))
                 if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
+                {
                     fields[i][j]->addOwner(owner);
+                    //kill undefended ones
+                    if (fields[i][j]->owners.size()==1) //its undefended
+                    {
+                        if (fields[i][j]->getType()==field::BARRACK)
+                            if (fields[i][j]->objectOwner()!=owner)
+                                fields[i][j]->destroyObject();
+                        if (fields[i][j]->getType()==field::STRONGHOLD)
+                            if (fields[i][j]->objectOwner()==NULL) //its a str base, so basically must be killed, however in some really few cases more str base can be activated in each othrs range
+                            {
+                                bool beingActivated=false;
+                                for (player* p:players)
+                                    if (strongholdStrength(fields[i][j],p)>0)
+                                        beingActivated=true;
+                                if (!beingActivated)
+                                    fields[i][j]->destroyObject();
+                            }
+                    }
+                }
+
 }
 
 bool gameScreen::inFields(coor coordinate)

@@ -27,6 +27,7 @@ class field
         void activateStronghold(player* owner); //if it's a stronghold, it gets owner
         player* objectOwner();
         player* strongholdBuilder();
+        void destroyObject();
 
         static const int WIDTH=50; //=height
         coor origo;

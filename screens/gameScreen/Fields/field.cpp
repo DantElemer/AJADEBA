@@ -115,6 +115,22 @@ player* field::strongholdBuilder()
     return NULL;
 }
 
+void field::destroyObject()
+{
+    int i=0;
+    for (fieldObject* fO:myParts)
+    {
+        if (fO->getType()==fieldObject::BARRACK || fO->getType()==fieldObject::STRONGHOLD)
+        {
+            delete fO;
+            myParts.erase(myParts.begin()+i,myParts.begin()+i+1);
+        }
+        i++;
+    }
+    if (myParts.size()==0)
+        type=BLANK;
+}
+
 bool field::canAct(player* who)
 {
     for (player* p:owners)
