@@ -21,10 +21,13 @@ class field
         string getType(){return type;};
         void addPart(string part);
         void addOwner(player* owner);
+        void removeOwner(player* owner);
+        bool isOwner(player* owner);
         bool hasPart(string part);
         bool canAct(player* who);
         bool canBuild(string part);
         void activateStronghold(player* owner); //if it's a stronghold, it gets owner
+        void assaultChange(bool changeTo); //if it's a stronghold, assaultChosen changes to @changeTo
         player* objectOwner();
         player* strongholdBuilder();
         void destroyObject();

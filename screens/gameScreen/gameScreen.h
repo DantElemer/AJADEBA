@@ -18,6 +18,7 @@ struct gameScreen : screen
         bool isConnected(field from, field to);
         int barrackStrength(field* bField);
         int strongholdStrength(field* shField, player* who);
+        void destroyStronghold(field* stronghold);
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();
@@ -26,6 +27,8 @@ struct gameScreen : screen
         static void subToAlphaDone();
         static void subToHeightDone();
         static void subToEndScene();*/
+        bool assaultMode=false;
+        field* selectedStronghold;
 
     public:
         void onTick();

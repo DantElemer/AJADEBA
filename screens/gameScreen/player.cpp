@@ -6,3 +6,10 @@ player::player(string name, string nation)
     //ctor
 }
 
+void player::changeStrongholdNumber(int delta)
+{
+    strongholdNumber+=delta;
+    if (strongholdNumber==0)
+        dead=true;
+}
+

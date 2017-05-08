@@ -32,6 +32,28 @@ void field::addOwner(player* owner)
     owners.push_back(owner);
 }
 
+void field::removeOwner(player* owner)
+{
+    int i=0;
+    for (player* p:owners)
+    {
+        if (p==owner)
+        {
+            owners.erase(owners.begin()+i,owners.begin()+i+1);
+            return;
+        }
+        i++;
+    }
+}
+
+bool field::isOwner(player* owner)
+{
+    for (player* p:owners)
+        if (p==owner)
+            return true;
+    return false;
+}
+
 void field::addPart(string part)
 {
     if (part==fieldObject::NORTH_ROAD)
@@ -84,6 +106,13 @@ void field::activateStronghold(player* owner)
             ((stronghold*)fO)->gotOwner(owner);
             myGameScreen->newStronghold(coordinate,owner);
         }
+}
+
+void field::assaultChange(bool changeTo)
+{
+    for (fieldObject* fO:myParts)
+        if (fO->getType()==fieldObject::STRONGHOLD)
+            static_cast<stronghold*>(fO)->assaultChosen=changeTo;
 }
 
 bool field::hasPart(string part)
@@ -142,6 +171,8 @@ bool field::canAct(player* who)
 bool field::canBuild(string part)
 {
     if (part==fieldObject::VILLAGE)
+        return false;
+    if (part==fieldObject::STRONGHOLD && owners.size()>0)
         return false;
     if (type==BLANK)
         if (part==fieldObject::STRONGHOLD || part==fieldObject::BARRACK)

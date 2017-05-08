@@ -59,12 +59,52 @@ void gameScreen::initPressedButtons() const
 
 }
 
+void gameScreen::destroyStronghold(field* stronghold)
+{
+    player* sadOne=stronghold->objectOwner();
+    sadOne->changeStrongholdNumber(-1);
+    coor coordinate=stronghold->coordinate;
+    for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
+        for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
+            if (inFields(makeCoor(i,j)))
+                if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
+                {
+                    fields[i][j]->removeOwner(sadOne);
+                    if (fields[i][j]->getType()==field::BARRACK)
+                        if (!fields[i][j]->isOwner(sadOne))
+                            fields[i][j]->destroyObject();
+                }
+    stronghold->destroyObject();
+}
+
 void gameScreen::fieldClicked(field* f)
 {
-    cout<<f->getType()<<endl;
-    cout<<"Strength: "<<strongholdStrength(fields[5][3],currentPlayer)<<" "<<currentPlayer->name<<endl;
+    //cout<<f->getType()<<endl;
+    //cout<<"Strength: "<<strongholdStrength(fields[5][3],currentPlayer)<<" "<<currentPlayer->name<<endl;
     selectedField=f;
-    if (f->canAct(currentPlayer))
+    if (assaultMode)
+    {
+        assaultMode=false;
+        if (selectedField->getType()==field::STRONGHOLD)
+            if (selectedField->objectOwner()!=selectedStronghold->objectOwner())
+                if (isConnected(*selectedStronghold, *selectedField))
+                    if (strongholdStrength(selectedStronghold,currentPlayer) > strongholdStrength(selectedField, selectedField->objectOwner()))
+                        {
+                            destroyStronghold(selectedField);
+                            currentPlayer->steps=0;
+                        }
+        selectedStronghold->assaultChange(false);
+    }
+    else if (f->getType()==field::STRONGHOLD)
+    {
+        if (currentPlayer->steps==currentPlayer->MAX_STEPS)
+        {
+            assaultMode=true;
+            selectedStronghold=f;
+            selectedStronghold->assaultChange(true);
+        }
+    }
+    else if (f->canAct(currentPlayer))
     {
         subToBuildChooserScreen(); //open build options
     }
@@ -82,8 +122,8 @@ void gameScreen::build()
         else
             currentPlayer->steps=0;
 
-        if (currentPlayer->steps==0)
-            currentPlayer->finishedTurn=true;
+        /*if (currentPlayer->steps==0)
+            currentPlayer->finishedTurn=true;*/
 
         for (vector<field*> fRow:fields) //stronghold base check
             for (field* f:fRow)
@@ -140,13 +180,14 @@ void gameScreen::nextPlayer()
     {
         currentPlayer=players[0];
     }
-    currentPlayer->finishedTurn=false;
+    //currentPlayer->finishedTurn=false;
     currentPlayer->steps=currentPlayer->MAX_STEPS;
     cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
 }
 
 void gameScreen::newStronghold(coor coordinate, player* owner)
 {
+    owner->changeStrongholdNumber(1);
     for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
         for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
             if (inFields(makeCoor(i,j)))
@@ -154,7 +195,7 @@ void gameScreen::newStronghold(coor coordinate, player* owner)
                 {
                     fields[i][j]->addOwner(owner);
                     //kill undefended ones
-                    if (fields[i][j]->owners.size()==1) //its undefended
+                    if (fields[i][j]->owners.size()==1) //it's undefended
                     {
                         if (fields[i][j]->getType()==field::BARRACK)
                             if (fields[i][j]->objectOwner()!=owner)
@@ -218,7 +259,7 @@ void gameScreen::onTick()
         for (field* f:fRow)
             f->draw();
 
-    if (currentPlayer->finishedTurn)
+    if (currentPlayer->steps==0)
         nextPlayer();
 
     if (justBuilt)
@@ -226,13 +267,28 @@ void gameScreen::onTick()
         build();
         justBuilt=false;
     }
+
+    int i=0;
+    for (player* p:players)
+    {
+        if (p->dead)
+        {
+            cout<<"meghaltam "<<p->name;
+            delete p;
+            players.erase(players.begin()+i,players.begin()+i+1);
+        }
+        i++;
+    }
+    if (players.size()==1)
+        switchToVictoryScreen();
 }
 
 void gameScreen::keyDown(event kE)
 {
     screen::keyDown(kE);
     if (kE.keycode=='n')
-        currentPlayer->finishedTurn=true;
+        //currentPlayer->finishedTurn=true;
+        currentPlayer->steps=0;
 }
 
 void gameScreen::keyUp(event kE)

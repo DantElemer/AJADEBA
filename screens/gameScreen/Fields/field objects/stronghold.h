@@ -20,6 +20,7 @@ class stronghold : public fieldObject
         player* owner;
         player* builder;
         bool hasOwner=false;
+        bool assaultChosen=false;
     protected:
         Picture territory;
     private:

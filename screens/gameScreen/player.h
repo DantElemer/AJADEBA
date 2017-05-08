@@ -8,15 +8,16 @@ class player
 {
     public:
         player(string name, string nation);
+        void changeStrongholdNumber(int delta);
 
         string name;
         string nation;
-        bool finishedTurn=false;
+        //bool finishedTurn=false;
         int steps;
-        int strongholdNumber=0;
         static const int MAX_STEPS=4;
-    protected:
+        bool dead=false;;
     private:
+        int strongholdNumber=0;
 };
 
 #endif // PLAYER_H

@@ -132,7 +132,7 @@
 	"../screen.h"
 	"../../data.h"
 
-1494149367 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+1494228780 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
 	"../../data.h"
 	"../screen.h"
 	"Fields/field.h"
@@ -155,7 +155,7 @@
 1494059540 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494154427 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494244902 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	<cstdlib>
@@ -295,7 +295,7 @@
 1493919759 source:c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.cpp
 	"lButton.h"
 
-1494154395 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
+1494245611 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
 	"../../../coor.h"
 	"../../../graphicsPlus.h"
 	"../../../widgets/lButton.h"
@@ -304,7 +304,7 @@
 	"field objects/village.h"
 	"field objects/stronghold.h"
 
-1494154411 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
+1494244902 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.cpp
 	"field.h"
 	"../gameScreen.h"
 
@@ -341,20 +341,20 @@
 1494079709 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\village.cpp
 	"village.h"
 
-1494139736 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.h
+1494244615 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.h
 	"fieldObject.h"
 	"../../../../coor.h"
 	"../../../../graphicsPlus.h"
 
-1494089637 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
+1494245984 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
 	"stronghold.h"
 	"../../player.h"
 	"../field.h"
 
-1494080517 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.h
+1494245984 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.h
 	<string>
 
-1494077592 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.cpp
+1494245984 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.cpp
 	"player.h"
 
 1494061244 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.h

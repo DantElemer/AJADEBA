@@ -17,8 +17,10 @@ stronghold::~stronghold()
 void stronghold::draw()
 {
     fieldObject::draw();
-    //if (hasOwner)
-    //    territory.draw();
+    if (assaultChosen)
+        drawRectangle(origo-makeCoor(field::WIDTH/2-1,field::WIDTH/2-1), origo+makeCoor(field::WIDTH/2-1,field::WIDTH/2-1),false,255,0,0);
+    if (hasOwner)
+        territory.draw();
 }
 
 void stronghold::gotOwner(player* bowner)
@@ -28,8 +30,7 @@ void stronghold::gotOwner(player* bowner)
     hasOwner=true;
     pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
     pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());
-    owner->strongholdNumber++;
-    //territory.addNewPic("pics/game objects/Territory"+numToString(RADIUS)+".kep",origo);
-    //territory.setScaleX((double)(field::WIDTH*7)/(double)territory.NORMAL_WIDTH);
-    //territory.setScaleY((double)(field::WIDTH*7)/(double)territory.NORMAL_HEIGHT);
+    territory.addNewPic("pics/game objects/Territory"+numToString(RADIUS)+".kep",origo);
+    territory.setScaleX((double)(field::WIDTH*7)/(double)territory.NORMAL_WIDTH);
+    territory.setScaleY((double)(field::WIDTH*7)/(double)territory.NORMAL_HEIGHT);
 }
