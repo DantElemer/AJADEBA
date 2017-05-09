@@ -3,6 +3,7 @@
 #include "../../screenHandler.h"
 
 #include <cstdlib>
+#include <fstream>
 
 
 gameScreen::gameScreen()
@@ -11,6 +12,7 @@ gameScreen::gameScreen()
 
     srand(time(NULL));
     generateMap();
+    currentPlayer=players[players.size()-1];
     nextPlayer();
 }
 
@@ -18,7 +20,46 @@ void gameScreen::generateMap()
 {
     players.push_back(new player("Player 1",player1Nation));
     players.push_back(new player("Player 2",player2Nation));
-    currentPlayer=players[0];
+
+    int wid,hei;
+    string mapFile="maps/testMap.txt";
+    ifstream mapF(mapFile);
+    mapF>>wid>>hei;
+    for (int i=0;i<hei;i++)
+    {
+        vector<field*> newRow;
+        for (int j=0;j<wid;j++)
+        {
+            field* newField=new field(this,makeCoor(j,i));
+            newRow.push_back(newField);
+
+            int owner, partNum;
+            mapF>>owner>>partNum;
+            cout<<"owner: "<<owner<<" partNum: "<<partNum<<endl;
+            if (owner>-1)
+                currentPlayer=players[owner];
+            else
+                currentPlayer=NULL;
+            for (int k=0;k<partNum;k++)
+            {
+                string newPart;
+                getline(mapF,newPart,';');
+                cout<<newPart<<"_";
+                newField->addPart(newPart);
+                if (newPart==fieldObject::STRONGHOLD)
+                    if (owner>-1)
+                        newField->activateStronghold(currentPlayer);
+            }
+            cout<<endl;
+        }
+        fields.push_back(newRow);
+    }
+
+    /*drawFields();
+    gout<<refresh;
+    giveMeTime(10);*/
+
+    /*currentPlayer=players[0];
 
     for (int j=0;j<10;j++) //some fields
     {
@@ -44,12 +85,6 @@ void gameScreen::generateMap()
                 newField->addPart(fieldObject::MOUNTAIN);
             newField=0;
             delete newField;
-            /*if (newField->getType()==field::BLANK&&rand()%10<1)
-                newField->addPart(fieldObject::VILLAGE);
-            if (newField->getType()==field::BLANK&&rand()%10<1)
-                newField->addPart(fieldObject::STRONGHOLD);
-            if (newField->getType()==field::BLANK&&rand()%10<1)
-                newField->addPart(fieldObject::BARRACK);*/
         }
         fields.push_back(newRow);
     }
@@ -59,7 +94,7 @@ void gameScreen::generateMap()
     currentPlayer=players[1];
     fields[2][6]->addPart(fieldObject::STRONGHOLD);
     fields[2][6]->activateStronghold(currentPlayer);
-    fields[4][6]->addPart(fieldObject::BARRACK);
+    fields[4][6]->addPart(fieldObject::BARRACK);*/
 }
 
 void gameScreen::initPressedButtons() const

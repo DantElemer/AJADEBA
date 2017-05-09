@@ -1,0 +1,7 @@
+2 3
+-1 0
+0 1stronghold;
+-1 3north road;south road;east road;
+1 1barrack;
+1 1stronghold;
+-1 3north road;south road;east road;

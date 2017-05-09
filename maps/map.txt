@@ -1,0 +1,8 @@
+n1 n2 -number of fields (width, length)
+
+n1*n2 row, containing fields' data like that:
+p m p1;p2; ...; pm, where
+
+p the player, who owns the objects there (0,1,... if there isn't any owner (for example it's a road), it is -1)
+m is the number of parts on that field
+p1, p2, ..., pm are the parts there
