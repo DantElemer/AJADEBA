@@ -8,6 +8,7 @@
 #include "field objects/barrack.h"
 #include "field objects/village.h"
 #include "field objects/stronghold.h"
+#include "field objects/mountain.h"
 
 class gameScreen;
 class player;
@@ -41,6 +42,7 @@ class field
         static const string BARRACK;
         static const string VILLAGE;
         static const string STRONGHOLD;
+        static const string MOUNTAIN;
 
     protected:
         gameScreen* myGameScreen;

@@ -25,6 +25,7 @@ struct gameScreen : screen
         void killDeadPlayers();
         void mayEnd();
         void mayBuild();
+        void generateMap();
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();
@@ -44,6 +45,7 @@ struct gameScreen : screen
         void fieldClicked(field* f);
         void newStronghold(coor coordinate, player* owner);
         bool inFields(coor coordinate);
+        void decreasePlayerTime();
 
         player* currentPlayer;
         vector<player*> players;

@@ -8,11 +8,12 @@ const string fieldObject::WEST_ROAD="west road";
 const string fieldObject::BARRACK="barrack";
 const string fieldObject::VILLAGE="village";
 const string fieldObject::STRONGHOLD="stronghold";
+const string fieldObject::MOUNTAIN="mountain";
 
 const vector<string> fieldObject::EVERY_OBJECT={fieldObject::NORTH_ROAD,fieldObject::SOUTH_ROAD,
                                                 fieldObject::EAST_ROAD,fieldObject::WEST_ROAD,
                                                 fieldObject::BARRACK, fieldObject::VILLAGE,
-                                                fieldObject::STRONGHOLD};
+                                                fieldObject::STRONGHOLD, fieldObject::MOUNTAIN};
 
 fieldObject::fieldObject(coor origo, string picFileName)
 : origo(origo), pic(picFileName, origo)

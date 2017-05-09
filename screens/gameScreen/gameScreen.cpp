@@ -10,11 +10,16 @@ gameScreen::gameScreen()
     initPressedButtons();
 
     srand(time(NULL));
-    players.push_back(new player("Player 1","Ancient 1"));
-    players.push_back(new player("Player 2","Ancient 2"));
-    players[0]->nation=player1Nation;
-    players[1]->nation=player2Nation;
+    generateMap();
+    nextPlayer();
+}
+
+void gameScreen::generateMap()
+{
+    players.push_back(new player("Player 1",player1Nation));
+    players.push_back(new player("Player 2",player2Nation));
     currentPlayer=players[0];
+
     for (int j=0;j<10;j++) //some fields
     {
         vector<field*> newRow;
@@ -35,6 +40,8 @@ gameScreen::gameScreen()
 
             if (newField->getType()==field::BLANK&&rand()%10<r)
                 newField->addPart(fieldObject::VILLAGE);
+            if (newField->getType()==field::BLANK&&rand()%10<r)
+                newField->addPart(fieldObject::MOUNTAIN);
             newField=0;
             delete newField;
             /*if (newField->getType()==field::BLANK&&rand()%10<1)
@@ -49,14 +56,10 @@ gameScreen::gameScreen()
     fields[5][3]->addPart(fieldObject::STRONGHOLD);
     fields[5][3]->activateStronghold(currentPlayer);
     fields[4][0]->addPart(fieldObject::BARRACK);
-    //nextPlayer();
     currentPlayer=players[1];
     fields[2][6]->addPart(fieldObject::STRONGHOLD);
     fields[2][6]->activateStronghold(currentPlayer);
     fields[4][6]->addPart(fieldObject::BARRACK);
-    nextPlayer();
-    currentPlayer=players[0];
-    isConnected(*fields[5][3],*fields[5][3]);
 }
 
 void gameScreen::initPressedButtons() const
@@ -113,6 +116,14 @@ void gameScreen::fieldClicked(field* f)
     else if (f->getType()==field::BARRACK)
     {
         cout<<"It's a barrack";
+    }
+    else if (f->getType()==field::MOUNTAIN)
+    {
+        cout<<"It's a mountain.";
+    }
+    else if (f->getType()==field::VILLAGE)
+    {
+        cout<<"It's a village.";
     }
     else if (f->getType()==field::ROAD&&f->hasPart(fieldObject::NORTH_ROAD)&&f->hasPart(fieldObject::SOUTH_ROAD)&&f->hasPart(fieldObject::EAST_ROAD)&&f->hasPart(fieldObject::WEST_ROAD))
     {
@@ -311,14 +322,23 @@ void gameScreen::mayBuild()
     }
 }
 
+void gameScreen::decreasePlayerTime()
+{
+    coor uLC=makeCoor(50,30);
+    string text="Time left: "+numToString(currentPlayer->timeLeft);
+    int fSize=20;
+    clearScreen(uLC,uLC+makeCoor(countTextWidth(text,fSize),countTextHeight(text,fSize)));
+    currentPlayer->timeLeft-=1.0/(double)screenHandler::FPS;
+    writeText(uLC,text,fSize);
+} //todo vár aktiválás lassú; mountain block; map editor
+
 void gameScreen::onTick()
 {
     clearScreen();
     screen::onTick();
 
     drawFields();
-    currentPlayer->timeLeft-=1.0/(double)screenHandler::FPS;
-    writeText(makeCoor(50,30),"Time left: "+numToString(currentPlayer->timeLeft),20);
+    decreasePlayerTime();
 
     mayBuild();
     killDeadPlayers();

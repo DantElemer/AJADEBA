@@ -6,6 +6,7 @@ const string field::ROAD="road";
 const string field::BARRACK="barrack";
 const string field::VILLAGE="village";
 const string field::STRONGHOLD="stronghold";
+const string field::MOUNTAIN="mountain";
 
 coor OFFSET={100,100};
 
@@ -94,6 +95,11 @@ void field::addPart(string part)
             myParts.push_back(new stronghold(origo,NULL));
         type=STRONGHOLD;
     }
+    else if (part==fieldObject::MOUNTAIN)
+    {
+        myParts.push_back(new mountain(origo));
+        type=MOUNTAIN;
+    }
     else
         cout<<"NINCS ILYEN!!!";
 }
@@ -170,7 +176,7 @@ bool field::canAct(player* who)
 
 bool field::canBuild(string part)
 {
-    if (part==fieldObject::VILLAGE)
+    if (part==fieldObject::VILLAGE|| part==fieldObject::MOUNTAIN)
         return false;
     if (part==fieldObject::STRONGHOLD && owners.size()>0)
         return false;

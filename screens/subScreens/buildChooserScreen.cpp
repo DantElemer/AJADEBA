@@ -11,7 +11,7 @@ buildChooserScreen::buildChooserScreen(gameScreen* gS)
 
 void buildChooserScreen::draw()
 {
-    darkening();
+    //darkening();
     //addTitle("Build chooser");
 }
 
@@ -33,4 +33,15 @@ void buildChooserScreen::showOptions()
                                           this->gS->justBuilt=true;
                                        },
                                        makeCoor(WINDOW_X-200,100+i*50),100,40,options[i],20));
+}
+
+void buildChooserScreen::onTick()
+{
+    screen::onTick();
+    gS->decreasePlayerTime();
+    if (gS->currentPlayer->timeLeft<=0)
+    {
+        gS->justBuilt=false; //it's not needed
+        terminateSub();
+    }
 }

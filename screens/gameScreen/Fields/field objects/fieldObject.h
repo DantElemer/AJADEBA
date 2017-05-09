@@ -23,6 +23,7 @@ class fieldObject
         static const string BARRACK;
         static const string VILLAGE;
         static const string STRONGHOLD;
+        static const string MOUNTAIN;
 
         static const vector<string> EVERY_OBJECT;
     protected:

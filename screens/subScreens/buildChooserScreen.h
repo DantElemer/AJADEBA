@@ -16,6 +16,7 @@ class buildChooserScreen : public subScreen
     public:
         buildChooserScreen(gameScreen* gS);
         void draw();
+        void onTick();
     private:
         gameScreen* gS;
         vector<string> options;
