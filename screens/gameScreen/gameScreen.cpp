@@ -25,6 +25,7 @@ void gameScreen::generateMap()
     string mapFile="maps/testMap.txt";
     ifstream mapF(mapFile);
     mapF>>wid>>hei;
+    mapOffset=makeCoor(WINDOW_X-wid*field::WIDTH,WINDOW_Y-hei*field::WIDTH)/2;
     for (int i=0;i<hei;i++)
     {
         vector<field*> newRow;

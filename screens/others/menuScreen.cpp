@@ -12,8 +12,9 @@ menuScreen::menuScreen()
 
     widgetBase* howToPlayButton=new button((vFunctionCall)subToHowToPlayScreen, makeCoor(WINDOW_X/2,390),buttonWidth,buttonHeight/*makeCoor((windowX-buttonWidth)/2,350),makeCoor((windowX+buttonWidth)/2,350+buttonHeight)*/,"Help");
     widgets.push_back(howToPlayButton);
-    widgetBase* exitButton=new button((vFunctionCall)exitRequest, makeCoor(WINDOW_X/2,540),buttonWidth,buttonHeight/*makeCoor((windowX-buttonWidth)/2,500),makeCoor((windowX+buttonWidth)/2,500+buttonHeight)*/,"Exit");
-    widgets.push_back(exitButton);
+    //widgetBase* exitButton=new button((vFunctionCall)exitRequest, makeCoor(WINDOW_X/2,540),buttonWidth,buttonHeight/*makeCoor((windowX-buttonWidth)/2,500),makeCoor((windowX+buttonWidth)/2,500+buttonHeight)*/,"Exit");
+    //widgets.push_back(exitButton);
+    widgets.push_back(new lButton([](){switchTo=screen::MAP_EDITOR;}, makeCoor(WINDOW_X/2,540),buttonWidth,buttonHeight,"Editor"));
 
     draw();
 }

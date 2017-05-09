@@ -1,0 +1,9 @@
+mapEditor
+help
+victory
+map-choosing
+
+visualization:
+pictures
+build-update
+map-choosing-update

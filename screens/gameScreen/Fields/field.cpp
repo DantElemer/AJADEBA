@@ -8,10 +8,9 @@ const string field::VILLAGE="village";
 const string field::STRONGHOLD="stronghold";
 const string field::MOUNTAIN="mountain";
 
-coor OFFSET={100,100};
 
 field::field(gameScreen* gS, coor coordinate)
-: myGameScreen(gS), coordinate(coordinate), type(BLANK), origo(coordinate*WIDTH+OFFSET)
+: myGameScreen(gS), coordinate(coordinate), type(BLANK), origo(coordinate*WIDTH+gS->mapOffset)
 {
     gS->widgets.push_back(new lButton([this](){this->myGameScreen->fieldClicked(this);},origo,WIDTH,WIDTH));
 }

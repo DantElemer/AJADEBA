@@ -10,6 +10,7 @@
 #include "screens\others\victoryScreen.h"
 #include "screens\gameScreen\gameScreen.h"
 #include "screens\others\settingsScreen.h"
+#include "screens\others\mapEditor.h"
 #include "screens\subScreens\confirmExitScreen.h"
 #include "screens\subScreens\howToPlayScreen.h"
 #include "screens\subScreens\buildChooserScreen.h"

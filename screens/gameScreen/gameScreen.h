@@ -50,6 +50,7 @@ struct gameScreen : screen
         player* currentPlayer;
         vector<player*> players;
         vector<vector<field*>> fields;
+        coor mapOffset;
 
         //for building
         string whatToBuild;

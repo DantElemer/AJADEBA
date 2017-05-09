@@ -21,6 +21,8 @@ void screenHandler::switchScreen(screen *&currScr)
         currScr=new difficultySettingScreen();
     else if (screen::switchTo==screen::WIDGET_TEST_SCREEN)
         currScr=new widgetTestScreen();
+    else if (screen::switchTo==screen::MAP_EDITOR)
+        currScr=new mapEditor();
     else if (screen::switchTo==screen::SETTINGS_SCREEN)
         currScr=new settingsScreen();
     else if (screen::switchTo==screen::TERMINATED)
