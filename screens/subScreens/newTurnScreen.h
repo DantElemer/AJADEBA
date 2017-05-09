@@ -3,16 +3,16 @@
 
 #include "subScreen.h"
 
+class gameScreen;
 
 class newTurnScreen : public subScreen
 {
     public:
-        /** Default constructor */
         newTurnScreen(gameScreen* gS);
-        /** Default destructor */
-        virtual ~newTurnScreen();
+        void draw();
     protected:
     private:
+        gameScreen* myGS;
 };
 
 #endif // NEWTURNSCREEN_H

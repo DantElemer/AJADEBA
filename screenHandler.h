@@ -13,6 +13,7 @@
 #include "screens\subScreens\confirmExitScreen.h"
 #include "screens\subScreens\howToPlayScreen.h"
 #include "screens\subScreens\buildChooserScreen.h"
+#include "screens\subScreens\newTurnScreen.h"
 
 #include "graphics.hpp"
 

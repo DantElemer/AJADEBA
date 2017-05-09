@@ -1,11 +1,15 @@
 #include "newTurnScreen.h"
+#include "../gameScreen/gameScreen.h"
 
 newTurnScreen::newTurnScreen(gameScreen* gS)
+: myGS(gS)
 {
-    //ctor
+    widgets.push_back(new button((vFunctionCall)terminateSub,WINDOW_ORIGO,100,40,"Ok",30));
+    draw();
 }
 
-newTurnScreen::~newTurnScreen()
+void newTurnScreen::draw()
 {
-    //dtor
+    clearScreen();
+    mWriteText(WINDOW_ORIGO-makeCoor(0,30),myGS->currentPlayer->name+"'s turn");
 }

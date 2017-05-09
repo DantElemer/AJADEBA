@@ -49,11 +49,13 @@ gameScreen::gameScreen()
     fields[5][3]->addPart(fieldObject::STRONGHOLD);
     fields[5][3]->activateStronghold(currentPlayer);
     fields[4][0]->addPart(fieldObject::BARRACK);
-    nextPlayer();
+    //nextPlayer();
+    currentPlayer=players[1];
     fields[2][6]->addPart(fieldObject::STRONGHOLD);
     fields[2][6]->activateStronghold(currentPlayer);
     fields[4][6]->addPart(fieldObject::BARRACK);
     nextPlayer();
+    currentPlayer=players[0];
     isConnected(*fields[5][3],*fields[5][3]);
 }
 
@@ -195,7 +197,9 @@ void gameScreen::nextPlayer()
     }
     currentPlayer->steps=currentPlayer->MAX_STEPS;
     currentPlayer->timeLeft=thinkingTime;
-    cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
+    if (players.size()>1)
+        newSub=NEW_TURN_SCREEN;
+    //cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
 }
 
 void gameScreen::newStronghold(coor coordinate, player* owner)
@@ -314,11 +318,13 @@ void gameScreen::onTick()
 
     drawFields();
     currentPlayer->timeLeft-=1.0/(double)screenHandler::FPS;
-    maySwitchPlayer();
+    writeText(makeCoor(50,30),"Time left: "+numToString(currentPlayer->timeLeft),20);
+
     mayBuild();
     killDeadPlayers();
+    maySwitchPlayer();
+
     mayEnd();
-    writeText(makeCoor(50,30),"Time left: "+numToString(currentPlayer->timeLeft),20);
 }
 
 void gameScreen::keyDown(event kE)
