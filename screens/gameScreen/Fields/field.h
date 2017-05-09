@@ -33,7 +33,7 @@ class field
         player* strongholdBuilder();
         void destroyObject();
 
-        static const int WIDTH=50; //=height
+        static const int WIDTH=20; //=height
         coor origo;
         coor coordinate; //in fields
         vector<player*> owners;

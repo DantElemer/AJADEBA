@@ -22,7 +22,7 @@ void gameScreen::generateMap()
     players.push_back(new player("Player 2",player2Nation));
 
     int wid,hei;
-    string mapFile="maps/testMap.txt";
+    string mapFile="maps/editorTest.txt";
     ifstream mapF(mapFile);
     mapF>>wid>>hei;
     mapOffset=makeCoor(WINDOW_X-wid*field::WIDTH,WINDOW_Y-hei*field::WIDTH)/2;

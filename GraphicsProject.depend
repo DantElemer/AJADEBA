@@ -159,7 +159,7 @@
 1494358383 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494357890 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494362360 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	"../../screenHandler.h"
@@ -301,7 +301,7 @@
 1493919759 source:c:\users\ildikó\documents\github\ajadeba\widgets\lbutton.cpp
 	"lButton.h"
 
-1494353697 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
+1494362360 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field.h
 	"../../../coor.h"
 	"../../../graphicsPlus.h"
 	"../../../widgets/lButton.h"
@@ -397,9 +397,12 @@
 1494353434 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\mountain.h
 	"fieldObject.h"
 
-1494358965 c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.h
+1494362397 c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.h
 	"../screen.h"
+	"../gameScreen/Fields/field objects/fieldObject.h"
+	"../gameScreen/Fields/field.h"
+	<fstream>
 
-1494358383 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
+1494362463 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
 	"mapEditor.h"
 
