@@ -27,6 +27,7 @@ class screen
         static const string GAME_SCREEN;
         static const string GAME_OVER_SCREEN;
         static const string VICTORY_SCREEN;
+        static const string SETTINGS_SCREEN;
         static const string DIFFICULTY_SETTING_SCREEN;
         //subScreens
         static const string CONFIRM_EXIT;

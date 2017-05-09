@@ -4,6 +4,7 @@ const string screen::MENU_SCREEN="menu screen";
 const string screen::GAME_SCREEN="game screen";
 const string screen::GAME_OVER_SCREEN="game over screen";
 const string screen::VICTORY_SCREEN="victory screen";
+const string screen::SETTINGS_SCREEN="settings screen";
 const string screen::DIFFICULTY_SETTING_SCREEN="difficulty setting screen";
 const string screen::HOW_TO_PLAY_SCREEN="how to play screen";
 const string screen::CONFIRM_EXIT="confirm exit";

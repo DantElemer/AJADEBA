@@ -1,5 +1,6 @@
 #include "gameScreen.h"
 #include "../subScreens/subScreen.h"
+#include "../../screenHandler.h"
 
 #include <cstdlib>
 
@@ -11,6 +12,8 @@ gameScreen::gameScreen()
     srand(time(NULL));
     players.push_back(new player("Player 1","Ancient 1"));
     players.push_back(new player("Player 2","Ancient 2"));
+    players[0]->nation=player1Nation;
+    players[1]->nation=player2Nation;
     currentPlayer=players[0];
     for (int j=0;j<10;j++) //some fields
     {
@@ -97,19 +100,71 @@ void gameScreen::fieldClicked(field* f)
     }
     else if (f->getType()==field::STRONGHOLD)
     {
-        if (currentPlayer->steps==currentPlayer->MAX_STEPS)
+        if (currentPlayer->steps==currentPlayer->MAX_STEPS && f->objectOwner()==currentPlayer)
         {
             assaultMode=true;
             selectedStronghold=f;
             selectedStronghold->assaultChange(true);
         }
+        cout<<"It's a stronghold";
     }
-    else if (f->canAct(currentPlayer))
+    else if (f->getType()==field::BARRACK)
+    {
+        cout<<"It's a barrack";
+    }
+    else if (f->getType()==field::ROAD&&f->hasPart(fieldObject::NORTH_ROAD)&&f->hasPart(fieldObject::SOUTH_ROAD)&&f->hasPart(fieldObject::EAST_ROAD)&&f->hasPart(fieldObject::WEST_ROAD))
+    {
+        cout<<"It's a full road";
+    }
+    else if (f->canAct(currentPlayer)) //build something?
     {
         subToBuildChooserScreen(); //open build options
     }
     else
-        cout<<"enemy territory"<<f->owners[0]->name;
+        cout<<"Can't build to enemy territory."<<f->owners[0]->name;
+}
+
+void gameScreen::strongholdBaseConquerCheck()
+{
+    for (vector<field*> fRow:fields) //stronghold base check
+        for (field* f:fRow)
+            if (f->getType()==field::STRONGHOLD)
+                if (f->objectOwner()==NULL)
+                {
+                    vector<int> strengths;
+                    for (player* p:players)
+                        strengths.push_back(strongholdStrength(f,p));
+                    int maxStr=0;
+                    vector<int> indexes={-1};
+                    for (int i=0;i<players.size();i++)
+                    {
+                        if (strengths[i]==maxStr)
+                            indexes.push_back(i);
+                        if (strengths[i]>maxStr)
+                        {
+                            maxStr=strengths[i];
+                            indexes.clear();
+                            indexes.push_back(i);
+                        }
+                    }
+                    if (indexes[0]>-1) //someone gets it
+                    {
+                        if (indexes.size()==1) //1 player sent more soldiers than all the others
+                            f->activateStronghold(players[indexes[0]]);
+                        else
+                        {
+                            bool oneMaxIsBuilder=false;
+                            for (int i=0;i<indexes.size();i++)
+                                if (players[indexes[i]]==f->strongholdBuilder()) //builder gets it
+                                {
+                                    f->activateStronghold(players[indexes[i]]);
+                                    oneMaxIsBuilder=true;
+                                }
+                            if (!oneMaxIsBuilder) //if equality and none of them is builder, the one who connected it
+                                f->activateStronghold(currentPlayer);
+                        }
+                    }
+                }
 }
 
 void gameScreen::build()
@@ -121,49 +176,7 @@ void gameScreen::build()
             currentPlayer->steps--;
         else
             currentPlayer->steps=0;
-
-        /*if (currentPlayer->steps==0)
-            currentPlayer->finishedTurn=true;*/
-
-        for (vector<field*> fRow:fields) //stronghold base check
-            for (field* f:fRow)
-                if (f->getType()==field::STRONGHOLD)
-                    if (f->objectOwner()==NULL)
-                    {
-                        vector<int> strengths;
-                        for (player* p:players)
-                            strengths.push_back(strongholdStrength(f,p));
-                        int maxStr=0;
-                        vector<int> indexes={-1};
-                        for (int i=0;i<players.size();i++)
-                        {
-                            if (strengths[i]==maxStr)
-                                indexes.push_back(i);
-                            if (strengths[i]>maxStr)
-                            {
-                                maxStr=strengths[i];
-                                indexes.clear();
-                                indexes.push_back(i);
-                            }
-                        }
-                        if (indexes[0]>-1) //someone gets it
-                        {
-                            if (indexes.size()==1) //1 player sent more soldiers than all the others
-                                f->activateStronghold(players[indexes[0]]);
-                            else
-                            {
-                                bool oneMaxIsBuilder=false;
-                                for (int i=0;i<indexes.size();i++)
-                                    if (players[indexes[i]]==f->strongholdBuilder()) //builder gets it
-                                    {
-                                        f->activateStronghold(players[indexes[i]]);
-                                        oneMaxIsBuilder=true;
-                                    }
-                                if (!oneMaxIsBuilder) //if equality and none of them is builder, the one who connected it
-                                    f->activateStronghold(currentPlayer);
-                            }
-                        }
-                    }
+        strongholdBaseConquerCheck();
     }
 }
 
@@ -180,8 +193,8 @@ void gameScreen::nextPlayer()
     {
         currentPlayer=players[0];
     }
-    //currentPlayer->finishedTurn=false;
     currentPlayer->steps=currentPlayer->MAX_STEPS;
+    currentPlayer->timeLeft=thinkingTime;
     cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
 }
 
@@ -251,23 +264,21 @@ int gameScreen::strongholdStrength(field* shField, player* who)
     return strength;
 }
 
-void gameScreen::onTick()
+void gameScreen::drawFields()
 {
-    screen::onTick();
-
     for (vector<field*> fRow:fields)
         for (field* f:fRow)
             f->draw();
+}
 
-    if (currentPlayer->steps==0)
+void gameScreen::maySwitchPlayer()
+{
+    if (currentPlayer->steps==0 || currentPlayer->timeLeft<=0)
         nextPlayer();
+}
 
-    if (justBuilt)
-    {
-        build();
-        justBuilt=false;
-    }
-
+void gameScreen::killDeadPlayers()
+{
     int i=0;
     for (player* p:players)
     {
@@ -279,15 +290,41 @@ void gameScreen::onTick()
         }
         i++;
     }
+}
+
+void gameScreen::mayEnd()
+{
     if (players.size()==1)
         switchToVictoryScreen();
+}
+
+void gameScreen::mayBuild()
+{
+    if (justBuilt)
+    {
+        build();
+        justBuilt=false;
+    }
+}
+
+void gameScreen::onTick()
+{
+    clearScreen();
+    screen::onTick();
+
+    drawFields();
+    currentPlayer->timeLeft-=1.0/(double)screenHandler::FPS;
+    maySwitchPlayer();
+    mayBuild();
+    killDeadPlayers();
+    mayEnd();
+    writeText(makeCoor(50,30),"Time left: "+numToString(currentPlayer->timeLeft),20);
 }
 
 void gameScreen::keyDown(event kE)
 {
     screen::keyDown(kE);
     if (kE.keycode=='n')
-        //currentPlayer->finishedTurn=true;
         currentPlayer->steps=0;
 }
 

@@ -14,4 +14,9 @@ coor mouse;
 //FONT
 int loadedFontSize=0;
 
+//SETTINGS
+int thinkingTime=60;
+string player1Nation="Ancient 1";
+string player2Nation="Ancient 2";
+
 

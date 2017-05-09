@@ -9,6 +9,7 @@
 #include "screens\others\gameOverScreen.h"
 #include "screens\others\victoryScreen.h"
 #include "screens\gameScreen\gameScreen.h"
+#include "screens\others\settingsScreen.h"
 #include "screens\subScreens\confirmExitScreen.h"
 #include "screens\subScreens\howToPlayScreen.h"
 #include "screens\subScreens\buildChooserScreen.h"
@@ -42,8 +43,8 @@ class screenHandler
 {
     public:
         void soul(); //the Core
+        static const int FPS=40;
     private:
-        const int FPS=40;
         bool exitAwesomeness=false; //used for the exit-system (true means exit is confirmed)
         bool exitReqested=false; //used for the exit-system (true means exit was requested)
         vector<screen*> screensAlive; //current screens

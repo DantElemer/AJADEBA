@@ -4,10 +4,10 @@ chooser::chooser(coor upperLeftCorner, coor downerRightCorner, vector<string> op
 : widgetBase(upperLeftCorner,downerRightCorner), options(options), current(&var), NAME(name), LIST_SPACE(listPlace), newOption(downerRightCorner,downerRightCorner+makeCoor(100,20))
 {
     const double O_W=20; //width=height of options-opening button
-    *current="Choose->";
-    subWidgets.push_back(&newOption);
-    subWidgets.push_back(new mButton((memberFunctionCall)sKillCurrent,this,downerRightCorner+makeCoor(100,50),50,20,"Kill",14)); //14 is the fontsize
-    subWidgets.push_back(new mButton((memberFunctionCall)addOp,this,downerRightCorner+makeCoor(100,20),50,20,"Add",14)); //14 is the fontsize
+    //*current="Choose->";
+    //subWidgets.push_back(&newOption);
+    //subWidgets.push_back(new mButton((memberFunctionCall)sKillCurrent,this,downerRightCorner+makeCoor(100,50),50,20,"Kill",14)); //14 is the fontsize
+    //subWidgets.push_back(new mButton((memberFunctionCall)addOp,this,downerRightCorner+makeCoor(100,20),50,20,"Add",14)); //14 is the fontsize
     subWidgets.push_back(new mButton((memberFunctionCall)chooseOther,this,upperLeftCorner+makeCoor(width-O_W/2,O_W/2),O_W,O_W,">",14)); //14 is the fontsize
 
     optionsStartIndex=subWidgets.size();

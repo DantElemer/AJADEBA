@@ -2,6 +2,9 @@
 #define PLAYER_H
 
 #include <string>
+
+#include "../../data.h"
+
 using namespace std;
 
 class player
@@ -12,10 +15,10 @@ class player
 
         string name;
         string nation;
-        //bool finishedTurn=false;
         int steps;
         static const int MAX_STEPS=4;
-        bool dead=false;;
+        bool dead=false;
+        double timeLeft;
     private:
         int strongholdNumber=0;
 };

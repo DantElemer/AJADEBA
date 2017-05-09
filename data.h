@@ -42,6 +42,9 @@
 
 #include "coor.h"
 
+#include <string>
+
+using namespace std;
 
 struct coor;
 
@@ -58,6 +61,11 @@ extern coor mouse; //...
 
 //FONT
 extern int loadedFontSize;
+
+//SETTINGS
+extern int thinkingTime;
+extern string player1Nation;
+extern string player2Nation;
 
 
 

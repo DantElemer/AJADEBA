@@ -11,13 +11,14 @@
 	<math.h>
 	<iostream>
 
-1493827663 c:\users\ildikó\documents\github\ajadeba\data.h
+1494322325 c:\users\ildikó\documents\github\ajadeba\data.h
 	"coor.h"
+	<string>
 
 1493109050 c:\users\ildikó\documents\github\ajadeba\include\graphics.hpp
 	<string>
 
-1493827663 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
+1494322592 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
 	"data.h"
 
 1494150474 source:c:\users\ildikó\documents\github\ajadeba\graphicsplus.cpp
@@ -41,7 +42,7 @@
 1493109976 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
 	"screenHandler.h"
 
-1494058006 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
+1494321139 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
 	"screens\screen.h"
 	"screens\widgetTestScreen.h"
 	"screens\others\menuScreen.h"
@@ -49,12 +50,13 @@
 	"screens\others\gameOverScreen.h"
 	"screens\others\victoryScreen.h"
 	"screens\gameScreen\gameScreen.h"
+	"screens\others\settingsScreen.h"
 	"screens\subScreens\confirmExitScreen.h"
 	"screens\subScreens\howToPlayScreen.h"
 	"screens\subScreens\buildChooserScreen.h"
 	"graphics.hpp"
 
-1494077680 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1494319118 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -95,7 +97,7 @@
 	"widgetBase.h"
 	"../graphicsPlus.h"
 
-1493715102 c:\users\ildikó\documents\github\ajadeba\widgets\slidersetter.h
+1494320153 c:\users\ildikó\documents\github\ajadeba\widgets\slidersetter.h
 	"widgetBase.h"
 	"mButton.h"
 
@@ -132,7 +134,7 @@
 	"../screen.h"
 	"../../data.h"
 
-1494228780 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+1494318444 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
 	"../../data.h"
 	"../screen.h"
 	"Fields/field.h"
@@ -152,12 +154,13 @@
 1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
 	"randomFuncs.h"
 
-1494059540 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+1494321515 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494244902 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494324555 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
+	"../../screenHandler.h"
 	<cstdlib>
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\difficultysettingscreen.cpp
@@ -166,13 +169,13 @@
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\gameoverscreen.cpp
 	"gameOverScreen.h"
 
-1494072217 source:c:\users\ildikó\documents\github\ajadeba\screens\others\menuscreen.cpp
+1494321534 source:c:\users\ildikó\documents\github\ajadeba\screens\others\menuscreen.cpp
 	"menuScreen.h"
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\others\victoryscreen.cpp
 	"victoryScreen.h"
 
-1494058006 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
+1494319118 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
 	"screen.h"
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.cpp
@@ -238,7 +241,7 @@
 1493719792 source:c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.cpp
 	"checkbox.h"
 
-1493720978 source:c:\users\ildikó\documents\github\ajadeba\widgets\chooser.cpp
+1494322592 source:c:\users\ildikó\documents\github\ajadeba\widgets\chooser.cpp
 	"chooser.h"
 
 1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\complexindicator.cpp
@@ -268,7 +271,7 @@
 	"reachedLED.h"
 	<fstream>
 
-1493828050 source:c:\users\ildikó\documents\github\ajadeba\widgets\slidersetter.cpp
+1494320482 source:c:\users\ildikó\documents\github\ajadeba\widgets\slidersetter.cpp
 	"sliderSetter.h"
 
 1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\specindicator.cpp
@@ -351,8 +354,9 @@
 	"../../player.h"
 	"../field.h"
 
-1494245984 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.h
+1494324703 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.h
 	<string>
+	"../../data.h"
 
 1494245984 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\player.cpp
 	"player.h"
@@ -368,4 +372,11 @@
 1494062036 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
 	"buildChooserScreen.h"
 	"../gameScreen/gameScreen.h"
+
+1494319665 c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.h
+	"../screen.h"
+	"../../data.h"
+
+1494322445 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
+	"settingsScreen.h"
 

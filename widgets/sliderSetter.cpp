@@ -1,6 +1,6 @@
 #include "sliderSetter.h"
 
-sliderSetter::sliderSetter(coor upperLeftCorner, coor downerRightCorner,  double &var, double maxValue, double minValue, string name)
+sliderSetter::sliderSetter(coor upperLeftCorner, coor downerRightCorner,  int &var, double maxValue, double minValue, string name)
 : widgetBase(upperLeftCorner,downerRightCorner), MAX_VALUE(maxValue), MIN_VALUE(minValue), currValue(&var), NAME(name), B_CHANGE((MAX_VALUE-MIN_VALUE)/20.0), LINE_LENGTH(width*3/4)
 {
     double changeButtsSide=20;
@@ -63,9 +63,8 @@ void sliderSetter::bDecrease(sliderSetter* slider)
     slider->change(-1);
 }
 
-void sliderSetter::change(double delta)
+void sliderSetter::change(int delta)
 {
-    delta=int(delta);
     *currValue+=delta;
     if (*currValue<MIN_VALUE)
         *currValue=MIN_VALUE;

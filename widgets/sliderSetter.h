@@ -8,7 +8,7 @@
 class sliderSetter : public widgetBase
 {
     public:
-        sliderSetter(coor upperLeftCorner, coor downerRightCorner, double &var, double maxValue, double minValue, string name="Mutyumom");
+        sliderSetter(coor upperLeftCorner, coor downerRightCorner, int &var, double maxValue, double minValue, string name="Mutyumom");
         void draw();
         void update();
         void mouseDown();
@@ -17,7 +17,7 @@ class sliderSetter : public widgetBase
         void saveData();
     private:
         const double MAX_VALUE, MIN_VALUE;
-        double* currValue;
+        int* currValue;
         const string NAME;
         const double B_CHANGE;
         const double LINE_LENGTH;
@@ -29,7 +29,7 @@ class sliderSetter : public widgetBase
 
         static void bIncrease(sliderSetter* slider);
         static void bDecrease(sliderSetter* slider);
-        void change(double delta);
+        void change(int delta);
 };
 
 #endif // SLIDERSETTER_H

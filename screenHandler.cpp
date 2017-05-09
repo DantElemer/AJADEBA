@@ -19,8 +19,10 @@ void screenHandler::switchScreen(screen *&currScr)
         currScr=new victoryScreen();
     else if (screen::switchTo==screen::DIFFICULTY_SETTING_SCREEN)
         currScr=new difficultySettingScreen();
-    if (screen::switchTo==screen::WIDGET_TEST_SCREEN)
+    else if (screen::switchTo==screen::WIDGET_TEST_SCREEN)
         currScr=new widgetTestScreen();
+    else if (screen::switchTo==screen::SETTINGS_SCREEN)
+        currScr=new settingsScreen();
     else if (screen::switchTo==screen::TERMINATED)
     {
         screensAlive.pop_back();

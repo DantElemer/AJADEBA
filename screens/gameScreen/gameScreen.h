@@ -19,6 +19,12 @@ struct gameScreen : screen
         int barrackStrength(field* bField);
         int strongholdStrength(field* shField, player* who);
         void destroyStronghold(field* stronghold);
+        void strongholdBaseConquerCheck();
+        void drawFields();
+        void maySwitchPlayer();
+        void killDeadPlayers();
+        void mayEnd();
+        void mayBuild();
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();
