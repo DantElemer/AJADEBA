@@ -8,6 +8,7 @@ void screenHandler::exitGame()
 void screenHandler::switchScreen(screen *&currScr)
 {
     delete currScr;
+    screensAlive.pop_back();
     clearScreen();
     if (screen::switchTo==screen::GAME_SCREEN)
         currScr=new gameScreen();
@@ -39,7 +40,7 @@ void screenHandler::switchScreen(screen *&currScr)
         exitGame();
     if (screen::switchTo!=screen::TERMINATED)
     {
-        for (int i=screensAlive.size()-1;i>=1;i--)
+        for (int i=screensAlive.size()-2;i>=1;i--)
         {
             delete screensAlive[i];
             screensAlive.pop_back();
@@ -70,6 +71,8 @@ void screenHandler::addSub(string newSubName)
         currScr=new buildChooserScreen((gameScreen*)screensAlive[screensAlive.size()-1]);
     else if (screen::newSub==screen::NEW_TURN_SCREEN)
         currScr=new newTurnScreen((gameScreen*)screensAlive[screensAlive.size()-1]);
+    else if (screen::newSub==screen::SAVE_MAP)
+        currScr=new saveMap((mapEditor*)screensAlive[screensAlive.size()-1]);
     /*else if (screen::newSub==screen::AT_START)
         currScr=new atStart();
     else if (screen::newSub==screen::ALPHA_DONE)

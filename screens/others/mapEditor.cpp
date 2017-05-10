@@ -65,7 +65,8 @@ vector<vector<fieldData*>> fields;
 
 mapEditor::mapEditor()
 {
-    widgets.push_back(new lButton([this](){this->save();},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+cutDist*cutNum),wid,hei,"Save",fSize));
+    widgets.push_back(new lButton([this](){newSub=screen::SAVE_MAP;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+cutDist*cutNum),wid,hei,"Save",fSize));
+
     cutNum++;
     playerStart=oDistFromEdgeY+dist+cutDist*cutNum;
     widgets.push_back(new lButton([this](){this->currOwner=-1;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist+cutDist*cutNum),wid,hei,"--",fSize));
@@ -77,16 +78,10 @@ mapEditor::mapEditor()
     obStart=oDistFromEdgeY+dist*(objStart)+cutDist*cutNum;
     for (int i=0;i<fieldObject::EVERY_OBJECT.size();i++)
         widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
-    /*widgets.push_back(new lButton([this](){this->currPart=fieldObject::BARRACK;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*4),wid,hei,"Barack",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::STRONGHOLD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*5),wid,hei,"Strong",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::NORTH_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*6),wid,hei,"N road",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::SOUTH_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*7),wid,hei,"S road",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::EAST_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*8),wid,hei,"E road",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::WEST_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*9),wid,hei,"W road",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::VILLAGE;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*10),wid,hei,"Vill",fSize));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::MOUNTAIN;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*11),wid,hei,"Mount",fSize));*/
+
     cutNum++;
     widgets.push_back(new lButton([this](){this->currPart="delete";},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*12+cutDist*cutNum),wid,hei,"Delete",fSize));
+
     draw();
     generateFields();
 }
@@ -130,9 +125,8 @@ void mapEditor::onTick()
     screen::onTick();
 }
 
-void mapEditor::save()
+void mapEditor::save(string fileName)
 {
-    string fileName="maps/editorTest.txt";
     ofstream file(fileName);
     file<<MAX_WIDTH<<" "<<MAX_HEIGHT<<endl;
     for (int i=0;i<MAX_WIDTH;i++)

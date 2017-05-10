@@ -937,11 +937,6 @@
 -1 0
 -1 0
 -1 0
-0 1barrack;
-0 1barrack;
-0 1barrack;
-0 1barrack;
-0 1barrack;
 -1 0
 -1 0
 -1 0
@@ -961,13 +956,6 @@
 -1 0
 -1 0
 -1 0
-0 1stronghold;
--1 4east road;north road;south road;west road;
--1 4east road;north road;south road;west road;
--1 4east road;north road;south road;west road;
--1 4east road;north road;south road;west road;
--1 4east road;north road;south road;west road;
-1 1stronghold;
 -1 0
 -1 0
 -1 0
@@ -987,11 +975,23 @@
 -1 0
 -1 0
 -1 0
--1 1village;
--1 1village;
--1 1village;
--1 1village;
--1 1village;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
 -1 0
 -1 0
 -1 0
