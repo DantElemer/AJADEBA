@@ -16,27 +16,34 @@ gameScreen::gameScreen()
     nextPlayer();
 }
 
+struct strong
+{
+    coor coordinate;
+    int player;
+    strong(coor c, int  p) : coordinate(c), player(p){}
+};
+
 void gameScreen::generateMap()
 {
     players.push_back(new player("Player 1",player1Nation));
     players.push_back(new player("Player 2",player2Nation));
 
+    vector<strong> strongs;
     int wid,hei;
     string mapFile="maps/editorTest.txt";
     ifstream mapF(mapFile);
     mapF>>wid>>hei;
     mapOffset=makeCoor(WINDOW_X-wid*field::WIDTH,WINDOW_Y-hei*field::WIDTH)/2;
-    for (int i=0;i<hei;i++)
+    for (int i=0;i<wid;i++)
     {
         vector<field*> newRow;
-        for (int j=0;j<wid;j++)
+        for (int j=0;j<hei;j++)
         {
-            field* newField=new field(this,makeCoor(j,i));
+            field* newField=new field(this,makeCoor(i,j));
             newRow.push_back(newField);
 
             int owner, partNum;
             mapF>>owner>>partNum;
-            cout<<"owner: "<<owner<<" partNum: "<<partNum<<endl;
             if (owner>-1)
                 currentPlayer=players[owner];
             else
@@ -45,16 +52,16 @@ void gameScreen::generateMap()
             {
                 string newPart;
                 getline(mapF,newPart,';');
-                cout<<newPart<<"_";
                 newField->addPart(newPart);
                 if (newPart==fieldObject::STRONGHOLD)
                     if (owner>-1)
-                        newField->activateStronghold(currentPlayer);
+                        strongs.push_back(strong(makeCoor(i,j),owner));
             }
-            cout<<endl;
         }
         fields.push_back(newRow);
     }
+    for (strong s:strongs)
+        fields[s.coordinate.X][s.coordinate.Y]->activateStronghold(players[s.player]);
 
     /*drawFields();
     gout<<refresh;
@@ -371,8 +378,6 @@ void gameScreen::decreasePlayerTime()
 void gameScreen::onTick()
 {
     clearScreen();
-    screen::onTick();
-
     drawFields();
     decreasePlayerTime();
 
@@ -381,6 +386,8 @@ void gameScreen::onTick()
     maySwitchPlayer();
 
     mayEnd();
+
+    screen::onTick();
 }
 
 void gameScreen::keyDown(event kE)

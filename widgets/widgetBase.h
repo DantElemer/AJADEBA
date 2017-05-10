@@ -18,6 +18,7 @@ class widgetBase
         coor upperLeftCorner;
         coor downerRightCorner;
         coor origo;
+        bool selfClear=true;
         vector <widgetBase*> subWidgets;
     public:
         widgetBase(coor upperLeftCorn, coor downerRightCorn);

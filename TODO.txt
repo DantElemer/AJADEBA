@@ -1,4 +1,4 @@
-mapEditor
+mapEditor: szimmetria, megjelenítés, kijelölni tartományt, filenév
 help
 victory
 map-choosing

@@ -2,48 +2,91 @@
 
 const coor mapEditor::MAP_OFFSET={50,50};
 
+struct part
+{
+    string name;
+    Picture pic;
+
+    part(string name, coor origo, mapEditor* myEd)
+    : name(name)
+    {
+        if (myEd->currOwner>-1)
+            pic.addNewPic("pics/editor/player"+numToString(myEd->currOwner+1)+"/"+name+".kep",origo);
+        else
+            pic.addNewPic("pics/editor/"+name+".kep",origo);
+        pic.setScaleX((double)mapEditor::FIELD_WIDTH/(double)pic.NORMAL_WIDTH);
+        pic.setScaleY((double)mapEditor::FIELD_WIDTH/(double)pic.NORMAL_HEIGHT);
+    }
+
+    void draw()
+    {
+        pic.draw();
+    }
+};
+
 struct fieldData
 {
     int player=-1;
-    vector<string> parts;
+    vector<part> parts;
     mapEditor* myEditor;
+    coor origo;
 
     fieldData(mapEditor* mE, coor origo)
-    : myEditor(mE)
+    : myEditor(mE), origo(origo)
     {
-        mE->widgets.push_back(new lButton([this](){this->addPart("ham");},origo,mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH));
+        mE->widgets.push_back(new lButton([this](){this->addPart();},origo,mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH,"",0,false));
     }
 
-    void addPart(string part)
+    void addPart()
     {
-        parts.push_back(myEditor->currPart);
-        player=myEditor->currOwner;
+        if (myEditor->currPart=="delete")
+            clearPart();
+        else
+        {
+            parts.push_back(part(myEditor->currPart,origo,myEditor));
+            player=myEditor->currOwner;
+        }
     }
 
     void clearPart()
     {
+        parts.clear();
+    }
 
+    void draw()
+    {
+        for (part p:parts)
+        {
+            p.draw();
+        }
     }
 };
 vector<vector<fieldData*>> fields;
 
 mapEditor::mapEditor()
 {
-    int dist=40;
-    widgets.push_back(new lButton([this](){this->save();},makeCoor(WINDOW_X-50,50),60,30,"Save",20));
+    widgets.push_back(new lButton([this](){this->save();},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+cutDist*cutNum),wid,hei,"Save",fSize));
+    cutNum++;
+    playerStart=oDistFromEdgeY+dist+cutDist*cutNum;
+    widgets.push_back(new lButton([this](){this->currOwner=-1;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist+cutDist*cutNum),wid,hei,"--",fSize));
+    widgets.push_back(new lButton([this](){this->currOwner=0;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*2+cutDist*cutNum),wid,hei,"P 1",fSize));
+    widgets.push_back(new lButton([this](){this->currOwner=1;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*3+cutDist*cutNum),wid,hei,"P 2",fSize));
 
-    widgets.push_back(new lButton([this](){this->currOwner=0;},makeCoor(WINDOW_X-50,50+dist),60,30,"P 1",20));
-    widgets.push_back(new lButton([this](){this->currOwner=1;},makeCoor(WINDOW_X-50,50+dist*2),60,30,"P 2",20));
-    widgets.push_back(new lButton([this](){this->currOwner=-1;},makeCoor(WINDOW_X-50,50+dist*3),60,30,"--",20));
-
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::BARRACK;},makeCoor(WINDOW_X-50,50+dist*4),60,30,"Barack",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::STRONGHOLD;},makeCoor(WINDOW_X-50,50+dist*5),60,30,"Strong",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::NORTH_ROAD;},makeCoor(WINDOW_X-50,50+dist*6),60,30,"N road",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::SOUTH_ROAD;},makeCoor(WINDOW_X-50,50+dist*7),60,30,"S road",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::EAST_ROAD;},makeCoor(WINDOW_X-50,50+dist*8),60,30,"E road",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::WEST_ROAD;},makeCoor(WINDOW_X-50,50+dist*9),60,30,"W road",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::VILLAGE;},makeCoor(WINDOW_X-50,50+dist*10),60,30,"Vill",20));
-    widgets.push_back(new lButton([this](){this->currPart=fieldObject::MOUNTAIN;},makeCoor(WINDOW_X-50,50+dist*11),60,30,"Mount",20));
+    cutNum++;
+    int objStart=widgets.size();
+    obStart=oDistFromEdgeY+dist*(objStart)+cutDist*cutNum;
+    for (int i=0;i<fieldObject::EVERY_OBJECT.size();i++)
+        widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
+    /*widgets.push_back(new lButton([this](){this->currPart=fieldObject::BARRACK;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*4),wid,hei,"Barack",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::STRONGHOLD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*5),wid,hei,"Strong",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::NORTH_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*6),wid,hei,"N road",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::SOUTH_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*7),wid,hei,"S road",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::EAST_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*8),wid,hei,"E road",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::WEST_ROAD;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*9),wid,hei,"W road",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::VILLAGE;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*10),wid,hei,"Vill",fSize));
+    widgets.push_back(new lButton([this](){this->currPart=fieldObject::MOUNTAIN;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*11),wid,hei,"Mount",fSize));*/
+    cutNum++;
+    widgets.push_back(new lButton([this](){this->currPart="delete";},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*12+cutDist*cutNum),wid,hei,"Delete",fSize));
     draw();
     generateFields();
 }
@@ -67,23 +110,43 @@ void mapEditor::generateFields()
     }
 }
 
+void mapEditor::drawMarkers()
+{
+    int obIndex=find(fieldObject::EVERY_OBJECT.begin(),fieldObject::EVERY_OBJECT.end(),currPart)-fieldObject::EVERY_OBJECT.begin();
+    drawLine(makeCoor(WINDOW_X-oDistFromEdgeX-wid*3.0/4.0,obIndex*dist+obStart),
+             makeCoor(WINDOW_X-oDistFromEdgeX-wid*2.0/4.0,obIndex*dist+obStart));
+
+    drawLine(makeCoor(WINDOW_X-oDistFromEdgeX-wid*3.0/4.0,(currOwner+1)*dist+playerStart),
+             makeCoor(WINDOW_X-oDistFromEdgeX-wid*2.0/4.0,(currOwner+1)*dist+playerStart));
+}
+
+void mapEditor::onTick()
+{
+    clearScreen();
+    for (vector<fieldData*> fRow:fields)
+        for (fieldData* f:fRow)
+            f->draw();
+    drawMarkers();
+    screen::onTick();
+}
+
 void mapEditor::save()
 {
     string fileName="maps/editorTest.txt";
     ofstream file(fileName);
     file<<MAX_WIDTH<<" "<<MAX_HEIGHT<<endl;
-    for (int i=0;i<MAX_HEIGHT;i++)
+    for (int i=0;i<MAX_WIDTH;i++)
     {
-        for (int j=0;j<MAX_WIDTH;j++)
+        for (int j=0;j<MAX_HEIGHT;j++)
         {
-            fieldData* currField=fields[i][j];
+            fieldData* currField=fields[j][i];
             file<<currField->player<<" "<<currField->parts.size();
             for (int k=0;k<currField->parts.size();k++)
             {
-                file<<currField->parts[k]<<";";
+                file<<currField->parts[k].name<<";";
             }
             file<<"\n";
         }
     }
-    //fclose(file);
+    switchToMenuScreen();
 }

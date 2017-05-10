@@ -23,7 +23,8 @@ void widgetBase::draw()
 
 void widgetBase::redraw()
 {
-    clearWid();
+    if (selfClear)
+        clearWid();
     draw();
 }
 

@@ -1,6 +1,6 @@
-n1 n2 -number of fields (width, length)
+w h -number of fields (width, height
 
-n1*n2 row, containing fields' data like that:
+w*h row, containing fields' data, first lines' fields, second lines' fields...
 p m p1;p2; ...; pm, where
 
 p the player, who owns the objects there (0,1,... if there isn't any owner (for example it's a road), it is -1)

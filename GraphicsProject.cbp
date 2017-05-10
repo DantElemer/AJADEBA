@@ -59,6 +59,8 @@
 		<Unit filename="screens/gameScreen/Fields/field objects/barrack.h" />
 		<Unit filename="screens/gameScreen/Fields/field objects/fieldObject.cpp" />
 		<Unit filename="screens/gameScreen/Fields/field objects/fieldObject.h" />
+		<Unit filename="screens/gameScreen/Fields/field objects/mountain.cpp" />
+		<Unit filename="screens/gameScreen/Fields/field objects/mountain.h" />
 		<Unit filename="screens/gameScreen/Fields/field objects/road.cpp" />
 		<Unit filename="screens/gameScreen/Fields/field objects/road.h" />
 		<Unit filename="screens/gameScreen/Fields/field objects/stronghold.cpp" />
@@ -75,8 +77,12 @@
 		<Unit filename="screens/others/difficultySettingScreen.h" />
 		<Unit filename="screens/others/gameOverScreen.cpp" />
 		<Unit filename="screens/others/gameOverScreen.h" />
+		<Unit filename="screens/others/mapEditor.cpp" />
+		<Unit filename="screens/others/mapEditor.h" />
 		<Unit filename="screens/others/menuScreen.cpp" />
 		<Unit filename="screens/others/menuScreen.h" />
+		<Unit filename="screens/others/settingsScreen.cpp" />
+		<Unit filename="screens/others/settingsScreen.h" />
 		<Unit filename="screens/others/victoryScreen.cpp" />
 		<Unit filename="screens/others/victoryScreen.h" />
 		<Unit filename="screens/screen.cpp" />
@@ -99,6 +105,8 @@
 		<Unit filename="screens/subScreens/cutscenes/fCutscenes/heightDone.h" />
 		<Unit filename="screens/subScreens/howToPlayScreen.cpp" />
 		<Unit filename="screens/subScreens/howToPlayScreen.h" />
+		<Unit filename="screens/subScreens/newTurnScreen.cpp" />
+		<Unit filename="screens/subScreens/newTurnScreen.h" />
 		<Unit filename="screens/subScreens/subScreen.cpp" />
 		<Unit filename="screens/subScreens/subScreen.h" />
 		<Unit filename="screens/widgetTestScreen.cpp" />

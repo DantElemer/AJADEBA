@@ -1,9 +1,9 @@
 #include "lButton.h"
 
-lButton::lButton(function<void()> fire, coor origo, int width, int height, string texty, int fontSize)
+lButton::lButton(function<void()> fire, coor origo, int width, int height, string texty, int fontSize, bool pSelfClear)
 :button(NULL, origo,width,height,texty,fontSize), fire(fire)
 {
-    //ctor
+    selfClear=pSelfClear;
 }
 
 lButton::~lButton()

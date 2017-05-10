@@ -12,7 +12,7 @@ const string field::MOUNTAIN="mountain";
 field::field(gameScreen* gS, coor coordinate)
 : myGameScreen(gS), coordinate(coordinate), type(BLANK), origo(coordinate*WIDTH+gS->mapOffset)
 {
-    gS->widgets.push_back(new lButton([this](){this->myGameScreen->fieldClicked(this);},origo,WIDTH,WIDTH));
+    gS->widgets.push_back(new lButton([this](){this->myGameScreen->fieldClicked(this);},origo,WIDTH,WIDTH,"",0,false));
 }
 
 field::~field()

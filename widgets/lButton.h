@@ -9,7 +9,7 @@
 class lButton : public button
 {
     public:
-        lButton(function<void()> fire, coor origo, int width, int height, string texty="", int fontSize=40);
+        lButton(function<void()> fire, coor origo, int width, int height, string texty="", int fontSize=40, bool selfClear=true);
         virtual ~lButton();
     protected:
         function<void()> fire;
