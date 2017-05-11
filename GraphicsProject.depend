@@ -11,14 +11,14 @@
 	<math.h>
 	<iostream>
 
-1494322325 c:\users\ildikó\documents\github\ajadeba\data.h
+1494493120 c:\users\ildikó\documents\github\ajadeba\data.h
 	"coor.h"
 	<string>
 
 1493109050 c:\users\ildikó\documents\github\ajadeba\include\graphics.hpp
 	<string>
 
-1494322592 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
+1494493120 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
 	"data.h"
 
 1494150474 source:c:\users\ildikó\documents\github\ajadeba\graphicsplus.cpp
@@ -157,10 +157,10 @@
 1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
 	"randomFuncs.h"
 
-1494445940 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+1494495777 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494441698 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494493839 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	"../../screenHandler.h"
@@ -378,11 +378,12 @@
 	"buildChooserScreen.h"
 	"../gameScreen/gameScreen.h"
 
-1494319665 c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.h
+1494493120 c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.h
 	"../screen.h"
 	"../../data.h"
+	<fstream>
 
-1494326131 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
+1494494614 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
 	"settingsScreen.h"
 
 1494325537 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\newturnscreen.h
@@ -398,7 +399,7 @@
 1494353434 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\mountain.h
 	"fieldObject.h"
 
-1494446038 c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.h
+1494493120 c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.h
 	"../screen.h"
 	"../gameScreen/Fields/field objects/fieldObject.h"
 	"../gameScreen/Fields/field.h"
@@ -406,13 +407,13 @@
 	<fstream>
 	<algorithm>
 
-1494446503 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
+1494495121 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
 	"mapEditor.h"
 
 1494447157 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.h
 	"subScreen.h"
 
-1494446552 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.cpp
+1494493120 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.cpp
 	"saveMap.h"
 	"../others/mapEditor.h"
 

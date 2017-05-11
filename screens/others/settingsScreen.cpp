@@ -8,6 +8,14 @@ settingsScreen::settingsScreen()
     widgets.push_back(new chooser(makeCoor(600,300),makeCoor(900,350),nations,player2Nation,200,"Player 2's nation"));
     widgets.push_back(new lButton([](){screen::switchTo=screen::GAME_SCREEN;},makeCoor(WINDOW_X-150,WINDOW_Y-50),200,50,"Start game",20));
     widgets.push_back(new lButton([](){screen::switchTo=screen::MENU_SCREEN;},makeCoor(150,WINDOW_Y-50),200,50,"Menu",20));
+
+    ifstream mapList("maps/mapList.txt");
+    vector<string> mList;
+    string newMap;
+    while (getline(mapList,newMap))
+        mList.push_back(newMap);
+    mapList.close();
+    widgets.push_back(new chooser(makeCoor(400,400), makeCoor(600,450),mList,chosenMap,100,"Map: "));
     draw();
 }
 

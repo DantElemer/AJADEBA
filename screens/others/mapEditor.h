@@ -15,7 +15,7 @@ class mapEditor : public screen
     public:
         mapEditor();
         void draw();
-        void save(string fileName);
+        void save(string mapName);
         void onTick();
 
         static const int FIELD_WIDTH=field::WIDTH; //=field height as well

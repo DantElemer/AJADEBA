@@ -30,7 +30,9 @@ void gameScreen::generateMap()
 
     vector<strong> strongs;
     int wid,hei;
-    string mapFile="maps/editorTest.txt";
+    string mapFile="maps/";
+    mapFile+=chosenMap;
+    mapFile+=".txt";
     ifstream mapF(mapFile);
     mapF>>wid>>hei;
     mapOffset=makeCoor(WINDOW_X-wid*field::WIDTH,WINDOW_Y-hei*field::WIDTH)/2;
@@ -367,13 +369,13 @@ void gameScreen::mayBuild()
 
 void gameScreen::decreasePlayerTime()
 {
-    coor uLC=makeCoor(50,30);
+    coor uLC=makeCoor(0,0);
     string text="Time left: "+numToString(currentPlayer->timeLeft);
     int fSize=20;
     clearScreen(uLC,uLC+makeCoor(countTextWidth(text,fSize),countTextHeight(text,fSize)));
     currentPlayer->timeLeft-=1.0/(double)screenHandler::FPS;
     writeText(uLC,text,fSize);
-} //todo vár aktiválás lassú; mountain block; map editor
+}
 
 void gameScreen::onTick()
 {

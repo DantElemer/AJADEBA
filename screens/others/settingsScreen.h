@@ -4,6 +4,8 @@
 #include "../screen.h"
 #include "../../data.h"
 
+#include <fstream>
+
 class settingsScreen : public screen
 {
     public:

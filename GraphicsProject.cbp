@@ -107,6 +107,8 @@
 		<Unit filename="screens/subScreens/howToPlayScreen.h" />
 		<Unit filename="screens/subScreens/newTurnScreen.cpp" />
 		<Unit filename="screens/subScreens/newTurnScreen.h" />
+		<Unit filename="screens/subScreens/saveMap.cpp" />
+		<Unit filename="screens/subScreens/saveMap.h" />
 		<Unit filename="screens/subScreens/subScreen.cpp" />
 		<Unit filename="screens/subScreens/subScreen.h" />
 		<Unit filename="screens/widgetTestScreen.cpp" />

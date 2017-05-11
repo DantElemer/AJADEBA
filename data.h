@@ -66,6 +66,7 @@ extern int loadedFontSize;
 extern int thinkingTime;
 extern string player1Nation;
 extern string player2Nation;
+extern string chosenMap;
 
 
 

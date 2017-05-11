@@ -125,8 +125,12 @@ void mapEditor::onTick()
     screen::onTick();
 }
 
-void mapEditor::save(string fileName)
+void mapEditor::save(string mapName) //no overwrite test
 {
+    string fileName="maps/";
+    fileName+=mapName;
+    fileName+=".txt";
+    cout<<fileName;
     ofstream file(fileName);
     file<<MAX_WIDTH<<" "<<MAX_HEIGHT<<endl;
     for (int i=0;i<MAX_WIDTH;i++)
@@ -142,5 +146,8 @@ void mapEditor::save(string fileName)
             file<<"\n";
         }
     }
-    switchToMenuScreen();
+    file.close();
+    ofstream mapList("maps/mapList.txt",ofstream::app);
+    mapList<<mapName<<endl;
+    mapList.close();
 }

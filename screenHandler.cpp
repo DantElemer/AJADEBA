@@ -28,7 +28,6 @@ void screenHandler::switchScreen(screen *&currScr)
         currScr=new settingsScreen();
     else if (screen::switchTo==screen::TERMINATED)
     {
-        screensAlive.pop_back();
         exitReqested=false;
         for (screen* s:screensAlive) //drawing screens
         {
@@ -40,12 +39,12 @@ void screenHandler::switchScreen(screen *&currScr)
         exitGame();
     if (screen::switchTo!=screen::TERMINATED)
     {
-        for (int i=screensAlive.size()-2;i>=1;i--)
+        for (int i=screensAlive.size()-1;i>=0;i--)
         {
             delete screensAlive[i];
             screensAlive.pop_back();
         }
-        screensAlive.pop_back(); //takes out "current screen", which was deleted above
+        //screensAlive.pop_back(); //takes out "current screen", which was deleted above
         screensAlive.push_back(currScr);
     }
     screen::switchTo=screen::STAY;
