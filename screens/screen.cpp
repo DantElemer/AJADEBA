@@ -60,7 +60,8 @@ void screen::soul(event ev)
 
 void screen::draw()
 {
-
+    for (widgetBase* w:widgets)
+        w->redraw();
 }
 
 void screen::mouseMoved(event mE)

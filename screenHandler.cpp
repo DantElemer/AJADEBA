@@ -30,10 +30,7 @@ void screenHandler::switchScreen(screen *&currScr)
     {
         exitReqested=false;
         for (screen* s:screensAlive) //drawing screens
-        {
             s->draw();
-            s->onTick(); //for drawing nonstatic objects
-        }
     }
     else if (screen::switchTo==screen::EXIT)
         exitGame();

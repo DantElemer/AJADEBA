@@ -33,7 +33,7 @@ void widgetTestScreen::draw()
         pic.draw();
         gout<<refresh;
     }
-
+    screen::draw();
 }
 
 void widgetTestScreen::keyDown(event kE)

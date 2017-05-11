@@ -30,16 +30,27 @@ struct fieldData
     vector<part> parts;
     mapEditor* myEditor;
     coor origo;
+    coor coordinate;
 
-    fieldData(mapEditor* mE, coor origo)
-    : myEditor(mE), origo(origo)
+    fieldData(mapEditor* mE, coor coordinate)
+    : myEditor(mE), coordinate(coordinate), origo(coordinate*mapEditor::FIELD_WIDTH+mapEditor::MAP_OFFSET)
     {
-        mE->widgets.push_back(new lButton([this](){this->addPart();},origo,mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH,"",0,false));
+        mE->widgets.push_back(new lButton([this](){this->clicked();},origo,mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH,"",0,false));
     }
 
-    void addPart()
+    void clicked()
     {
-        if (myEditor->currPart=="delete")
+        if (myEditor->moveULC)
+        {
+            myEditor->uLC=coordinate;
+            myEditor->moveULC=false;
+        }
+        else if (myEditor->moveDRC)
+        {
+            myEditor->dRC=coordinate;
+            myEditor->moveDRC=false;
+        }
+        else if (myEditor->currPart=="delete")
             clearPart();
         else
         {
@@ -59,6 +70,13 @@ struct fieldData
         {
             p.draw();
         }
+        if (!(coordinate>=myEditor->uLC && coordinate<=myEditor->dRC)) //if not in selected area
+        {
+            drawLine(origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,100,100,100);
+            drawLine(origo-makeCoor(-mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(-mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,100,100,100);
+        }
+        //szebb, de lassú:
+        //darkening(2,origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2);
     }
 };
 vector<vector<fieldData*>> fields;
@@ -77,10 +95,15 @@ mapEditor::mapEditor()
     int objStart=widgets.size();
     obStart=oDistFromEdgeY+dist*(objStart)+cutDist*cutNum;
     for (int i=0;i<fieldObject::EVERY_OBJECT.size();i++)
-        widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
-
+        if (fieldObject::EVERY_OBJECT[i]!=fieldObject::BARRACK&&fieldObject::EVERY_OBJECT[i]!=fieldObject::STRONGHOLD)
+            widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];this->currOwner=-1;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
+        else
+            widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
     cutNum++;
     widgets.push_back(new lButton([this](){this->currPart="delete";},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*12+cutDist*cutNum),wid,hei,"Delete",fSize));
+    cutNum++;
+    widgets.push_back(new lButton([this](){this->moveULC=true;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*13+cutDist*cutNum),wid,hei,"ULC",fSize));
+    widgets.push_back(new lButton([this](){this->moveDRC=true;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*14+cutDist*cutNum),wid,hei,"DRC",fSize));
 
     draw();
     generateFields();
@@ -88,7 +111,7 @@ mapEditor::mapEditor()
 
 void mapEditor::draw()
 {
-    //addTitle("Editor");
+    screen::draw();
 }
 
 void mapEditor::generateFields()
@@ -98,7 +121,7 @@ void mapEditor::generateFields()
         vector<fieldData*> newRow;
         for (int j=0;j<MAX_WIDTH;j++)
         {
-            fieldData* newField=new fieldData(this,makeCoor(j,i)*FIELD_WIDTH+MAP_OFFSET);
+            fieldData* newField=new fieldData(this,makeCoor(j,i));
             newRow.push_back(newField);
         }
         fields.push_back(newRow);
@@ -107,12 +130,42 @@ void mapEditor::generateFields()
 
 void mapEditor::drawMarkers()
 {
+    //object marker
     int obIndex=find(fieldObject::EVERY_OBJECT.begin(),fieldObject::EVERY_OBJECT.end(),currPart)-fieldObject::EVERY_OBJECT.begin();
     drawLine(makeCoor(WINDOW_X-oDistFromEdgeX-wid*3.0/4.0,obIndex*dist+obStart),
              makeCoor(WINDOW_X-oDistFromEdgeX-wid*2.0/4.0,obIndex*dist+obStart));
-
+    //player marker
     drawLine(makeCoor(WINDOW_X-oDistFromEdgeX-wid*3.0/4.0,(currOwner+1)*dist+playerStart),
              makeCoor(WINDOW_X-oDistFromEdgeX-wid*2.0/4.0,(currOwner+1)*dist+playerStart));
+    //border markers
+    coor uLCorner=(uLC-0.5)*FIELD_WIDTH+MAP_OFFSET;
+    int length=10;
+    int width=2;
+    int r=238;
+    int g=238;
+    int b=0;
+    drawFatLine(uLCorner,uLCorner+makeCoor(0,length),width,r,g,b);
+    drawFatLine(uLCorner,uLCorner+makeCoor(length,0),width,r,g,b);
+    coor dRCorner=(dRC+0.5)*FIELD_WIDTH+MAP_OFFSET;
+    drawFatLine(dRCorner,dRCorner+makeCoor(0,-length),width,r,g,b);
+    drawFatLine(dRCorner,dRCorner+makeCoor(-length,0),width,r,g,b);
+}
+
+void mapEditor::mayWarn()
+{
+    bool shallWarn=false;
+    if (currOwner==-1) //no owner
+        if (currPart==fieldObject::BARRACK)
+            shallWarn=true;
+        else shallWarn=false;
+    else
+        if (currPart!=fieldObject::BARRACK && currPart!=fieldObject::STRONGHOLD)
+            shallWarn=true;
+    if (!(uLC<=dRC))
+        shallWarn=true;
+    if (shallWarn)
+        for (int i=0;i<5;i++)
+            drawRectangle(makeCoor(i,i),makeCoor(WINDOW_X-i,WINDOW_Y-i),false,255,0,0);
 }
 
 void mapEditor::onTick()
@@ -121,8 +174,9 @@ void mapEditor::onTick()
     for (vector<fieldData*> fRow:fields)
         for (fieldData* f:fRow)
             f->draw();
-    drawMarkers();
+    mayWarn();
     screen::onTick();
+    drawMarkers();
 }
 
 void mapEditor::save(string mapName) //no overwrite test
@@ -130,12 +184,13 @@ void mapEditor::save(string mapName) //no overwrite test
     string fileName="maps/";
     fileName+=mapName;
     fileName+=".txt";
-    cout<<fileName;
     ofstream file(fileName);
-    file<<MAX_WIDTH<<" "<<MAX_HEIGHT<<endl;
-    for (int i=0;i<MAX_WIDTH;i++)
+    int width=dRC.X-uLC.X+1;
+    int height=dRC.Y-uLC.Y+1;
+    file<<width<<" "<<height<<endl;
+    for (int i=uLC.X;i<=dRC.X;i++)
     {
-        for (int j=0;j<MAX_HEIGHT;j++)
+        for (int j=uLC.Y;j<=dRC.Y;j++)
         {
             fieldData* currField=fields[j][i];
             file<<currField->player<<" "<<currField->parts.size();

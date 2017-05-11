@@ -22,4 +22,5 @@ settingsScreen::settingsScreen()
 void settingsScreen::draw()
 {
     addTitle("Settings");
+    screen::draw();
 }

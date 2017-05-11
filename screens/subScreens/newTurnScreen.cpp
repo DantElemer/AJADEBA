@@ -12,4 +12,5 @@ void newTurnScreen::draw()
 {
     clearScreen();
     mWriteText(WINDOW_ORIGO-makeCoor(0,30),myGS->currentPlayer->name+"'s turn");
+    screen::draw();
 }

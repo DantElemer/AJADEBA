@@ -23,7 +23,8 @@ void howToPlayScreen::draw()
     writeText(makeCoor(100,380),"Left/Right Arrow: Rotate helicopter.",20);
     writeText(makeCoor(50,430),"Recommended music:",40);
     writeText(makeCoor(100,490),"Helikoffer (https://www.youtube.com/watch?v=HNjWhBa1_qU)",20);
-}//Make successfull tests. First lift up your helicopter to test height, then test if the helikoffer can rotate.
+    screen::draw();
+}
 
 void howToPlayScreen::onTick()
 {

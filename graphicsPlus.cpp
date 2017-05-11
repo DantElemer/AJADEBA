@@ -10,10 +10,10 @@ void clearScreen(coor uLC, coor dRC)
     gout<<move_to(max(0,(int)uLC.X),max(0,(int)uLC.Y))<<color(0,0,0)<<box(min((int)(dRC.X-uLC.X+1),WINDOW_X),min((int)(dRC.Y-uLC.Y+1),WINDOW_Y));
 }
 
-void darkening(int rate)
+void darkening(int rate, coor uLC, coor dRC)
 {
-    for (int i=0;i<=WINDOW_X;i++)
-        for (int j=0;j<=WINDOW_Y;j++)
+    for (int i=(int)uLC.X;i<=(int)dRC.X;i++)
+        for (int j=(int)uLC.Y;j<=(int)dRC.Y;j++)
             if (i%rate==0&&j%rate==0)
                 gout<<move_to(i,j)<<color(100,100,100)<<dot;
 }

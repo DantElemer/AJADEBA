@@ -22,9 +22,14 @@ class mapEditor : public screen
         static const coor MAP_OFFSET;
         int currOwner=-1;
         string currPart="village";
+        coor uLC=makeCoor(0,0);
+        coor dRC=makeCoor(MAX_WIDTH-1,MAX_HEIGHT-1);
+        bool moveULC=false;
+        bool moveDRC=false;
     private:
         void generateFields();
         void drawMarkers();
+        void mayWarn();
 
         static const int MAX_WIDTH=40;
         static const int MAX_HEIGHT=25;

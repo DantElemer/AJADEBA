@@ -37,7 +37,7 @@ void textfield::keyDown(event kE)
     {
         if (kE.keycode==key_backspace)
             myText=myText.substr(0,myText.length()-1);
-        else if (kE.keycode>=97&&kE.keycode<=122) //it's between 'a' & 'z'
+        else if (kE.keycode>=97&&kE.keycode<=122 || kE.keycode==key_space) //it's between 'a' & 'z' or SPACE
         {
             string newText=myText;
             newText+=kE.keycode;

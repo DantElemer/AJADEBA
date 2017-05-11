@@ -78,6 +78,20 @@ bool coor::operator< (coor ezzel) const
     return false;
 }
 
+bool coor::operator>= (coor ezzel) const
+{
+    if (X>=ezzel.X&&Y>=ezzel.Y)
+        return true;
+    return false;
+}
+
+bool coor::operator<= (coor ezzel) const
+{
+    if (X<=ezzel.X&&Y<=ezzel.Y)
+        return true;
+    return false;
+}
+
 bool coor::operator== (coor ezzel) const
 {
     if (X==ezzel.X&&Y==ezzel.Y)

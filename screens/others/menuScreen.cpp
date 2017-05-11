@@ -23,6 +23,7 @@ void menuScreen::draw()
 {
     clearScreen();
     addTitle("AJADEBA");
+    screen::draw();
 }
 
 void menuScreen::onTick()

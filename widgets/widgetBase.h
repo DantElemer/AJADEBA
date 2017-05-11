@@ -11,7 +11,6 @@ class widgetBase
 {
     protected:
         virtual void draw(); //...
-        virtual void redraw(); //clears, then draws
         void addFrame();
         int width;
         int height;
@@ -32,6 +31,7 @@ class widgetBase
         virtual void keyUp(event kE);
         virtual void clearWid(); //clears
         virtual void saveData(){};
+        virtual void redraw(); //clears, then draws
 
         static const string DATA_FILE_NAME;
 };

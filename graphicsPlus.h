@@ -18,7 +18,7 @@ extern int titleFromWindow;
 void drawFatLine(coor startPoint, coor endPoint, int width, int r=255, int g=255, int b=255);
 void drawLine(coor startPoint, coor endPoint, int r=255, int g=255, int b=255);
 void clearScreen(coor uLC=makeCoor(0,0), coor dRC=WINDOW_ORIGO*2); //clears the given rectangle, the whole screen by default
-void darkening(int rate=2); //a simple effect
+void darkening(int rate=2, coor uLC=makeCoor(0,0), coor dRC=WINDOW_ORIGO*2); //a simple effect
 void drawRectangle(coor upperLeftCorn,coor downerRightCorn, bool filled=false, int r=255, int g=255, int b=255);
 void drawCircle(coor origo, double radius, int r=255, int g=255, int b=255, int accuracy=1000);//...
 void drawFilledCircle(coor origo, double radius, int r=255, int g=255, int b=255);//...

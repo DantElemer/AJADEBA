@@ -11,8 +11,7 @@ buildChooserScreen::buildChooserScreen(gameScreen* gS)
 
 void buildChooserScreen::draw()
 {
-    //darkening();
-    //addTitle("Build chooser");
+    screen::draw();
 }
 
 void buildChooserScreen::generateOptions()
