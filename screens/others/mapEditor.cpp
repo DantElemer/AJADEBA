@@ -54,9 +54,25 @@ struct fieldData
             clearPart();
         else
         {
-            parts.push_back(part(myEditor->currPart,origo,myEditor));
-            player=myEditor->currOwner;
+            addPart(myEditor->currPart, myEditor->currOwner);
         }
+    }
+
+    void addPart(string partName, int pplayer)
+    {
+        if (!hasPart(partName))
+        {
+            parts.push_back(part(partName,origo,myEditor));
+            player=pplayer;
+        }
+    }
+
+    bool hasPart(string partName)
+    {
+        for (part p:parts)
+            if (p.name==partName)
+                return true;
+        return false;
     }
 
     void clearPart()
@@ -79,7 +95,6 @@ struct fieldData
         //darkening(2,origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2);
     }
 };
-vector<vector<fieldData*>> fields;
 
 mapEditor::mapEditor()
 {
@@ -99,14 +114,37 @@ mapEditor::mapEditor()
             widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];this->currOwner=-1;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
         else
             widgets.push_back(new lButton([this,i](){this->currPart=fieldObject::EVERY_OBJECT[i];},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*(i+objStart)+cutDist*cutNum),wid,hei,fieldObject::EVERY_OBJECT[i],fSize));
-    cutNum++;
+    //cutNum++;
     widgets.push_back(new lButton([this](){this->currPart="delete";},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*12+cutDist*cutNum),wid,hei,"Delete",fSize));
+
     cutNum++;
     widgets.push_back(new lButton([this](){this->moveULC=true;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*13+cutDist*cutNum),wid,hei,"ULC",fSize));
     widgets.push_back(new lButton([this](){this->moveDRC=true;},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*14+cutDist*cutNum),wid,hei,"DRC",fSize));
 
+    cutNum++;
+    widgets.push_back(new lButton([this](){this->symmetrieOrdered();},makeCoor(WINDOW_X-oDistFromEdgeX,oDistFromEdgeY+dist*15+cutDist*cutNum),wid,hei,"Symmetrie",fSize));
+
     draw();
     generateFields();
+}
+
+void mapEditor::symmetrieOrdered()
+{
+    double xAxis=(double)(dRC.X-uLC.X+1)/2.0+uLC.X;
+    int xStart=uLC.X;
+    int xEnd=(int)xAxis;
+    int yStart=uLC.Y;
+    int yEnd=dRC.Y+1;
+    cout<<"axis: "<<xAxis<<" xStart: "<<xStart<<" yStart: "<<yStart<<" xEnd: "<< xEnd<<" yEnd: "<<yEnd<<endl;
+    for (int y=yStart;y<yEnd;y++)
+    {
+        for (int x=xStart;x<xEnd;x++)
+        {
+            currOwner=fields[y][x]->player;
+            for (part p:fields[y][x]->parts)
+                fields[y][xAxis*2-x-1]->addPart(p.name,currOwner);
+        }
+    }
 }
 
 void mapEditor::draw()
@@ -139,6 +177,7 @@ void mapEditor::drawMarkers()
              makeCoor(WINDOW_X-oDistFromEdgeX-wid*2.0/4.0,(currOwner+1)*dist+playerStart));
     //border markers
     coor uLCorner=(uLC-0.5)*FIELD_WIDTH+MAP_OFFSET;
+    coor dRCorner=(dRC+0.5)*FIELD_WIDTH+MAP_OFFSET;
     int length=10;
     int width=2;
     int r=238;
@@ -146,9 +185,11 @@ void mapEditor::drawMarkers()
     int b=0;
     drawFatLine(uLCorner,uLCorner+makeCoor(0,length),width,r,g,b);
     drawFatLine(uLCorner,uLCorner+makeCoor(length,0),width,r,g,b);
-    coor dRCorner=(dRC+0.5)*FIELD_WIDTH+MAP_OFFSET;
     drawFatLine(dRCorner,dRCorner+makeCoor(0,-length),width,r,g,b);
     drawFatLine(dRCorner,dRCorner+makeCoor(-length,0),width,r,g,b);
+    //symmetrie axis
+    double xAxis=(double)(dRC.X-uLC.X+1)/2.0/*+uLC.X*/;
+    drawFatLine(uLCorner+makeCoor(FIELD_WIDTH*(xAxis),0),dRCorner-makeCoor(FIELD_WIDTH*(xAxis),0),width,r,g,b);
 }
 
 void mapEditor::mayWarn()
@@ -205,4 +246,9 @@ void mapEditor::save(string mapName) //no overwrite test
     ofstream mapList("maps/mapList.txt",ofstream::app);
     mapList<<mapName<<endl;
     mapList.close();
+    if (generateDescFile)
+    {
+        ofstream descFile("maps/descriptions/"+mapName+".txt");
+        descFile.close();
+    }
 }

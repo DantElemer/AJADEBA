@@ -3,17 +3,12 @@
 checkbox::checkbox(coor uLC, coor dRC, bool &var)
 : widgetBase(uLC,dRC), currValue(&var)
 {
-    subWidgets.push_back(new mButton((memberFunctionCall)sChange,this,uLC,dRC));
+    subWidgets.push_back(new lButton([this](){this->change();},origo,width,height));
 }
 
 checkbox::~checkbox()
 {
     //dtor
-}
-
-void checkbox::sChange(checkbox* c)
-{
-    c->change();
 }
 
 void checkbox::change()

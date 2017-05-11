@@ -25,6 +25,7 @@ void chooser::draw()
     writeText(upperLeftCorner,NAME+": ",20);
     drawRectangle(upperLeftCorner+makeCoor(countTextWidth(NAME+": "),0),downerRightCorner-makeCoor(0,height-countTextHeight(NAME+": ")+2));
     writeText(upperLeftCorner+makeCoor(countTextWidth(NAME+": ")+3,0),*current,15);
+    widgetBase::draw();
 }
 
 void chooser::addOption(string option)

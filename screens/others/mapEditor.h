@@ -9,6 +9,7 @@
 #include <fstream>
 #include <algorithm>
 
+struct fieldData;
 
 class mapEditor : public screen
 {
@@ -17,6 +18,7 @@ class mapEditor : public screen
         void draw();
         void save(string mapName);
         void onTick();
+        void symmetrieOrdered();
 
         static const int FIELD_WIDTH=field::WIDTH; //=field height as well
         static const coor MAP_OFFSET;
@@ -26,6 +28,8 @@ class mapEditor : public screen
         coor dRC=makeCoor(MAX_WIDTH-1,MAX_HEIGHT-1);
         bool moveULC=false;
         bool moveDRC=false;
+        vector<vector<fieldData*>> fields;
+        bool generateDescFile=false;;
     private:
         void generateFields();
         void drawMarkers();
@@ -36,7 +40,7 @@ class mapEditor : public screen
 
 
         int dist=30;
-        int oDistFromEdgeY=50;
+        int oDistFromEdgeY=20;
         int oDistFromEdgeX=60;
         int wid=100;
         int hei=30;

@@ -116,9 +116,9 @@
 	"widgetBase.h"
 	<string>
 
-1493719623 c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.h
+1494528645 c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.h
 	"widgetBase.h"
-	"mButton.h"
+	"lButton.h"
 
 1493719427 c:\users\ildikó\documents\github\ajadeba\screens\widgettestscreen.h
 	"screen.h"
@@ -242,10 +242,10 @@
 1494076439 source:c:\users\ildikó\documents\github\ajadeba\widgets\button.cpp
 	"button.h"
 
-1493719792 source:c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.cpp
+1494528645 source:c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.cpp
 	"checkbox.h"
 
-1494322592 source:c:\users\ildikó\documents\github\ajadeba\widgets\chooser.cpp
+1494528645 source:c:\users\ildikó\documents\github\ajadeba\widgets\chooser.cpp
 	"chooser.h"
 
 1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\complexindicator.cpp
@@ -399,7 +399,7 @@
 1494353434 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\mountain.h
 	"fieldObject.h"
 
-1494507343 c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.h
+1494520987 c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.h
 	"../screen.h"
 	"../gameScreen/Fields/field objects/fieldObject.h"
 	"../gameScreen/Fields/field.h"
@@ -407,13 +407,13 @@
 	<fstream>
 	<algorithm>
 
-1494505807 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
+1494521620 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
 	"mapEditor.h"
 
 1494447157 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.h
 	"subScreen.h"
 
-1494505958 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.cpp
+1494528882 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.cpp
 	"saveMap.h"
 	"../others/mapEditor.h"
 

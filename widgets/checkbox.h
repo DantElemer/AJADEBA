@@ -2,7 +2,7 @@
 #define CHECKBOX_H
 
 #include "widgetBase.h"
-#include "mButton.h"
+#include "lButton.h"
 
 class checkbox : public widgetBase
 {
@@ -17,7 +17,7 @@ class checkbox : public widgetBase
     private:
         bool* currValue;
 
-        static void sChange(checkbox* c);
+        //static void sChange(checkbox* c);
         void change();
         void draw();
 };
