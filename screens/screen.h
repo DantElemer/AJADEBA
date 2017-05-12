@@ -22,14 +22,10 @@
 class screen
 {
     public:
-        static const string WIDGET_TEST_SCREEN;
         static const string MENU_SCREEN;
         static const string GAME_SCREEN;
-        static const string GAME_OVER_SCREEN;
-        static const string VICTORY_SCREEN;
         static const string MAP_EDITOR;
         static const string SETTINGS_SCREEN;
-        static const string DIFFICULTY_SETTING_SCREEN;
         //subScreens
         static const string CONFIRM_EXIT;
         static const string HOW_TO_PLAY_SCREEN;

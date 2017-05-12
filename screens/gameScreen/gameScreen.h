@@ -29,13 +29,8 @@ struct gameScreen : screen
         void addTerritoryOwnership(field* stronghold, player* owner);
         void removeTerritoryOwnership(field* stronghold, player* owner);
 
-        static void switchToGameOverScreen();
-        static void switchToVictoryScreen();
+
         static void subToBuildChooserScreen();
-        /*static void subToAtStart();
-        static void subToAlphaDone();
-        static void subToHeightDone();
-        static void subToEndScene();*/
         bool assaultMode=false;
         field* selectedStronghold;
 

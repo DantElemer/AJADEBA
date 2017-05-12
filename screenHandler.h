@@ -3,11 +3,7 @@
 
 
 #include "screens\screen.h"
-#include "screens\widgetTestScreen.h"
 #include "screens\others\menuScreen.h"
-#include "screens\others\difficultySettingScreen.h"
-#include "screens\others\gameOverScreen.h"
-#include "screens\others\victoryScreen.h"
 #include "screens\gameScreen\gameScreen.h"
 #include "screens\others\settingsScreen.h"
 #include "screens\others\mapEditor.h"

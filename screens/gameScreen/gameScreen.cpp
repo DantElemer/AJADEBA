@@ -438,39 +438,10 @@ void gameScreen::keyUp(event kE)
     screen::keyUp(kE);
 }
 
-void gameScreen::switchToGameOverScreen()
-{
-    switchTo=screen::GAME_OVER_SCREEN;
-}
-
-void gameScreen::switchToVictoryScreen()
-{
-    switchTo=screen::VICTORY_SCREEN;
-}
-
 void gameScreen::subToBuildChooserScreen()
 {
     newSub=screen::BUILD_CHOOSER_SCREEN;
 }
-/*void gameScreen::subToAtStart()
-{
-    newSub=screen::AT_START;
-}
-
-void gameScreen::subToAlphaDone()
-{
-    newSub=screen::ALPHA_DONE;
-}
-
-void gameScreen::subToHeightDone()
-{
-    newSub=screen::HEIGHT_DONE;
-}
-
-void gameScreen::subToEndScene()
-{
-    newSub=screen::END_SCENE;
-}*/
 
 
 

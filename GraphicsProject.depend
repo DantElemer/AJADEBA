@@ -42,13 +42,9 @@
 1493109976 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
 	"screenHandler.h"
 
-1494582705 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
+1494594296 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
 	"screens\screen.h"
-	"screens\widgetTestScreen.h"
 	"screens\others\menuScreen.h"
-	"screens\others\difficultySettingScreen.h"
-	"screens\others\gameOverScreen.h"
-	"screens\others\victoryScreen.h"
 	"screens\gameScreen\gameScreen.h"
 	"screens\others\settingsScreen.h"
 	"screens\others\mapEditor.h"
@@ -60,7 +56,7 @@
 	"screens\subScreens\victoryMessage.h"
 	"graphics.hpp"
 
-1494582706 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1494594296 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -124,7 +120,7 @@
 1493719427 c:\users\ildikó\documents\github\ajadeba\screens\widgettestscreen.h
 	"screen.h"
 
-1493109053 c:\users\ildikó\documents\github\ajadeba\screens\others\menuscreen.h
+1494594413 c:\users\ildikó\documents\github\ajadeba\screens\others\menuscreen.h
 	"../screen.h"
 
 1493109053 c:\users\ildikó\documents\github\ajadeba\screens\others\difficultysettingscreen.h
@@ -138,7 +134,7 @@
 	"../screen.h"
 	"../../data.h"
 
-1494569147 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
+1494594340 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.h
 	"../../data.h"
 	"../screen.h"
 	"Fields/field.h"
@@ -158,10 +154,10 @@
 1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
 	"randomFuncs.h"
 
-1494582705 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+1494594296 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494584398 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494594340 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	"../../screenHandler.h"

@@ -31,8 +31,4 @@ void menuScreen::onTick()
     screen::onTick();
 }
 
-void menuScreen::switchToDifficultySettingScreen()
-{
-    switchTo=screen::DIFFICULTY_SETTING_SCREEN;
-}
 

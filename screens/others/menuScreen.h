@@ -6,15 +6,11 @@
 struct menuScreen : screen
 {
     private:
-        static void switchToDifficultySettingScreen();
 
     public:
         menuScreen();
         void draw();
         void onTick();
-
-        /*void test();
-        static void stest(menuScreen* menu);*/
 };
 
 #endif // MENUSCREEN_H_INCLUDED

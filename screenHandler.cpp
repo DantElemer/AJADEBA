@@ -14,14 +14,6 @@ void screenHandler::switchScreen(screen *&currScr)
         currScr=new gameScreen();
     else if (screen::switchTo==screen::MENU_SCREEN)
         currScr=new menuScreen();
-    else if (screen::switchTo==screen::GAME_OVER_SCREEN)
-        currScr=new gameOverScreen();
-    else if (screen::switchTo==screen::VICTORY_SCREEN)
-        currScr=new victoryScreen();
-    else if (screen::switchTo==screen::DIFFICULTY_SETTING_SCREEN)
-        currScr=new difficultySettingScreen();
-    else if (screen::switchTo==screen::WIDGET_TEST_SCREEN)
-        currScr=new widgetTestScreen();
     else if (screen::switchTo==screen::MAP_EDITOR)
         currScr=new mapEditor();
     else if (screen::switchTo==screen::SETTINGS_SCREEN)
@@ -41,11 +33,9 @@ void screenHandler::switchScreen(screen *&currScr)
             delete screensAlive[i];
             screensAlive.pop_back();
         }
-        //screensAlive.pop_back(); //takes out "current screen", which was deleted above
         screensAlive.push_back(currScr);
     }
     screen::switchTo=screen::STAY;
-
 }
 
 void screenHandler::addSub(string newSubName)
@@ -71,14 +61,6 @@ void screenHandler::addSub(string newSubName)
         currScr=new saveMap((mapEditor*)screensAlive[screensAlive.size()-1]);
     else if (screen::newSub==screen::VICTORY_MESSAGE)
         currScr=new victoryMessage((gameScreen*)screensAlive[screensAlive.size()-1]);
-    /*else if (screen::newSub==screen::AT_START)
-        currScr=new atStart();
-    else if (screen::newSub==screen::ALPHA_DONE)
-        currScr=new alphaDone();
-    else if (screen::newSub==screen::HEIGHT_DONE)
-        currScr=new heightDone();
-    else if (screen::newSub==screen::END_SCENE)
-        currScr=new endScene();*/
     screensAlive.push_back(currScr);
     screen::newSub=screen::STAY;
 }
