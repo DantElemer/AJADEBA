@@ -22,7 +22,15 @@ menuScreen::menuScreen()
 void menuScreen::draw()
 {
     clearScreen();
+    drawFatLine(makeCoor(560,20), makeCoor(550,40),4); //ékezet...
     addTitle("AJADEBA");
+    mWriteText(WINDOW_ORIGO-makeCoor(0,150),"(A Jatek, Amit Domonkos Es Balazs Alkotott)",12);
+    //ékezetek -_-
+    drawLine(makeCoor(405,143),makeCoor(404,145));
+    drawLine(makeCoor(415,143),makeCoor(414,145));
+    drawLine(makeCoor(521,140),makeCoor(520,142));
+    drawLine(makeCoor(555,143),makeCoor(554,145));
+
     screen::draw();
 }
 

@@ -13,6 +13,7 @@ gameScreen::gameScreen()
     srand(time(NULL));
     generateMap();
     currentPlayer=players[players.size()-1];
+    currentPlayer->boosted=true;
     nextPlayer();
 }
 
@@ -72,48 +73,6 @@ void gameScreen::generateMap()
         removeTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]); //because it already owned itself, now it would be double ownership
         fields[s.coordinate.X][s.coordinate.Y]->activateStronghold(players[s.player]);
     }
-
-
-    /*drawFields();
-    gout<<refresh;
-    giveMeTime(10);*/
-
-    /*currentPlayer=players[0];
-
-    for (int j=0;j<10;j++) //some fields
-    {
-        vector<field*> newRow;
-        for (int i=0;i<7;i++)
-        {
-            field* newField=new field(this,makeCoor(j,i));
-            newRow.push_back(newField);
-
-            int r=1;
-            if (rand()%10<r)
-                newField->addPart(fieldObject::NORTH_ROAD);
-            if (rand()%10<r)
-                newField->addPart(fieldObject::SOUTH_ROAD);
-            if (rand()%10<r)
-                newField->addPart(fieldObject::WEST_ROAD);
-            if (rand()%10<r)
-                newField->addPart(fieldObject::EAST_ROAD);
-
-            if (newField->getType()==field::BLANK&&rand()%10<r)
-                newField->addPart(fieldObject::VILLAGE);
-            if (newField->getType()==field::BLANK&&rand()%10<r)
-                newField->addPart(fieldObject::MOUNTAIN);
-            newField=0;
-            delete newField;
-        }
-        fields.push_back(newRow);
-    }
-    fields[5][3]->addPart(fieldObject::STRONGHOLD);
-    fields[5][3]->activateStronghold(currentPlayer);
-    fields[4][0]->addPart(fieldObject::BARRACK);
-    currentPlayer=players[1];
-    fields[2][6]->addPart(fieldObject::STRONGHOLD);
-    fields[2][6]->activateStronghold(currentPlayer);
-    fields[4][6]->addPart(fieldObject::BARRACK);*/
 }
 
 void gameScreen::initPressedButtons() const
@@ -152,8 +111,6 @@ void gameScreen::destroyStronghold(field* stronghold)
 
 void gameScreen::fieldClicked(field* f)
 {
-    //cout<<f->getType()<<endl;
-    //cout<<"Strength: "<<strongholdStrength(fields[5][3],currentPlayer)<<" "<<currentPlayer->name<<endl;
     selectedField=f;
     if (assaultMode)
     {
@@ -260,6 +217,7 @@ void gameScreen::build()
 
 void gameScreen::nextPlayer()
 {
+    cout<<currentPlayer->name;
     bool newTurn=true;
     for (int i=players.size()-2;i>=0;i--)
         if (players[i]==currentPlayer)
@@ -275,7 +233,7 @@ void gameScreen::nextPlayer()
     currentPlayer->timeLeft=thinkingTime;
     if (players.size()>1)
         newSub=NEW_TURN_SCREEN;
-    //cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
+    cout<<currentPlayer->name;
 }
 
 void gameScreen::addTerritoryOwnership(field* stronghold, player* owner)
@@ -365,7 +323,12 @@ void gameScreen::drawFields()
 
 void gameScreen::maySwitchPlayer()
 {
-    if (currentPlayer->steps==0 || currentPlayer->timeLeft<=0)
+    if (currentPlayer->steps==0 && currentPlayer->boosted)
+    {
+        currentPlayer->boosted=false;
+        currentPlayer->steps=2;
+    }
+    else if (currentPlayer->steps==0 || currentPlayer->timeLeft<=0)
         nextPlayer();
 }
 
@@ -387,9 +350,10 @@ void gameScreen::killDeadPlayers()
 void gameScreen::mayEnd()
 {
     if (players.size()==1)
-        //switchToVictoryScreen();
+    {
         newSub=screen::VICTORY_MESSAGE;
-    currentPlayer=players[0];
+        currentPlayer=players[0];
+    }
 }
 
 void gameScreen::mayBuild()

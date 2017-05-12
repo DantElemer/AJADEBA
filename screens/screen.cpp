@@ -5,12 +5,14 @@ const string screen::GAME_SCREEN="game screen";
 const string screen::MAP_EDITOR="map editor";
 const string screen::SETTINGS_SCREEN="settings screen";
 
-const string screen::HOW_TO_PLAY_SCREEN="how to play screen";
 const string screen::CONFIRM_EXIT="confirm exit";
 const string screen::BUILD_CHOOSER_SCREEN="build chooser screen";
 const string screen::NEW_TURN_SCREEN="new turn screen";
 const string screen::SAVE_MAP="save map";
 const string screen::VICTORY_MESSAGE="victory message";
+
+const string screen::HOW_TO_PLAY_SCREEN="how to play screen";
+const string screen::HELPII="helpII";
 
 const string screen::STAY="stay";
 const string screen::EXIT="exit";

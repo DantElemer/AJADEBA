@@ -28,11 +28,13 @@ class screen
         static const string SETTINGS_SCREEN;
         //subScreens
         static const string CONFIRM_EXIT;
-        static const string HOW_TO_PLAY_SCREEN;
         static const string BUILD_CHOOSER_SCREEN;
         static const string NEW_TURN_SCREEN;
         static const string SAVE_MAP;
         static const string VICTORY_MESSAGE;
+
+        static const string HOW_TO_PLAY_SCREEN;
+        static const string HELPII;
         //changing
         static const string TERMINATED;
         static const string STAY;

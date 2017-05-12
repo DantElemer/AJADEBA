@@ -20,6 +20,7 @@ class player
         bool dead=false;
         double timeLeft;
         int strongholdNumber=0;
+        bool boosted=false;
     private:
 
 };

@@ -30,7 +30,7 @@ void stronghold::gotOwner(player* bowner)
     hasOwner=true;
     pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
     pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());
-    /*territory.addNewPic("pics/game objects/Territory"+numToString(RADIUS)+".kep",origo);
+    /*territory.addNewPic("pics/game objects/nations/"+owner->nation+"Territory"+numToString(RADIUS)+".kep",origo);
     territory.setScaleX((double)(field::WIDTH*7)/(double)territory.NORMAL_WIDTH);
     territory.setScaleY((double)(field::WIDTH*7)/(double)territory.NORMAL_HEIGHT);*/
 }

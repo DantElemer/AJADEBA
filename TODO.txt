@@ -1,6 +1,8 @@
 help
+victory
 colors
-ponyeffect
+clear maps
+descriptions
 
 visualization:
 pictures

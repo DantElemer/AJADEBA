@@ -11,8 +11,10 @@ class settingsScreen : public screen
     public:
         settingsScreen();
         void draw();
-    protected:
+        void onTick();
     private:
+        string loadedDesc;
+        void loadNewDesc();
 };
 
 #endif // SETTINGSSCREEN_H

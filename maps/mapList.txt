@@ -1,8 +1,2 @@
-laci
 separated
-map name
-map name
-map name
-map name
-varatlan
 win test

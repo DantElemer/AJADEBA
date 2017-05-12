@@ -255,7 +255,7 @@ void mapEditor::save(string mapName) //no overwrite test
     ofstream mapList("maps/mapList.txt",ofstream::app);
     mapList<<mapName<<endl;
     mapList.close();
-    if (generateDescFile)
+    //if (generateDescFile)
     {
         ofstream descFile("maps/descriptions/"+mapName+".txt");
         descFile.close();

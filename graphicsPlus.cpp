@@ -114,7 +114,7 @@ void printText(string texty, int fontSize)
     gout<<color(255,255,255)<<text(texty);
 }
 
-void lWriteText(coor startPoint, string texty, int lineLength, int fontSize)
+int lWriteText(coor startPoint, string texty, int lineLength, int fontSize)
 {
     int lineCounter=0;
     int lineStart=0;
@@ -135,7 +135,9 @@ void lWriteText(coor startPoint, string texty, int lineLength, int fontSize)
         lineEnd=texty.length()-1;
         writeText(startPoint+makeCoor(0,lineCounter*countTextHeight(line,fontSize)),line,fontSize);
         lineCounter++;
+
     }
+    return lineCounter;
 }
 
 void writeText(coor startPoint, string texty, int fontSize)
