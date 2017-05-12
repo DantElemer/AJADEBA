@@ -69,6 +69,8 @@ void screenHandler::addSub(string newSubName)
         currScr=new newTurnScreen((gameScreen*)screensAlive[screensAlive.size()-1]);
     else if (screen::newSub==screen::SAVE_MAP)
         currScr=new saveMap((mapEditor*)screensAlive[screensAlive.size()-1]);
+    else if (screen::newSub==screen::VICTORY_MESSAGE)
+        currScr=new victoryMessage((gameScreen*)screensAlive[screensAlive.size()-1]);
     /*else if (screen::newSub==screen::AT_START)
         currScr=new atStart();
     else if (screen::newSub==screen::ALPHA_DONE)

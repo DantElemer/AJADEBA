@@ -21,7 +21,11 @@ saveMap::saveMap(mapEditor* myEditor)
 void saveMap::draw()
 {
     darkening();
-    clearScreen(WINDOW_ORIGO-makeCoor(130,170),WINDOW_ORIGO+makeCoor(130,170));
+    coor uLC=WINDOW_ORIGO-makeCoor(130,170);
+    coor dRC=WINDOW_ORIGO+makeCoor(130,170);
+    clearScreen(uLC,dRC);
+    addFrame(uLC,dRC);
+
     screen::draw();
     //addTitle("Saving...");
 }

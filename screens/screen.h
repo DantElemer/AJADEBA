@@ -36,6 +36,7 @@ class screen
         static const string BUILD_CHOOSER_SCREEN;
         static const string NEW_TURN_SCREEN;
         static const string SAVE_MAP;
+        static const string VICTORY_MESSAGE;
         //changing
         static const string TERMINATED;
         static const string STAY;

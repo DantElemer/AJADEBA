@@ -86,11 +86,11 @@ struct fieldData
         {
             p.draw();
         }
-        if (!(coordinate>=myEditor->uLC && coordinate<=myEditor->dRC)) //if not in selected area
+       /* if (!(coordinate>=myEditor->uLC && coordinate<=myEditor->dRC)) //if not in selected area
         {
             drawLine(origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,100,100,100);
             drawLine(origo-makeCoor(-mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(-mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,100,100,100);
-        }
+        }*/
         //szebb, de lassú:
         //darkening(2,origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2);
     }
@@ -141,8 +141,17 @@ void mapEditor::symmetrieOrdered()
         for (int x=xStart;x<xEnd;x++)
         {
             currOwner=fields[y][x]->player;
+            if (currOwner==1)
+                currOwner=0;
+            else if (currOwner==0)
+                currOwner=1;
             for (part p:fields[y][x]->parts)
-                fields[y][xAxis*2-x-1]->addPart(p.name,currOwner);
+                if (p.name==fieldObject::EAST_ROAD)
+                    fields[y][xAxis*2-x-1]->addPart(fieldObject::WEST_ROAD,currOwner);
+                else if (p.name==fieldObject::WEST_ROAD)
+                    fields[y][xAxis*2-x-1]->addPart(fieldObject::EAST_ROAD,currOwner);
+                else
+                    fields[y][xAxis*2-x-1]->addPart(p.name,currOwner);
         }
     }
 }

@@ -26,6 +26,8 @@ struct gameScreen : screen
         void mayEnd();
         void mayBuild();
         void generateMap();
+        void addTerritoryOwnership(field* stronghold, player* owner);
+        void removeTerritoryOwnership(field* stronghold, player* owner);
 
         static void switchToGameOverScreen();
         static void switchToVictoryScreen();

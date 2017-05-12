@@ -12,9 +12,8 @@ victoryScreen::victoryScreen()
 void victoryScreen::draw()
 {
     clearScreen();
-    addTitle("Successful test!");
+    addTitle("Victory!");
     mWriteText(makeCoor(WINDOW_X/2,WINDOW_Y-30),"(Press any key to start next level.)",20);
-    //mWriteText(makeCoor(WINDOW_X/2,WINDOW_Y/2-100),"Level: "+numToString(skillfulness),30);
 }
 
 void victoryScreen::onTick()

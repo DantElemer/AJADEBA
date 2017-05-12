@@ -35,7 +35,7 @@ void gameScreen::generateMap()
     mapFile+=".txt";
     ifstream mapF(mapFile);
     mapF>>wid>>hei;
-    mapOffset=makeCoor(WINDOW_X-wid*field::WIDTH,WINDOW_Y-hei*field::WIDTH)/2;
+    mapOffset=makeCoor(WINDOW_X-(wid-1)*field::WIDTH,WINDOW_Y-(hei-1)*field::WIDTH)/2;
     for (int i=0;i<wid;i++)
     {
         vector<field*> newRow;
@@ -56,14 +56,23 @@ void gameScreen::generateMap()
                 getline(mapF,newPart,';');
                 newField->addPart(newPart);
                 if (newPart==fieldObject::STRONGHOLD)
-                    if (owner>-1)
+                    if (owner>-1) //TODO addOwnership to ALL in radius, then remove it
+                    {
                         strongs.push_back(strong(makeCoor(i,j),owner));
+                        newField->addOwner(players[owner]); //so it won't be killed if in range of an other
+                    }
             }
         }
         fields.push_back(newRow);
     }
     for (strong s:strongs)
+        addTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]);
+    for (strong s:strongs)
+    {
+        removeTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]); //because it already owned itself, now it would be double ownership
         fields[s.coordinate.X][s.coordinate.Y]->activateStronghold(players[s.player]);
+    }
+
 
     /*drawFields();
     gout<<refresh;
@@ -112,17 +121,28 @@ void gameScreen::initPressedButtons() const
 
 }
 
+void gameScreen::removeTerritoryOwnership(field* stronghold, player* owner)
+{
+    coor coordinate=stronghold->coordinate;
+    for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
+        for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
+            if (inFields(makeCoor(i,j)))
+                if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
+                    fields[i][j]->removeOwner(owner);
+}
+
 void gameScreen::destroyStronghold(field* stronghold)
 {
     player* sadOne=stronghold->objectOwner();
     sadOne->changeStrongholdNumber(-1);
+    removeTerritoryOwnership(stronghold,sadOne);
     coor coordinate=stronghold->coordinate;
     for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
         for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
             if (inFields(makeCoor(i,j)))
                 if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
                 {
-                    fields[i][j]->removeOwner(sadOne);
+                    //fields[i][j]->removeOwner(sadOne);
                     if (fields[i][j]->getType()==field::BARRACK)
                         if (!fields[i][j]->isOwner(sadOne))
                             fields[i][j]->destroyObject();
@@ -258,15 +278,26 @@ void gameScreen::nextPlayer()
     //cout<<"==========================================================\n"<<currentPlayer->name<<"\n";
 }
 
+void gameScreen::addTerritoryOwnership(field* stronghold, player* owner)
+{
+    coor coordinate=stronghold->coordinate;
+    for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
+        for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
+            if (inFields(makeCoor(i,j)))
+                if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
+                    fields[i][j]->addOwner(owner);
+}
+
 void gameScreen::newStronghold(coor coordinate, player* owner)
 {
     owner->changeStrongholdNumber(1);
+    addTerritoryOwnership(fields[coordinate.X][coordinate.Y],owner);
     for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
         for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
             if (inFields(makeCoor(i,j)))
                 if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
                 {
-                    fields[i][j]->addOwner(owner);
+                    //fields[i][j]->addOwner(owner);
                     //kill undefended ones
                     if (fields[i][j]->owners.size()==1) //it's undefended
                     {
@@ -276,6 +307,7 @@ void gameScreen::newStronghold(coor coordinate, player* owner)
                         if (fields[i][j]->getType()==field::STRONGHOLD)
                             if (fields[i][j]->objectOwner()==NULL) //its a str base, so basically must be killed, however in some really few cases more str base can be activated in each othrs range
                             {
+                                cout<<"megpusztulsz";
                                 bool beingActivated=false;
                                 for (player* p:players)
                                     if (strongholdStrength(fields[i][j],p)>0)
@@ -355,7 +387,9 @@ void gameScreen::killDeadPlayers()
 void gameScreen::mayEnd()
 {
     if (players.size()==1)
-        switchToVictoryScreen();
+        //switchToVictoryScreen();
+        newSub=screen::VICTORY_MESSAGE;
+    currentPlayer=players[0];
 }
 
 void gameScreen::mayBuild()
@@ -641,7 +675,7 @@ bool gameScreen::isConnected(field from, field to)
         for (int i=to.coordinate.X-3;i<=to.coordinate.X+3;i++)
             for (int j=to.coordinate.Y-3;j<=to.coordinate.Y+3;j++)
                 if (inFields(makeCoor(i,j)))
-                    if (abs(i-to.coordinate.X)+abs(j-to.coordinate.Y)==3) //border field
+                    if (abs(i-to.coordinate.X)+abs(j-to.coordinate.Y)<=3) //border field
                         if (helperF(from,*fields[i][j], fields, false, *this))
                             return true;
     return false;

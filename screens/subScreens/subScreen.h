@@ -12,6 +12,7 @@ class subScreen : public screen
         static const string CANCEL;
     protected:
         static void terminateSub();
+        void addFrame(coor uLC, coor dRC);
     private:
 };
 

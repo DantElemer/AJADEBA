@@ -1,7 +1,6 @@
-mapEditor: szimmetria, megjelenítés, kijelölni tartományt, filenév
 help
-victory
-map-choosing
+colors
+ponyeffect
 
 visualization:
 pictures

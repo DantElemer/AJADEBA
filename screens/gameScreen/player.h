@@ -19,8 +19,9 @@ class player
         static const int MAX_STEPS=4;
         bool dead=false;
         double timeLeft;
-    private:
         int strongholdNumber=0;
+    private:
+
 };
 
 #endif // PLAYER_H
