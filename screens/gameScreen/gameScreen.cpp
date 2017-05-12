@@ -70,7 +70,7 @@ void gameScreen::generateMap()
         addTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]);
     for (strong s:strongs)
     {
-        removeTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]); //because it already owned itself, now it would be double ownership
+        //removeTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]); //because it already owned itself, now it would be double ownership
         fields[s.coordinate.X][s.coordinate.Y]->activateStronghold(players[s.player]);
     }
 }
@@ -159,8 +159,16 @@ void gameScreen::fieldClicked(field* f)
         cout<<"Can't build to enemy territory."<<f->owners[0]->name;
 }
 
+struct strong2
+{
+    coor coordinate;
+    player* p;
+    strong2(coor c, player*  p) : coordinate(c), p(p){}
+};
+
 void gameScreen::strongholdBaseConquerCheck()
 {
+    vector<strong2> nowActivatedStrongs;
     for (vector<field*> fRow:fields) //stronghold base check
         for (field* f:fRow)
             if (f->getType()==field::STRONGHOLD)
@@ -185,21 +193,37 @@ void gameScreen::strongholdBaseConquerCheck()
                     if (indexes[0]>-1) //someone gets it
                     {
                         if (indexes.size()==1) //1 player sent more soldiers than all the others
+                        {
+                            //newStronghold(f->coordinate,players[indexes[0]]);
+                            addTerritoryOwnership(f,players[indexes[0]]);
                             f->activateStronghold(players[indexes[0]]);
+                            nowActivatedStrongs.push_back(strong2(f->coordinate,players[indexes[0]]));
+                        }
                         else
                         {
                             bool oneMaxIsBuilder=false;
                             for (int i=0;i<indexes.size();i++)
                                 if (players[indexes[i]]==f->strongholdBuilder()) //builder gets it
                                 {
+                                    //newStronghold(f->coordinate,players[indexes[i]]);
+                                    addTerritoryOwnership(f,players[indexes[i]]);
                                     f->activateStronghold(players[indexes[i]]);
+                                    nowActivatedStrongs.push_back(strong2(f->coordinate,players[indexes[i]]));
+
                                     oneMaxIsBuilder=true;
                                 }
                             if (!oneMaxIsBuilder) //if equality and none of them is builder, the one who connected it
+                            {
+                                //newStronghold(f->coordinate,currentPlayer);
+                                addTerritoryOwnership(f,currentPlayer);
                                 f->activateStronghold(currentPlayer);
+                                nowActivatedStrongs.push_back(strong2(f->coordinate,currentPlayer));
+                            }
                         }
                     }
                 }
+    for (strong2 s:nowActivatedStrongs)
+        newStronghold(s.coordinate,s.p);
 }
 
 void gameScreen::build()
@@ -249,7 +273,7 @@ void gameScreen::addTerritoryOwnership(field* stronghold, player* owner)
 void gameScreen::newStronghold(coor coordinate, player* owner)
 {
     owner->changeStrongholdNumber(1);
-    addTerritoryOwnership(fields[coordinate.X][coordinate.Y],owner);
+    //addTerritoryOwnership(fields[coordinate.X][coordinate.Y],owner);
     for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
         for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
             if (inFields(makeCoor(i,j)))
@@ -265,7 +289,6 @@ void gameScreen::newStronghold(coor coordinate, player* owner)
                         if (fields[i][j]->getType()==field::STRONGHOLD)
                             if (fields[i][j]->objectOwner()==NULL) //its a str base, so basically must be killed, however in some really few cases more str base can be activated in each othrs range
                             {
-                                cout<<"megpusztulsz";
                                 bool beingActivated=false;
                                 for (player* p:players)
                                     if (strongholdStrength(fields[i][j],p)>0)

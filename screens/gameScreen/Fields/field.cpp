@@ -109,7 +109,7 @@ void field::activateStronghold(player* owner)
         if (fO->getType()==fieldObject::STRONGHOLD)
         {
             ((stronghold*)fO)->gotOwner(owner);
-            myGameScreen->newStronghold(coordinate,owner);
+            //myGameScreen->newStronghold(coordinate,owner);
         }
 }
 

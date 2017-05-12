@@ -20,7 +20,7 @@ class mapEditor : public screen
         void onTick();
         void symmetrieOrdered();
 
-        static const int FIELD_WIDTH=20; //=field height as well
+        static const int FIELD_WIDTH=19; //=field height as well
         static const coor MAP_OFFSET;
         int currOwner=-1;
         string currPart="village";

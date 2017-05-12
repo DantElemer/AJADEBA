@@ -86,11 +86,11 @@ struct fieldData
         {
             p.draw();
         }
-       /* if (!(coordinate>=myEditor->uLC && coordinate<=myEditor->dRC)) //if not in selected area
+        if (!(coordinate>=myEditor->uLC && coordinate<=myEditor->dRC)) //if not in selected area
         {
             drawLine(origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,100,100,100);
             drawLine(origo-makeCoor(-mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(-mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,100,100,100);
-        }*/
+        }
         //szebb, de lassú:
         //darkening(2,origo-makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2,origo+makeCoor(mapEditor::FIELD_WIDTH,mapEditor::FIELD_WIDTH)/2);
     }
