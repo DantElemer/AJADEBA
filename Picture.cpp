@@ -68,7 +68,7 @@ void Picture::remakeCanvas()
     {
         for(int j=0;j<NORMAL_WIDTH;j++)
         {
-            aimPoint=makeCoor(egyRohadtRendesKerekites(scaleX*j),egyRohadtRendesKerekites(scaleY*i));
+            aimPoint=makeCoor(egyRohadtRendesKerekites(scaleX*(j+1)),egyRohadtRendesKerekites(scaleY*(i+1)));
             myPic<<move_to(lastPoint.X,lastPoint.Y)<<color(pixelData[i][j].r,pixelData[i][j].g,pixelData[i][j].b)<<box(aimPoint.X-lastPoint.X,aimPoint.Y-lastPoint.Y);
             lastPoint.X=aimPoint.X;
         }

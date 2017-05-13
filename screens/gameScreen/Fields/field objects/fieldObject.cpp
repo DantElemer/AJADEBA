@@ -20,6 +20,7 @@ fieldObject::fieldObject(coor origo, string picFileName)
 {
     pic.setScaleX((double)field::WIDTH/(double)pic.NORMAL_WIDTH);
     pic.setScaleY((double)field::WIDTH/(double)pic.NORMAL_HEIGHT);
+    //pic.origo=pic.origo+1;
 }
 
 fieldObject::~fieldObject()

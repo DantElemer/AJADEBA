@@ -28,15 +28,15 @@ class Picture
 
         int NORMAL_WIDTH;
         int NORMAL_HEIGHT;
+        coor origo;
 
     protected:
         string picFileName;
         canvas myPic;
-        int width;
-        int height;
-        double scaleX=1;
-        double scaleY=1;
-        coor origo;
+        double width;
+        double height;
+        double scaleX=1.0;
+        double scaleY=1.0;
         vector<vector<pixel>> pixelData;
 
         void getData();

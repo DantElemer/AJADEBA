@@ -36,6 +36,7 @@ class screen
         static const string HOW_TO_PLAY_SCREEN;
         static const string HELPII;
         static const string HELPIII;
+        static const string HELPIV;
         //changing
         static const string TERMINATED;
         static const string STAY;

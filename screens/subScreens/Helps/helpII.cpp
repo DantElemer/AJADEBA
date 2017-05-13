@@ -18,8 +18,8 @@ void helpII::draw()
     addParagraph("Villages: they are on the map from start to end, can't be destroyed. "
                  " They provide people for your barracks, and for your opponent's barracks, as they never "
                  "belong to one specific player. Marker: circle. ");
-    addParagraph("Strongholds: you get at least one at start, and you can get more by conquering "
-                 "stronghold bases. Marker: square with the owner player's flag. ");
+    addParagraph("Strongholds: you get at least one at start, and you can get more by conquering stronghold "
+                 "bases. They have territory. Marker: square with the owner player's flag. ");
     addParagraph("Mountains: they don't do anything just sit and you can't build there. "
                  "Marker: full square. ");
 }

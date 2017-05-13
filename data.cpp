@@ -18,6 +18,6 @@ int loadedFontSize=0;
 int thinkingTime=60;
 string player1Nation="Ancient 1";
 string player2Nation="Ancient 2";
-string chosenMap="separated";
+string chosenMap="Szimker";
 
 

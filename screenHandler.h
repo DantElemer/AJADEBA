@@ -11,6 +11,7 @@
 #include "screens\subScreens\Helps\howToPlayScreen.h"
 #include "screens\subScreens\Helps\helpII.h"
 #include "screens\subScreens\Helps\helpIII.h"
+#include "screens\subScreens\Helps\helpIV.h"
 #include "screens\subScreens\buildChooserScreen.h"
 #include "screens\subScreens\newTurnScreen.h"
 #include "screens\subScreens\saveMap.h"

@@ -3,11 +3,8 @@
 
 #include "subScreen.h"
 #include "../gameScreen/Fields/field.h"
-/*#include "../gameScreen/Fields/field objects/barrack.h"
-#include "../gameScreen/Fields/field objects/road.h"
-#include "../gameScreen/Fields/field objects/village.h"
-#include "../gameScreen/Fields/field objects/stronghold.h"*/
 #include "../gameScreen/Fields/field objects/fieldObject.h"
+#include "../../graphicsPlus.h"
 
 class gameScreen;
 

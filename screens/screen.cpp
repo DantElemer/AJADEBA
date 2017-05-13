@@ -14,6 +14,7 @@ const string screen::VICTORY_MESSAGE="victory message";
 const string screen::HOW_TO_PLAY_SCREEN="how to play screen";
 const string screen::HELPII="helpII";
 const string screen::HELPIII="helpIII";
+const string screen::HELPIV="helpIV";
 
 const string screen::STAY="stay";
 const string screen::EXIT="exit";
