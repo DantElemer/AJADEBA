@@ -12,6 +12,10 @@ void helpIV::draw()
     helpBase::draw();
     addTitle("How to play IV");
     addParagraph("Finally conquering and assaults: ");
-    addParagraph("Conquering a stronghold base: basically if a barrack -whose strength is not zero- gets "
-                 "connected to a base, the base becomes the barrack's owner's stronghold. ");
+    addParagraph("Conquering a stronghold base: basically if you connect your barrack -whose strength isn't zero-"
+                 "to it, you get it as a stronghold. However, there are some more complicated cases...if it's get"
+                 "connected to different players at once");
+
+    addParagraph("Starting an assault: basically if you connect your barrack -whose strength isn't zero-"
+                 "to it, you get it as a stronghold. However, there are some more complicated cases...");
 }

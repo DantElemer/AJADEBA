@@ -39,7 +39,7 @@
 	"coor.h"
 	"graphics.hpp"
 
-1493109976 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
+1494694394 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
 	"screenHandler.h"
 
 1494689616 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
@@ -373,7 +373,7 @@
 	"../gameScreen/Fields/field objects/fieldObject.h"
 	"../../graphicsPlus.h"
 
-1494692475 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
+1494693159 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
 	"buildChooserScreen.h"
 	"../gameScreen/gameScreen.h"
 
@@ -382,7 +382,7 @@
 	"../../data.h"
 	<fstream>
 
-1494659328 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
+1494694394 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
 	"settingsScreen.h"
 
 1494325537 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\newturnscreen.h
@@ -450,6 +450,6 @@
 1494689616 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.h
 	"helpBase.h"
 
-1494690355 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.cpp
+1494694394 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.cpp
 	"helpIV.h"
 
