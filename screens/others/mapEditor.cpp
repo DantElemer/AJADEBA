@@ -258,6 +258,7 @@ void mapEditor::save(string mapName) //no overwrite test
     //if (generateDescFile)
     {
         ofstream descFile("maps/descriptions/"+mapName+".txt");
+        descFile<<mapName+"'s description comes here.";
         descFile.close();
     }
 }

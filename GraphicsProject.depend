@@ -158,7 +158,7 @@
 1494603710 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494619308 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494653085 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	"../../screenHandler.h"
@@ -405,7 +405,7 @@
 	<fstream>
 	<algorithm>
 
-1494622069 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
+1494622099 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
 	"mapEditor.h"
 
 1494447157 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.h
@@ -431,6 +431,6 @@
 1494604090 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpii.cpp
 	"helpII.h"
 
-1494621610 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\howtoplayscreen.cpp
+1494622577 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\howtoplayscreen.cpp
 	"howToPlayScreen.h"
 

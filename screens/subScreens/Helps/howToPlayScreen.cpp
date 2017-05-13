@@ -19,7 +19,7 @@ void howToPlayScreen::draw()
     int bekezdDist=30;
     int lines;
     lines=lWriteText(startPoint,"It's a turn-based game, where two medieval kingdoms (the two player) try to "
-                     "overpower each other. As it was on boring lessons, it's played on a sqare grid?????. Your final aim "
+                     "overpower each other. As it was invented on boring lessons, it's played on a sqare grid. Your final aim "
                      "is to destroy all the stongholds of your opponent. To achieve that in each turn you "
                      "can either build or start an assault. Let's see what objects can you build! ",WINDOW_X-2*startPoint.X,fSize);
     height+=lines*countTextHeight("I",fSize)+bekezdDist;

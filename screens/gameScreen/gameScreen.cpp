@@ -57,11 +57,8 @@ void gameScreen::generateMap()
                 getline(mapF,newPart,';');
                 newField->addPart(newPart);
                 if (newPart==fieldObject::STRONGHOLD)
-                    if (owner>-1) //TODO addOwnership to ALL in radius, then remove it
-                    {
+                    if (owner>-1)
                         strongs.push_back(strong(makeCoor(i,j),owner));
-                        newField->addOwner(players[owner]); //so it won't be killed if in range of an other
-                    }
             }
         }
         fields.push_back(newRow);
@@ -69,10 +66,9 @@ void gameScreen::generateMap()
     for (strong s:strongs)
         addTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]);
     for (strong s:strongs)
-    {
-        //removeTerritoryOwnership(fields[s.coordinate.X][s.coordinate.Y],players[s.player]); //because it already owned itself, now it would be double ownership
         fields[s.coordinate.X][s.coordinate.Y]->activateStronghold(players[s.player]);
-    }
+    for (strong s:strongs)
+        newStronghold(s.coordinate,players[s.player]);
 }
 
 void gameScreen::initPressedButtons() const
@@ -169,17 +165,17 @@ struct strong2
 void gameScreen::strongholdBaseConquerCheck()
 {
     vector<strong2> nowActivatedStrongs;
-    for (vector<field*> fRow:fields) //stronghold base check
+    for (vector<field*> fRow:fields)
         for (field* f:fRow)
             if (f->getType()==field::STRONGHOLD)
-                if (f->objectOwner()==NULL)
+                if (f->objectOwner()==NULL) //so this field is a stronghold base, now check if someone gets it
                 {
                     vector<int> strengths;
                     for (player* p:players)
                         strengths.push_back(strongholdStrength(f,p));
                     int maxStr=0;
                     vector<int> indexes={-1};
-                    for (int i=0;i<players.size();i++)
+                    for (int i=0;i<players.size();i++) //find maxes
                     {
                         if (strengths[i]==maxStr)
                             indexes.push_back(i);
@@ -194,36 +190,34 @@ void gameScreen::strongholdBaseConquerCheck()
                     {
                         if (indexes.size()==1) //1 player sent more soldiers than all the others
                         {
-                            //newStronghold(f->coordinate,players[indexes[0]]);
                             addTerritoryOwnership(f,players[indexes[0]]);
-                            f->activateStronghold(players[indexes[0]]);
                             nowActivatedStrongs.push_back(strong2(f->coordinate,players[indexes[0]]));
                         }
-                        else
+                        else //in case more players sent more than all the others
                         {
                             bool oneMaxIsBuilder=false;
                             for (int i=0;i<indexes.size();i++)
                                 if (players[indexes[i]]==f->strongholdBuilder()) //builder gets it
                                 {
-                                    //newStronghold(f->coordinate,players[indexes[i]]);
                                     addTerritoryOwnership(f,players[indexes[i]]);
-                                    f->activateStronghold(players[indexes[i]]);
                                     nowActivatedStrongs.push_back(strong2(f->coordinate,players[indexes[i]]));
 
                                     oneMaxIsBuilder=true;
                                 }
                             if (!oneMaxIsBuilder) //if equality and none of them is builder, the one who connected it
                             {
-                                //newStronghold(f->coordinate,currentPlayer);
                                 addTerritoryOwnership(f,currentPlayer);
-                                f->activateStronghold(currentPlayer);
                                 nowActivatedStrongs.push_back(strong2(f->coordinate,currentPlayer));
                             }
                         }
                     }
                 }
     for (strong2 s:nowActivatedStrongs)
+        fields[s.coordinate.X][s.coordinate.Y]->activateStronghold(s.p);
+    for (strong2 s:nowActivatedStrongs)
         newStronghold(s.coordinate,s.p);
+    if (nowActivatedStrongs.size()>0)
+        strongholdBaseConquerCheck(); //as there can be strongholds which are connected using the new ones
 }
 
 void gameScreen::build()
@@ -273,30 +267,18 @@ void gameScreen::addTerritoryOwnership(field* stronghold, player* owner)
 void gameScreen::newStronghold(coor coordinate, player* owner)
 {
     owner->changeStrongholdNumber(1);
-    //addTerritoryOwnership(fields[coordinate.X][coordinate.Y],owner);
     for (int i=coordinate.X-3;i<=coordinate.X+3;i++)
         for (int j=coordinate.Y-3;j<=coordinate.Y+3;j++)
             if (inFields(makeCoor(i,j)))
                 if (abs(coordinate.X-i)+abs(coordinate.Y-j)<=stronghold::RADIUS)
                 {
-                    //fields[i][j]->addOwner(owner);
-                    //kill undefended ones
-                    if (fields[i][j]->owners.size()==1) //it's undefended
-                    {
+                    if (fields[i][j]->owners.size()==1) //it's undefended, so must be killed
                         if (fields[i][j]->getType()==field::BARRACK)
                             if (fields[i][j]->objectOwner()!=owner)
                                 fields[i][j]->destroyObject();
-                        if (fields[i][j]->getType()==field::STRONGHOLD)
-                            if (fields[i][j]->objectOwner()==NULL) //its a str base, so basically must be killed, however in some really few cases more str base can be activated in each othrs range
-                            {
-                                bool beingActivated=false;
-                                for (player* p:players)
-                                    if (strongholdStrength(fields[i][j],p)>0)
-                                        beingActivated=true;
-                                if (!beingActivated)
-                                    fields[i][j]->destroyObject();
-                            }
-                    }
+                    if (fields[i][j]->getType()==field::STRONGHOLD)
+                        if (fields[i][j]->objectOwner()==NULL) //its a str base, so must be killed
+                                fields[i][j]->destroyObject();
                 }
 
 }
