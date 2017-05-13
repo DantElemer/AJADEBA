@@ -21,4 +21,5 @@ void helpIII::draw()
     addParagraph("Barrack-strength: a barrack's strength is the number of villages, connected to the barrack");
     addParagraph("Stronghold-strength: a stronghold's strength is the sum of barrack-strengths of barracks"
                  " connected to the stronghold. ");
+    addParagraph("Undefended barrack: a barrack is undefended if it isn't in friendly territory. ");
 }

@@ -1,6 +1,3 @@
-separated
-win test
-marcellnek
 Bagettmezo
 Lacihely
 Kiskunfarkas
@@ -8,3 +5,4 @@ Kisdomod
 Nagydomod
 Szentlaszlokut
 Szimker
+Nagyszalonta

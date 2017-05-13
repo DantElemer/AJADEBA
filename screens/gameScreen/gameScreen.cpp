@@ -235,7 +235,6 @@ void gameScreen::build()
 
 void gameScreen::nextPlayer()
 {
-    cout<<currentPlayer->name;
     bool newTurn=true;
     for (int i=players.size()-2;i>=0;i--)
         if (players[i]==currentPlayer)
@@ -251,7 +250,6 @@ void gameScreen::nextPlayer()
     currentPlayer->timeLeft=thinkingTime;
     if (players.size()>1)
         newSub=NEW_TURN_SCREEN;
-    cout<<currentPlayer->name;
 }
 
 void gameScreen::addTerritoryOwnership(field* stronghold, player* owner)
@@ -323,7 +321,12 @@ void gameScreen::drawFields()
 {
     for (vector<field*> fRow:fields)
         for (field* f:fRow)
-            f->draw();
+            if (f->getType()!=field::STRONGHOLD)
+                f->draw();
+    for (vector<field*> fRow:fields)
+        for (field* f:fRow)
+            if (f->getType()==field::STRONGHOLD)
+                f->draw();
 }
 
 void gameScreen::maySwitchPlayer()

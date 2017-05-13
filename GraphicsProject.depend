@@ -161,7 +161,7 @@
 1494689616 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494660003 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494708015 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	"../../screenHandler.h"
@@ -355,7 +355,7 @@
 	"../../../../coor.h"
 	"../../../../graphicsPlus.h"
 
-1494691984 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
+1494708015 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
 	"stronghold.h"
 	"../../player.h"
 	"../field.h"
@@ -444,12 +444,12 @@
 1494687274 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiii.h
 	"helpBase.h"
 
-1494689616 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiii.cpp
+1494706279 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiii.cpp
 	"helpIII.h"
 
 1494689616 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.h
 	"helpBase.h"
 
-1494694394 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.cpp
+1494706279 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.cpp
 	"helpIV.h"
 

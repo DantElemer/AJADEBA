@@ -18,14 +18,14 @@ void stronghold::draw()
 {
     fieldObject::draw();
     if (assaultChosen)
-        drawRectangle(origo-makeCoor(field::WIDTH/2-1,field::WIDTH/2-1), origo+makeCoor(field::WIDTH/2-1,field::WIDTH/2-1),false,255,0,0);
+        for (int i=0;i<4;i++)
+            drawRectangle(origo-makeCoor(field::WIDTH/2-i,field::WIDTH/2-i), origo+makeCoor(field::WIDTH/2-i,field::WIDTH/2-i),false,255,0,0);
     if (hasOwner)
         territory.draw();
 }
 
 void stronghold::gotOwner(player* bowner)
 {
-    cout<<"hi";
     owner=bowner;
     pic.addNewPic("pics/game objects/nations/"+owner->nation+"/stronghold.kep", origo);
     hasOwner=true;

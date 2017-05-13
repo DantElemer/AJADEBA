@@ -1,0 +1,127 @@
+14 9
+-1 0
+-1 0
+-1 1village;
+0 1barrack;
+0 1stronghold;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+0 1barrack;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1east road;
+-1 1east road;
+-1 1south road;
+-1 1mountain;
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1south road;
+-1 1mountain;
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1south road;
+-1 1mountain;
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1west road;
+-1 1west road;
+-1 1south road;
+-1 1mountain;
+-1 0
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+1 1barrack;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 1village;
+1 1barrack;
+1 1stronghold;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
