@@ -53,11 +53,11 @@ class screen
         vector<widgetBase*> widgets;
     protected:
 
-        void mouseMoved(event mE);
-        void mouseUp(event mE);
-        void mouseDown(event mE);
-        void mouseWheelUp(event mE);
-        void mouseWheelDown(event mE);
+        virtual void mouseMoved(event mE);
+        virtual void mouseUp(event mE);
+        virtual void mouseDown(event mE);
+        virtual void mouseWheelUp(event mE);
+        virtual void mouseWheelDown(event mE);
         virtual void keyDown(event kE);
         virtual void keyUp(event kE);
 

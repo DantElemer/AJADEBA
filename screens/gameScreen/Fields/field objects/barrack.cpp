@@ -2,7 +2,7 @@
 #include "../../player.h"
 
 barrack::barrack(coor origo, player* owner)
-: fieldObject(origo,"pics/game objects/nations/"+owner->nation+"/Barrack.kep"), owner(owner)
+: fieldObject(origo,"pics/game objects/nations/"+owner->nation+"/barrack.kep"), owner(owner)
 {
     type=BARRACK;
 }

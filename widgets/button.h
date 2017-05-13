@@ -5,6 +5,7 @@
 #include "../randomFuncs.h"
 #include "../graphicsPlus.h"
 #include "widgetBase.h"
+#include "../Picture.h"
 
 typedef void (* vFunctionCall)();
 //Well, it's a button.
@@ -21,13 +22,13 @@ class button : public widgetBase
         void update();
         void addText(string text);
 
-        void addCanvas(string picName);
+        void addPicture(string picName, double scaleX=1, double scaleY=1);
 
     protected:
         vFunctionCall funcToStart;
         string myText;
-        canvas myPic;
-        bool hasCanvas=false;
+        Picture myPic;
+        bool hasPic=false;
         bool mouseAbove=false;
         bool mouseChosen=false;
         int borderDiff=4;

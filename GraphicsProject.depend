@@ -57,7 +57,7 @@
 	"screens\subScreens\victoryMessage.h"
 	"graphics.hpp"
 
-1494603710 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1494659328 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -74,16 +74,17 @@
 	"../data.h"
 	<vector>
 
-1494504958 c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.h
+1494683700 c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.h
 	"../coor.h"
 	"../graphicsPlus.h"
 	"graphics.hpp"
 
-1493116999 c:\users\ildikó\documents\github\ajadeba\widgets\button.h
+1494684539 c:\users\ildikó\documents\github\ajadeba\widgets\button.h
 	"../coor.h"
 	"../randomFuncs.h"
 	"../graphicsPlus.h"
 	"widgetBase.h"
+	"../Picture.h"
 
 1493109059 c:\users\ildikó\documents\github\ajadeba\widgets\indicator.h
 	"../graphicsPlus.h"
@@ -110,7 +111,7 @@
 	"mButton.h"
 	"textfield.h"
 
-1493115657 c:\users\ildikó\documents\github\ajadeba\widgets\textfield.h
+1494664064 c:\users\ildikó\documents\github\ajadeba\widgets\textfield.h
 	"widgetBase.h"
 	<string>
 
@@ -158,7 +159,7 @@
 1494603710 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
-1494653085 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
+1494660003 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
 	"gameScreen.h"
 	"../subScreens/subScreen.h"
 	"../../screenHandler.h"
@@ -237,7 +238,7 @@
 1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\animation.cpp
 	"animation.h"
 
-1494076439 source:c:\users\ildikó\documents\github\ajadeba\widgets\button.cpp
+1494684539 source:c:\users\ildikó\documents\github\ajadeba\widgets\button.cpp
 	"button.h"
 
 1494528645 source:c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.cpp
@@ -279,7 +280,7 @@
 1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\specindicator.cpp
 	"specIndicator.h"
 
-1494506341 source:c:\users\ildikó\documents\github\ajadeba\widgets\textfield.cpp
+1494664064 source:c:\users\ildikó\documents\github\ajadeba\widgets\textfield.cpp
 	"textfield.h"
 
 1494441398 source:c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.cpp
@@ -340,11 +341,11 @@
 	"fieldObject.h"
 	"../../../../graphicsPlus.h"
 
-1494079694 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\barrack.cpp
+1494666330 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\barrack.cpp
 	"barrack.h"
 	"../../player.h"
 
-1494079709 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\village.cpp
+1494666330 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\village.cpp
 	"village.h"
 
 1494244615 c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.h
@@ -352,7 +353,7 @@
 	"../../../../coor.h"
 	"../../../../graphicsPlus.h"
 
-1494596561 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
+1494666330 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\fields\field objects\stronghold.cpp
 	"stronghold.h"
 	"../../player.h"
 	"../field.h"
@@ -372,16 +373,16 @@
 	"../gameScreen/Fields/field objects/stronghold.h"
 	"../gameScreen/Fields/field objects/fieldObject.h"
 
-1494504958 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
+1494684737 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
 	"buildChooserScreen.h"
 	"../gameScreen/gameScreen.h"
 
-1494597498 c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.h
+1494659166 c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.h
 	"../screen.h"
 	"../../data.h"
 	<fstream>
 
-1494601314 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
+1494659328 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
 	"settingsScreen.h"
 
 1494325537 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\newturnscreen.h
@@ -405,7 +406,7 @@
 	<fstream>
 	<algorithm>
 
-1494622099 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
+1494656688 source:c:\users\ildikó\documents\github\ajadeba\screens\others\mapeditor.cpp
 	"mapEditor.h"
 
 1494447157 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\savemap.h

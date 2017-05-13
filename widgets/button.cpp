@@ -63,6 +63,9 @@ void button::draw()
 {
     setFont(fontSize);//for correctly counting text-startPoint
 
+    if (hasPic)
+        myPic.draw();
+
     if (mouseAbove)
     {
         //growEffect();
@@ -77,9 +80,7 @@ void button::draw()
     }
     drawRectangle(upperLeftCorner,downerRightCorner);
     //drawRectangle(upperLeftCorner+borderDiff,downerRightCorner-borderDiff);
-
-    if (hasCanvas)
-        gout<<stamp(myPic,upperLeftCorner.X,upperLeftCorner.Y);
+        //gout<<stamp(myPic,upperLeftCorner.X,upperLeftCorner.Y);
     if (myText.length()>0)
         mWriteText((upperLeftCorner+downerRightCorner)/2,myText,fontSize);
 }
@@ -113,8 +114,11 @@ void button::addText(string text)
     myText=text;
 }
 
-void button::addCanvas(string picName)
+void button::addPicture(string picName, double scaleX, double scaleY)
 {
-    hasCanvas=true;
-    generateCanvas(myPic,picName);
+    hasPic=true;
+    myPic.addNewPic(picName,origo);
+    myPic.setScaleX(scaleX);
+    myPic.setScaleY(scaleY);
 }
+

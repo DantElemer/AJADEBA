@@ -15,8 +15,15 @@ settingsScreen::settingsScreen()
     while (getline(mapList,newMap))
         mList.push_back(newMap);
     mapList.close();
-    widgets.push_back(new chooser(makeCoor(600,300), makeCoor(800,400),mList,chosenMap,100,"Map"));
+    widgets.push_back(new chooser(makeCoor(600,300), makeCoor(800,400),mList,chosenMap,200,"Map"));
     loadNewDesc();
+    draw();
+}
+
+void settingsScreen::mouseUp(event mE)
+{
+    screen::mouseUp(mE);
+    clearScreen();
     draw();
 }
 
@@ -34,14 +41,13 @@ void settingsScreen::loadNewDesc()
     ifstream desc(fileName);
     getline(desc,description);
     desc.close();
-    //description="It's a turn-based game, where two ------ kingdoms (the two player) try to overpower each other. As it was on boring lessons, it's played on -----. Your final aim is to destroy all the stongholds of your opponent. To reach???? that you can either build or start an assault in each turn.";
     lWriteText(makeCoor(600,400),description,200,12);
-    loadedDesc=chosenMap;
+    //loadedDesc=chosenMap;
 
     screen::draw();
 }
 
-void settingsScreen::onTick()
+/*void settingsScreen::onTick()
 {
     screen::onTick();
     if (chosenMap!=loadedDesc)
@@ -49,4 +55,4 @@ void settingsScreen::onTick()
         clearScreen();
         draw();
     }
-}
+}*/

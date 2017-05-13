@@ -11,9 +11,10 @@ class settingsScreen : public screen
     public:
         settingsScreen();
         void draw();
-        void onTick();
+        //void onTick();
+        void mouseUp(event mE);
     private:
-        string loadedDesc;
+        //string loadedDesc;
         void loadNewDesc();
 };
 

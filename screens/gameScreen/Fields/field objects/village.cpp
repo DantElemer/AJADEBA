@@ -1,7 +1,7 @@
 #include "village.h"
 
 village::village(coor origo)
-: fieldObject(origo,"pics/game objects/Village.kep")
+: fieldObject(origo,"pics/game objects/village.kep")
 {
     type=VILLAGE;
 }

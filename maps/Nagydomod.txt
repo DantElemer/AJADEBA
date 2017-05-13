@@ -1,0 +1,163 @@
+18 9
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 2west road;east road;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 2west road;north road;
+-1 2west road;east road;
+-1 2west road;south road;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 2west road;north road;
+-1 0
+0 1stronghold;
+-1 0
+-1 2west road;south road;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 2west road;east road;
+-1 0
+-1 0
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 2west road;east road;
+-1 0
+-1 0
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 1mountain;
+0 1barrack;
+-1 1mountain;
+-1 0
+-1 0
+-1 1mountain;
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 1village;
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1village;
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1village;
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 1village;
+-1 1mountain;
+-1 0
+-1 0
+-1 1mountain;
+1 1barrack;
+-1 1mountain;
+-1 0
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 2east road;west road;
+-1 0
+-1 0
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 2east road;west road;
+-1 0
+-1 0
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 2east road;north road;
+-1 0
+1 1stronghold;
+-1 0
+-1 2east road;south road;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 2east road;north road;
+-1 2east road;west road;
+-1 2east road;south road;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 2east road;west road;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1village;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;

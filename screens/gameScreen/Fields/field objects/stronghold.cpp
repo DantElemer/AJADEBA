@@ -3,7 +3,7 @@
 #include "../field.h"
 
 stronghold::stronghold(coor origo, player* builder)
-: fieldObject(origo,"pics/game objects/StrongholdBase.kep"), builder(builder)
+: fieldObject(origo,"pics/game objects/stronghold.kep"), builder(builder)
 //"pics/game objects/nations/"+owner->nation+"/Stronghold.kep
 {
     type=STRONGHOLD;
@@ -26,7 +26,7 @@ void stronghold::draw()
 void stronghold::gotOwner(player* bowner)
 {
     owner=bowner;
-    pic.addNewPic("pics/game objects/nations/"+owner->nation+"/Stronghold.kep", origo);
+    pic.addNewPic("pics/game objects/nations/"+owner->nation+"/stronghold.kep", origo);
     hasOwner=true;
     pic.setScaleX((double)field::WIDTH/(double)pic.getWidth());
     pic.setScaleY((double)field::WIDTH/(double)pic.getHeight());

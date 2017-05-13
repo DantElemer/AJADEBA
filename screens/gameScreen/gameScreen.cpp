@@ -400,6 +400,8 @@ void gameScreen::keyDown(event kE)
     screen::keyDown(kE);
     if (kE.keycode=='n')
         currentPlayer->steps=0;
+    if (kE.keycode=='g')
+        currentPlayer->dead=true;
 }
 
 void gameScreen::keyUp(event kE)

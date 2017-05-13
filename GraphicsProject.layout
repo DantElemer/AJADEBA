@@ -1,14 +1,228 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="widgets\animation.cpp" open="0" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\subScreens\Helps\helpII.cpp" open="1" top="0" tabpos="67" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="389" topLine="0" />
+			<Cursor1 position="343" topLine="0" />
 		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\barrack.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="335" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\mButton.h" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="732" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\Helps\helpII.h" open="1" top="0" tabpos="65" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="114" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\fieldObject.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1105" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="widgets\needleIndicator.cpp" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="306" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\Helps\howToPlayScreen.cpp" open="1" top="0" tabpos="68" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1932" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\fieldObject.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="353" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="widgets\needleIndicator.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="169" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\Helps\howToPlayScreen.h" open="1" top="0" tabpos="66" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="191" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\mountain.cpp" open="1" top="0" tabpos="46" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="132" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\reachedLED.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="293" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\buildChooserScreen.cpp" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="260" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\mountain.h" open="1" top="0" tabpos="45" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="154" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\reachedLED.h" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="163" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\buildChooserScreen.h" open="1" top="0" tabpos="43" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="593" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\road.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="316" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="widgets\sliderSetter.cpp" open="1" top="0" tabpos="39" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="746" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\confirmExitScreen.cpp" open="1" top="0" tabpos="58" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="708" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\road.h" open="1" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="204" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\sliderSetter.h" open="1" top="0" tabpos="38" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1066" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\confirmExitScreen.h" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\stronghold.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="663" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="widgets\specIndicator.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="215" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\newTurnScreen.cpp" open="1" top="0" tabpos="42" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="332" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\stronghold.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="565" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="widgets\specIndicator.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="124" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\newTurnScreen.h" open="1" top="0" tabpos="41" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="95" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\village.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="74" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\textfield.cpp" open="1" top="1" tabpos="55" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1313" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\saveMap.cpp" open="1" top="0" tabpos="54" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1341" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="21" />
+		</Folding>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\village.h" open="1" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="185" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\textfield.h" open="1" top="0" tabpos="57" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="393" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\saveMap.h" open="1" top="0" tabpos="53" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="236" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2789" topLine="97" />
+		</Cursor>
+	</File>
+	<File name="widgets\widgetBase.cpp" open="1" top="0" tabpos="50" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1344" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\subScreen.cpp" open="1" top="0" tabpos="56" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="214" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Picture.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="674" topLine="5" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="13" />
+			<Collapse line="25" />
+		</Folding>
 	</File>
 	<File name="widgets\widgetBase.h" open="1" top="0" tabpos="49" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="240" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\subScreen.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="403" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Picture.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="881" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="screens\subScreens\victoryMessage.cpp" open="1" top="0" tabpos="63" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="569" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="coor.cpp" open="1" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1322" topLine="69" />
 		</Cursor>
 	</File>
 	<File name="screens\gameScreen\Fields\field.h" open="1" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -16,9 +230,89 @@
 			<Cursor1 position="1147" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="graphicsPlus.h" open="1" top="0" tabpos="59" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\subScreens\victoryMessage.h" open="1" top="0" tabpos="62" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1700" topLine="16" />
+			<Cursor1 position="64" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\gameScreen.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12960" topLine="67" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
+			<Collapse line="20" />
+			<Collapse line="27" />
+			<Collapse line="40" />
+			<Collapse line="43" />
+			<Collapse line="54" />
+			<Collapse line="74" />
+			<Collapse line="79" />
+			<Collapse line="89" />
+			<Collapse line="98" />
+			<Collapse line="108" />
+			<Collapse line="111" />
+			<Collapse line="117" />
+			<Collapse line="124" />
+			<Collapse line="126" />
+			<Collapse line="134" />
+			<Collapse line="138" />
+			<Collapse line="142" />
+			<Collapse line="146" />
+			<Collapse line="150" />
+			<Collapse line="158" />
+			<Collapse line="165" />
+			<Collapse line="223" />
+			<Collapse line="226" />
+			<Collapse line="236" />
+			<Collapse line="241" />
+			<Collapse line="246" />
+			<Collapse line="257" />
+			<Collapse line="267" />
+			<Collapse line="299" />
+			<Collapse line="310" />
+			<Collapse line="322" />
+			<Collapse line="329" />
+			<Collapse line="331" />
+			<Collapse line="340" />
+			<Collapse line="343" />
+			<Collapse line="345" />
+			<Collapse line="355" />
+			<Collapse line="357" />
+			<Collapse line="364" />
+			<Collapse line="366" />
+			<Collapse line="373" />
+			<Collapse line="383" />
+			<Collapse line="407" />
+			<Collapse line="412" />
+			<Collapse line="474" />
+			<Collapse line="489" />
+			<Collapse line="491" />
+			<Collapse line="498" />
+			<Collapse line="505" />
+			<Collapse line="512" />
+			<Collapse line="520" />
+			<Collapse line="534" />
+			<Collapse line="543" />
+			<Collapse line="576" />
+			<Collapse line="586" />
+			<Collapse line="589" />
+			<Collapse line="607" />
+		</Folding>
+	</File>
+	<File name="widgets\animation.cpp" open="0" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="389" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\gameScreen.h" open="1" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="917" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="coor.h" open="1" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="882" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="widgets\animation.h" open="0" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -26,18 +320,14 @@
 			<Cursor1 position="111" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\gameScreen\gameScreen.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\gameScreen\player.cpp" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11422" topLine="0" />
+			<Cursor1 position="67" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="9" />
-			<Collapse line="20" />
-		</Folding>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="data.cpp" open="1" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="205" topLine="0" />
+			<Cursor1 position="360" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="widgets\button.cpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -55,14 +345,14 @@
 			<Collapse line="51" />
 		</Folding>
 	</File>
-	<File name="screens\gameScreen\gameScreen.h" open="1" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\gameScreen\player.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="917" topLine="24" />
+			<Cursor1 position="300" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="randomFuncs.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="data.h" open="1" top="0" tabpos="36" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1158" topLine="18" />
+			<Cursor1 position="779" topLine="53" />
 		</Cursor>
 	</File>
 	<File name="widgets\button.h" open="1" top="0" tabpos="44" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -70,50 +360,11 @@
 			<Cursor1 position="1207" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="screens\gameScreen\player.cpp" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="67" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="randomFuncs.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="27" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\checkbox.cpp" open="1" top="0" tabpos="60" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="179" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\player.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="300" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="screenHandler.cpp" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2615" topLine="28" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="8" />
-		</Folding>
-	</File>
-	<File name="widgets\checkbox.h" open="1" top="0" tabpos="61" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="321" topLine="5" />
-		</Cursor>
-	</File>
 	<File name="screens\others\mapEditor.cpp" open="1" top="0" tabpos="48" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4996" topLine="12" />
+			<Cursor1 position="9095" topLine="211" />
 		</Cursor>
 		<Folding>
-			<Collapse line="5" />
-			<Collapse line="11" />
-			<Collapse line="21" />
-			<Collapse line="27" />
-			<Collapse line="36" />
 			<Collapse line="41" />
 			<Collapse line="43" />
 			<Collapse line="48" />
@@ -122,30 +373,42 @@
 			<Collapse line="63" />
 			<Collapse line="70" />
 			<Collapse line="78" />
-			<Collapse line="83" />
 			<Collapse line="85" />
-			<Collapse line="88" />
-			<Collapse line="99" />
-			<Collapse line="131" />
-			<Collapse line="139" />
-			<Collapse line="141" />
-			<Collapse line="159" />
-			<Collapse line="164" />
-			<Collapse line="166" />
-			<Collapse line="169" />
-			<Collapse line="178" />
-			<Collapse line="204" />
-			<Collapse line="221" />
-			<Collapse line="232" />
-			<Collapse line="241" />
-			<Collapse line="243" />
-			<Collapse line="247" />
-			<Collapse line="258" />
 		</Folding>
 	</File>
-	<File name="screenHandler.h" open="1" top="0" tabpos="35" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="graphicsPlus.cpp" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="415" topLine="3" />
+			<Cursor1 position="150" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="widgets\checkbox.cpp" open="1" top="0" tabpos="60" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="179" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\others\mapEditor.h" open="1" top="0" tabpos="47" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="493" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="graphicsPlus.h" open="1" top="0" tabpos="59" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1700" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="widgets\checkbox.h" open="1" top="0" tabpos="61" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="321" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="screens\others\menuScreen.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1804" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="205" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="widgets\chooser.cpp" open="1" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -157,19 +420,16 @@
 			<Collapse line="17" />
 			<Collapse line="23" />
 			<Collapse line="31" />
-			<Collapse line="37" />
-			<Collapse line="42" />
-			<Collapse line="48" />
 		</Folding>
 	</File>
-	<File name="screens\others\mapEditor.h" open="1" top="0" tabpos="47" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\others\menuScreen.h" open="1" top="0" tabpos="64" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="356" topLine="7" />
+			<Cursor1 position="217" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\gameScreen\Fields\field objects\barrack.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="randomFuncs.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="96" topLine="0" />
+			<Cursor1 position="1158" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="widgets\chooser.h" open="1" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -177,65 +437,14 @@
 			<Cursor1 position="19" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\others\menuScreen.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1804" topLine="14" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\barrack.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="335" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\complexIndicator.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="533" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\others\menuScreen.h" open="1" top="0" tabpos="64" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="217" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\fieldObject.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1105" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="widgets\complexIndicator.h" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="189" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="screens\others\settingsScreen.cpp" open="1" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1340" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="23" />
-			<Collapse line="44" />
-			<Collapse line="47" />
-		</Folding>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\fieldObject.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="353" topLine="16" />
+			<Cursor1 position="1150" topLine="11" />
 		</Cursor>
 	</File>
-	<File name="widgets\indicator.cpp" open="0" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="randomFuncs.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="467" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="screens\others\settingsScreen.h" open="1" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="323" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\mountain.cpp" open="1" top="0" tabpos="46" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="132" topLine="0" />
+			<Cursor1 position="27" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="widgets\indicator.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -243,42 +452,43 @@
 			<Cursor1 position="171" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\screen.cpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="widgets\complexIndicator.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="916" topLine="12" />
+			<Cursor1 position="533" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screens\others\settingsScreen.h" open="1" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="240" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="screenHandler.cpp" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2615" topLine="28" />
 		</Cursor>
 		<Folding>
-			<Collapse line="23" />
+			<Collapse line="3" />
+			<Collapse line="8" />
 		</Folding>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\mountain.h" open="1" top="0" tabpos="45" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="154" topLine="0" />
-		</Cursor>
 	</File>
 	<File name="widgets\lButton.cpp" open="1" top="0" tabpos="51" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="314" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\screen.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="widgets\complexIndicator.h" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1158" topLine="24" />
+			<Cursor1 position="189" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\gameScreen\Fields\field objects\road.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\screen.cpp" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="316" topLine="3" />
+			<Cursor1 position="916" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="screens\subScreens\buildChooserScreen.cpp" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screenHandler.h" open="1" top="0" tabpos="35" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="260" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\road.h" open="1" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="204" topLine="0" />
+			<Cursor1 position="415" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="widgets\lButton.h" open="1" top="0" tabpos="40" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -286,241 +496,24 @@
 			<Cursor1 position="175" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="screens\subScreens\buildChooserScreen.h" open="1" top="0" tabpos="43" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="widgets\indicator.cpp" open="0" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="593" topLine="6" />
+			<Cursor1 position="467" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="screens\gameScreen\Fields\field objects\stronghold.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="screens\screen.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="663" topLine="16" />
+			<Cursor1 position="1577" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="screens\gameScreen\Fields\field objects\barrack.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="96" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="widgets\mButton.cpp" open="1" top="0" tabpos="52" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="152" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="screens\subScreens\confirmExitScreen.cpp" open="1" top="0" tabpos="58" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="708" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\stronghold.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="565" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="widgets\mButton.h" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="732" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\confirmExitScreen.h" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="151" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\village.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="74" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\needleIndicator.cpp" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="306" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\Helps\howToPlayScreen.cpp" open="1" top="1" tabpos="68" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1115" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field objects\village.h" open="1" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="185" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\needleIndicator.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="169" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="screens\gameScreen\Fields\field.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2787" topLine="91" />
-		</Cursor>
-	</File>
-	<File name="widgets\reachedLED.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="293" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\newTurnScreen.cpp" open="1" top="0" tabpos="42" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="332" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Picture.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="674" topLine="5" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="13" />
-			<Collapse line="25" />
-		</Folding>
-	</File>
-	<File name="screens\subScreens\Helps\helpII.cpp" open="1" top="0" tabpos="67" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="343" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\reachedLED.h" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="163" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\newTurnScreen.h" open="1" top="0" tabpos="41" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="95" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Picture.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="881" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\Helps\helpII.h" open="1" top="0" tabpos="65" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="114" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\sliderSetter.cpp" open="1" top="0" tabpos="39" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="746" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\saveMap.cpp" open="1" top="0" tabpos="54" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1341" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="5" />
-			<Collapse line="21" />
-		</Folding>
-	</File>
-	<File name="coor.cpp" open="1" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1322" topLine="69" />
-		</Cursor>
-	</File>
-	<File name="widgets\sliderSetter.h" open="1" top="0" tabpos="38" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1066" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\saveMap.h" open="1" top="0" tabpos="53" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="236" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\specIndicator.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="215" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\subScreen.cpp" open="1" top="0" tabpos="56" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="214" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\specIndicator.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="124" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="coor.h" open="1" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="882" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\subScreen.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="403" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\textfield.cpp" open="1" top="0" tabpos="55" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1070" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="data.cpp" open="1" top="0" tabpos="37" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="360" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\Helps\howToPlayScreen.h" open="1" top="0" tabpos="66" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="191" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\victoryMessage.cpp" open="1" top="0" tabpos="63" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="569" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="widgets\textfield.h" open="1" top="0" tabpos="57" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="235" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="data.h" open="1" top="0" tabpos="36" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="779" topLine="53" />
-		</Cursor>
-	</File>
-	<File name="screens\subScreens\victoryMessage.h" open="1" top="0" tabpos="62" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="64" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="widgets\widgetBase.cpp" open="1" top="0" tabpos="50" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1344" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="graphicsPlus.cpp" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="150" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="13" />
-			<Collapse line="21" />
-			<Collapse line="27" />
-			<Collapse line="35" />
-			<Collapse line="37" />
-			<Collapse line="42" />
-			<Collapse line="50" />
-			<Collapse line="64" />
-			<Collapse line="83" />
-			<Collapse line="87" />
-			<Collapse line="93" />
-			<Collapse line="102" />
-			<Collapse line="104" />
-			<Collapse line="111" />
-			<Collapse line="143" />
-			<Collapse line="149" />
-			<Collapse line="154" />
-			<Collapse line="161" />
-			<Collapse line="167" />
-			<Collapse line="173" />
-			<Collapse line="179" />
-			<Collapse line="186" />
-			<Collapse line="192" />
-			<Collapse line="194" />
-			<Collapse line="198" />
-			<Collapse line="202" />
-		</Folding>
 	</File>
 </CodeBlocks_layout_file>

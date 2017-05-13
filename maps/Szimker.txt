@@ -1,0 +1,157 @@
+12 13
+0 1barrack;
+-1 2north road;east road;
+-1 0
+-1 0
+-1 0
+-1 0
+0 1stronghold;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1village;
+0 1barrack;
+-1 3north road;east road;west road;
+-1 0
+-1 0
+-1 0
+-1 2north road;south road;
+-1 4north road;south road;east road;west road;
+-1 2north road;south road;
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1village;
+0 1barrack;
+-1 2north road;west road;
+-1 0
+-1 0
+-1 1village;
+-1 0
+-1 2east road;west road;
+-1 0
+-1 1village;
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+0 1barrack;
+-1 0
+-1 0
+-1 0
+-1 1east road;
+-1 0
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1stronghold;
+-1 1north road;
+-1 0
+-1 0
+-1 0
+-1 4west road;east road;south road;north road;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1west road;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 4west road;east road;south road;north road;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1east road;
+-1 0
+-1 1village;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1stronghold;
+-1 1north road;
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+-1 0
+-1 0
+-1 0
+-1 0
+1 1barrack;
+-1 0
+-1 0
+-1 0
+-1 1west road;
+-1 0
+1 1barrack;
+-1 2north road;east road;
+-1 0
+-1 0
+-1 1village;
+-1 0
+-1 2west road;east road;
+-1 0
+-1 1village;
+-1 0
+-1 1mountain;
+-1 1mountain;
+-1 1mountain;
+1 1barrack;
+-1 3north road;west road;east road;
+-1 0
+-1 0
+-1 0
+-1 2north road;south road;
+-1 4north road;south road;west road;east road;
+-1 2north road;south road;
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1village;
+1 1barrack;
+-1 2north road;west road;
+-1 0
+-1 0
+-1 0
+-1 0
+1 1stronghold;
+-1 0
+-1 0
+-1 0
+-1 0
+-1 1south road;
+-1 1village;

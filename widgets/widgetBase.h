@@ -16,7 +16,6 @@ class widgetBase
         int height;
         coor upperLeftCorner;
         coor downerRightCorner;
-        coor origo;
         bool selfClear=true;
         vector <widgetBase*> subWidgets;
     public:
@@ -34,6 +33,7 @@ class widgetBase
         virtual void redraw(); //clears, then draws
 
         static const string DATA_FILE_NAME;
+        coor origo;
 };
 
 #endif // WIDGETBASE_H_INCLUDED

@@ -1,10 +1,7 @@
 help
-victory
 colors
-clear maps
 descriptions
 
 visualization:
 pictures
 build-update
-map-choosing-update
