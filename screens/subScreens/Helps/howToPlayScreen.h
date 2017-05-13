@@ -1,9 +1,9 @@
 #ifndef HOWTOPLAYSCREEN_H_INCLUDED
 #define HOWTOPLAYSCREEN_H_INCLUDED
 
-#include "../subScreen.h"
+#include "helpBase.h"
 
-struct howToPlayScreen : subScreen
+struct howToPlayScreen : helpBase
 {
     public:
         howToPlayScreen();

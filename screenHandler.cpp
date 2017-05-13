@@ -55,6 +55,8 @@ void screenHandler::addSub(string newSubName)
         currScr=new howToPlayScreen();
     else if (screen::newSub==screen::HELPII)
         currScr=new helpII();
+    else if (screen::newSub==screen::HELPIII)
+        currScr=new helpIII();
     else if (screen::newSub==screen::BUILD_CHOOSER_SCREEN)
         currScr=new buildChooserScreen((gameScreen*)screensAlive[screensAlive.size()-1]);
     else if (screen::newSub==screen::NEW_TURN_SCREEN)

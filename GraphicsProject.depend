@@ -42,7 +42,7 @@
 1493109976 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
 	"screenHandler.h"
 
-1494603710 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
+1494687274 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
 	"screens\screen.h"
 	"screens\others\menuScreen.h"
 	"screens\gameScreen\gameScreen.h"
@@ -51,13 +51,14 @@
 	"screens\subScreens\confirmExitScreen.h"
 	"screens\subScreens\Helps\howToPlayScreen.h"
 	"screens\subScreens\Helps\helpII.h"
+	"screens\subScreens\Helps\helpIII.h"
 	"screens\subScreens\buildChooserScreen.h"
 	"screens\subScreens\newTurnScreen.h"
 	"screens\subScreens\saveMap.h"
 	"screens\subScreens\victoryMessage.h"
 	"graphics.hpp"
 
-1494659328 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1494687280 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -156,7 +157,7 @@
 1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
 	"randomFuncs.h"
 
-1494603710 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+1494687274 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
 1494660003 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
@@ -178,7 +179,7 @@
 1494530522 source:c:\users\ildikó\documents\github\ajadeba\screens\others\victoryscreen.cpp
 	"victoryScreen.h"
 
-1494603710 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
+1494687336 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
 	"screen.h"
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.cpp
@@ -238,7 +239,7 @@
 1493109058 source:c:\users\ildikó\documents\github\ajadeba\widgets\animation.cpp
 	"animation.h"
 
-1494684539 source:c:\users\ildikó\documents\github\ajadeba\widgets\button.cpp
+1494684879 source:c:\users\ildikó\documents\github\ajadeba\widgets\button.cpp
 	"button.h"
 
 1494528645 source:c:\users\ildikó\documents\github\ajadeba\widgets\checkbox.cpp
@@ -423,15 +424,27 @@
 	"victoryMessage.h"
 	"../gameScreen/gameScreen.h"
 
-1494603711 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\howtoplayscreen.h
-	"../subScreen.h"
+1494685467 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\howtoplayscreen.h
+	"helpBase.h"
 
-1494603793 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpii.h
-	"../subScreen.h"
+1494685410 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpii.h
+	"helpBase.h"
 
-1494604090 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpii.cpp
+1494687274 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpii.cpp
 	"helpII.h"
 
-1494622577 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\howtoplayscreen.cpp
+1494687274 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\howtoplayscreen.cpp
 	"howToPlayScreen.h"
+
+1494686301 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpbase.h
+	"../subScreen.h"
+
+1494687385 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpbase.cpp
+	"helpBase.h"
+
+1494687274 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiii.h
+	"helpBase.h"
+
+1494687274 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiii.cpp
+	"helpIII.h"
 

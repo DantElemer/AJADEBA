@@ -1,9 +1,9 @@
 #ifndef HELPII_H
 #define HELPII_H
 
-#include "../subScreen.h"
+#include "helpBase.h"
 
-class helpII : public subScreen
+class helpII : public helpBase
 {
     public:
         helpII();
