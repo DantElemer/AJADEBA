@@ -23,8 +23,10 @@ class Picture
         void clearPic();
         int getWidth(){return width;}
         int getHeight(){return height;}
-        void setScaleX(double sX){scaleX=sX;remakeCanvas();};
-        void setScaleY(double sY){scaleY=sY;remakeCanvas();};
+        void setScaleX(double sX){scaleX=max(sX,0.0);remakeCanvas();};
+        void setScaleY(double sY){scaleY=max(sY,0.0);remakeCanvas();};
+        double getScaleX(){return scaleX;};
+        double getScaleY(){return scaleY;};
 
         int NORMAL_WIDTH;
         int NORMAL_HEIGHT;

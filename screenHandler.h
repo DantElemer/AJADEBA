@@ -16,6 +16,7 @@
 #include "screens\subScreens\newTurnScreen.h"
 #include "screens\subScreens\saveMap.h"
 #include "screens\subScreens\victoryMessage.h"
+#include "screens\subScreens\PonyScreen.h"
 
 #include "graphics.hpp"
 

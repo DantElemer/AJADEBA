@@ -18,7 +18,7 @@
 1493109050 c:\users\ildikó\documents\github\ajadeba\include\graphics.hpp
 	<string>
 
-1494692231 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
+1494710227 source:c:\users\ildikó\documents\github\ajadeba\data.cpp
 	"data.h"
 
 1494601393 source:c:\users\ildikó\documents\github\ajadeba\graphicsplus.cpp
@@ -42,7 +42,7 @@
 1494694394 source:c:\users\ildikó\documents\github\ajadeba\main.cpp
 	"screenHandler.h"
 
-1494689616 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
+1494749318 c:\users\ildikó\documents\github\ajadeba\screenhandler.h
 	"screens\screen.h"
 	"screens\others\menuScreen.h"
 	"screens\gameScreen\gameScreen.h"
@@ -57,9 +57,10 @@
 	"screens\subScreens\newTurnScreen.h"
 	"screens\subScreens\saveMap.h"
 	"screens\subScreens\victoryMessage.h"
+	"screens\subScreens\PonyScreen.h"
 	"graphics.hpp"
 
-1494689616 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
+1494749318 c:\users\ildikó\documents\github\ajadeba\screens\screen.h
 	"../widgets/widgetBase.h"
 	"../widgets/button.h"
 	"../widgets/indicator.h"
@@ -158,7 +159,7 @@
 1493109050 source:c:\users\ildikó\documents\github\ajadeba\randomfuncs.cpp
 	"randomFuncs.h"
 
-1494689616 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
+1494749318 source:c:\users\ildikó\documents\github\ajadeba\screenhandler.cpp
 	"screenHandler.h"
 
 1494708015 source:c:\users\ildikó\documents\github\ajadeba\screens\gamescreen\gamescreen.cpp
@@ -180,7 +181,7 @@
 1494530522 source:c:\users\ildikó\documents\github\ajadeba\screens\others\victoryscreen.cpp
 	"victoryScreen.h"
 
-1494689653 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
+1494749318 source:c:\users\ildikó\documents\github\ajadeba\screens\screen.cpp
 	"screen.h"
 
 1493109053 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\confirmexitscreen.cpp
@@ -288,10 +289,10 @@
 1494441398 source:c:\users\ildikó\documents\github\ajadeba\widgets\widgetbase.cpp
 	"widgetBase.h"
 
-1494692231 source:c:\users\ildikó\documents\github\ajadeba\picture.cpp
+1494753710 source:c:\users\ildikó\documents\github\ajadeba\picture.cpp
 	"Picture.h"
 
-1494691819 c:\users\ildikó\documents\github\ajadeba\picture.h
+1494751708 c:\users\ildikó\documents\github\ajadeba\picture.h
 	"graphics.hpp"
 	"graphicsPlus.h"
 	<sstream>
@@ -373,7 +374,7 @@
 	"../gameScreen/Fields/field objects/fieldObject.h"
 	"../../graphicsPlus.h"
 
-1494693159 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
+1494756315 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\buildchooserscreen.cpp
 	"buildChooserScreen.h"
 	"../gameScreen/gameScreen.h"
 
@@ -382,7 +383,7 @@
 	"../../data.h"
 	<fstream>
 
-1494694394 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
+1494754235 source:c:\users\ildikó\documents\github\ajadeba\screens\others\settingsscreen.cpp
 	"settingsScreen.h"
 
 1494325537 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\newturnscreen.h
@@ -452,4 +453,12 @@
 
 1494706279 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\helps\helpiv.cpp
 	"helpIV.h"
+
+1494754604 c:\users\ildikó\documents\github\ajadeba\screens\subscreens\ponyscreen.h
+	"subScreen.h"
+	"../../Picture.h"
+	<cstdlib>
+
+1494757052 source:c:\users\ildikó\documents\github\ajadeba\screens\subscreens\ponyscreen.cpp
+	"PonyScreen.h"
 

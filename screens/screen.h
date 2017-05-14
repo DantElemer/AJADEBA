@@ -32,6 +32,7 @@ class screen
         static const string NEW_TURN_SCREEN;
         static const string SAVE_MAP;
         static const string VICTORY_MESSAGE;
+        static const string PONY_SCREEN;
 
         static const string HOW_TO_PLAY_SCREEN;
         static const string HELPII;

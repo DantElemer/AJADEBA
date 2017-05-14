@@ -10,6 +10,7 @@ const string screen::BUILD_CHOOSER_SCREEN="build chooser screen";
 const string screen::NEW_TURN_SCREEN="new turn screen";
 const string screen::SAVE_MAP="save map";
 const string screen::VICTORY_MESSAGE="victory message";
+const string screen::PONY_SCREEN="pony screen";
 
 const string screen::HOW_TO_PLAY_SCREEN="how to play screen";
 const string screen::HELPII="helpII";
@@ -128,7 +129,8 @@ void screen::keyDown(event kE)
     if (kE.keycode==key_escape)
         exitRequest();
     if (kE.keycode=='q')
-        ponyEffect();
+        //ponyEffect();
+        newSub=screen::PONY_SCREEN;
     for (widgetBase* &w:widgets)
         w->keyDown(kE);
 }

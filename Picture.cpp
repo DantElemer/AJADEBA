@@ -83,6 +83,7 @@ void Picture::clearCanvas()
     {
         for(int j=0;j<width;j++)
         {
+            //cout<<"i:"<<i<<"j:"<<j<<endl;
             myPic<<move_to(j,i)<<color(0,0,0)<<dot;
         }
     }

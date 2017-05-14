@@ -43,10 +43,18 @@ void buildChooserScreen::showOptions()
                                        },
                                        middle+makeCoor(cos(i*deltaAlpha),sin(i*deltaAlpha))*radius,picWidth,picWidth);
         widgets.push_back(option);
-        Picture pic("pics/game objects/"+options[i]+".kep",option->origo);
+        Picture pic;
+        if (options[i]!=fieldObject::BARRACK)
+            pic.addNewPic("pics/game objects/"+options[i]+".kep",option->origo);
+        else
+            pic.addNewPic("pics/game objects/nations/"+gS->currentPlayer->nation+"/barrack.kep",option->origo);
         double scX=picWidth/pic.NORMAL_WIDTH;
         double scY=picWidth/pic.NORMAL_HEIGHT;
-        option->addPicture("pics/game objects/"+options[i]+".kep",scX,scY);
+
+        if (options[i]!=fieldObject::BARRACK)
+            option->addPicture("pics/game objects/"+options[i]+".kep",scX,scY);
+        else
+            option->addPicture("pics/game objects/nations/"+gS->currentPlayer->nation+"/barrack.kep",scX,scY);
     }
 
 }

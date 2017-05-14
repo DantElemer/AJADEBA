@@ -3,9 +3,9 @@
 settingsScreen::settingsScreen()
 {
     widgets.push_back(new sliderSetter(makeCoor(WINDOW_X/2-100,200), makeCoor(WINDOW_X/2+100,280),thinkingTime,120,0,"Time(s)"));
-    vector<string> nations={"Ancient 1","Ancient 2", "Mordor"};
-    widgets.push_back(new chooser(makeCoor(100,300),makeCoor(400,350),nations,player1Nation,200,"Player 1's nation"));
-    widgets.push_back(new chooser(makeCoor(100,400),makeCoor(400,450),nations,player2Nation,200,"Player 2's nation"));
+    vector<string> nations={"Ancient 1","Ancient 2", "Mordor", "Rudian", "Balkatrian"};
+    widgets.push_back(new chooser(makeCoor(100,300),makeCoor(400,350),nations,player1Nation,60,"Player 1's nation"));
+    widgets.push_back(new chooser(makeCoor(100,400),makeCoor(400,450),nations,player2Nation,60,"Player 2's nation"));
     widgets.push_back(new lButton([](){screen::switchTo=screen::GAME_SCREEN;},makeCoor(WINDOW_X-150,WINDOW_Y-50),200,50,"Start game",20));
     widgets.push_back(new lButton([](){screen::switchTo=screen::MENU_SCREEN;},makeCoor(150,WINDOW_Y-50),200,50,"Menu",20));
 
