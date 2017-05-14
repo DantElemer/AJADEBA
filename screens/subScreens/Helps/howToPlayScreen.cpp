@@ -13,16 +13,16 @@ void howToPlayScreen::draw()
 {
     helpBase::draw();
     addTitle("How to play");
-    addParagraph("It's a turn-based game, where two medieval kingdoms (the two player) try to "
-                 "overpower each other. As it was invented on boring lessons, it's played on a sqare grid. Your"
-                 " final aim is to destroy all the stongholds of your opponent. To achieve that in each turn"
-                 " you can either build or start an assault. Let's see what objects can you build! ");
-    addParagraph("Barracks: their point is to provide soldiers for your "
-                 "strongholds. Marker: rombus with the owner player's pattern. ");
-    addParagraph("Stronghold bases: they can be strongholds later... Marker: square. ");
-    addParagraph("Roads: you can connect objects, by using roads. You can "
-                 "build north-, east-, south-, and west roads. Marker: blue line from middle to edge. ");
-    addParagraph("In one turn you can build: 1 barrack/1 stronghold base/4 roads. You can't build to enemy"
-                 "  territory. Exception: in the first turn, the second player can build plus 2 roads. ");
+    addParagraph("In this turn-based game two medieval kingdoms under the command of the two players try to "
+                 "overpower each other. As it was invented on boring lectures, it's played on a sqare grid. Your"
+                 " final objective is to destroy all stongholds of your opponent. To achieve that each turn"
+                 " you can either build something or start an assault. Let's see what objects you can build! ");
+    addParagraph("Barracks: they provide soldiers for your "
+                 "strongholds. Marker: rhombus with the owner player's pattern. ");
+    addParagraph("Stronghold bases: they can be built into strongholds later. Marker: square. ");
+    addParagraph("Roads: connect objects by using roads. You can "
+                 "build north, east, south, and west roads. Marker: blue line from middle to edge. ");
+    addParagraph("In one turn you can build: 1 barrack/1 stronghold base/4 roads. You cannot build on enemy"
+                 "  territory, with one exception: in the first turn, the second player can build an extra 2 roads. ");
 }
 
