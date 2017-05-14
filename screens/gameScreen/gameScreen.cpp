@@ -117,7 +117,7 @@ void gameScreen::fieldClicked(field* f)
                     if (strongholdStrength(selectedStronghold,currentPlayer) > strongholdStrength(selectedField, selectedField->objectOwner()))
                         {
                             destroyStronghold(selectedField);
-                            currentPlayer->steps=0;
+                            currentPlayer->steps-=player::MAX_STEPS;
                         }
         selectedStronghold->assaultChange(false);
     }
@@ -228,7 +228,7 @@ void gameScreen::build()
         if (selectedField->getType()==field::ROAD)
             currentPlayer->steps--;
         else
-            currentPlayer->steps=0;
+            currentPlayer->steps-=player::MAX_STEPS;
         strongholdBaseConquerCheck();
     }
 }
@@ -248,6 +248,11 @@ void gameScreen::nextPlayer()
     }
     currentPlayer->steps=currentPlayer->MAX_STEPS;
     currentPlayer->timeLeft=thinkingTime;
+    if (currentPlayer->boosted)
+    {
+        currentPlayer->boosted=false;
+        currentPlayer->steps+=2;
+    }
     if (players.size()>1)
         newSub=NEW_TURN_SCREEN;
 }
@@ -331,12 +336,7 @@ void gameScreen::drawFields()
 
 void gameScreen::maySwitchPlayer()
 {
-    if (currentPlayer->steps==0 && currentPlayer->boosted)
-    {
-        currentPlayer->boosted=false;
-        currentPlayer->steps=2;
-    }
-    else if (currentPlayer->steps==0 || currentPlayer->timeLeft<=0)
+    if (currentPlayer->steps==0 || currentPlayer->timeLeft<=0)
         nextPlayer();
 }
 

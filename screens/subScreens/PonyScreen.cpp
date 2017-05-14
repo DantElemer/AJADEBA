@@ -23,7 +23,6 @@ bool pony::scaleYourself()
     else
     {
         double newScale=pic.getScaleX()-SCALE_SPEED;
-        cout<<"ns: " <<newScale<<endl;
         if (newScale<MIN_SCALE)
             return false;
         else
@@ -48,23 +47,12 @@ void PonyScreen::onTick()
     screen::onTick();
     mWriteText(WINDOW_ORIGO-makeCoor(0,250),"Click!", 50);
     for (int i=ponies.size()-1;i>=0;i--)
-    {
-        //cout<<"new pony: "<<ponies[i].MAX_SCALE<<" "<<ponies[i].SCALE_SPEED<<" "<<ponies[i].pic.getHeight()<<endl;
-        cout<<i;
-
         if (!ponies[i].scaleYourself())
-        {
-            cout<<"die"<<i<<" ";
             ponies.erase(ponies.begin()+i,ponies.begin()+i+1);
-        }
-
-    }
-
 }
 
 void PonyScreen::keyDown(event kE)
 {
-    //screen::keyDown(kE);
     if (kE.keycode='q')
         terminateSub();
 }
@@ -72,7 +60,7 @@ void PonyScreen::keyDown(event kE)
 void PonyScreen::mouseUp(event mE)
 {
     screen::mouseUp(mE);
-    if (ponies.size()==0) //for more pony, it crashes sometimes :(
+    if (ponies.size()==0) //for more pony, it crashes sometimes :( don't have time to debug it :(
     {
         pony newPony(mouse);
         ponies.push_back(newPony);

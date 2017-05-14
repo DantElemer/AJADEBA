@@ -181,10 +181,14 @@ bool field::canBuild(string part)
         return false;
     if (type==BLANK)
         if (part==fieldObject::STRONGHOLD || part==fieldObject::BARRACK)
-            if (myGameScreen->currentPlayer->steps==player::MAX_STEPS)
+        {
+            cout<<myGameScreen->currentPlayer->steps+2*myGameScreen->currentPlayer->boosted;
+            if (myGameScreen->currentPlayer->steps>=player::MAX_STEPS)
                 return true;
             else
                 return false;
+        }
+
         else //it's a road
             return true;
     else if (type==ROAD
