@@ -14,13 +14,13 @@ void helpII::draw()
     helpBase::draw();
     addTitle("How to play II");
 
-    addParagraph("Now the objects, you can't build: ");
-    addParagraph("Villages: they are on the map from start to end, can't be destroyed. "
-                 " They provide people for your barracks, and for your opponent's barracks, as they never "
+    addParagraph("There are objects you cannot build: ");
+    addParagraph("Villages: they are on the map from the start and cannot be destroyed. "
+                 " They provide people for barracks, both yours and those of your opponent. They never "
                  "belong to one specific player. Marker: circle. ");
-    addParagraph("Strongholds: you get at least one at start, and you can get more by conquering stronghold "
-                 "bases. They have territory. Marker: square with the owner player's flag. ");
-    addParagraph("Mountains: they don't do anything just sit and you can't build there. "
+    addParagraph("Strongholds: you get at least one at the start and you can get more by conquering stronghold "
+                 "bases. They claim territory. Marker: square with the owner player's flag. ");
+    addParagraph("Mountains: they don't do anything other than existing: you can't build on them. "
                  "Marker: full square. ");
 }
 
