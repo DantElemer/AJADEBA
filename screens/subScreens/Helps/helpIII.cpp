@@ -14,12 +14,12 @@ void helpIII::draw()
     helpBase::draw();
     addTitle("How to play III");
     addParagraph("Some definitions: ");
-    addParagraph("Connection: basically object A is connected to object B, if you can walk from one of A's "
-                 "edges middle to one of B's edges on roads (neighbours are connected for sure). If A is a "
-                 "barrack and B is a stronghold/strongholdBase, friendly strongholds count as full roads. ");
+    addParagraph("Connection: object A is connected to object B if you can walk from one of A's "
+                 "edges to one of B's edges on roads (neighbours are always connected). If A is a barracks"
+                 " and B is a stronghold/stronghold base, friendly strongholds count as full roads. ");
 
-    addParagraph("Barrack-strength: a barrack's strength is the number of villages, connected to the barrack");
-    addParagraph("Stronghold-strength: a stronghold's strength is the sum of barrack-strengths of barracks"
+    addParagraph("Barracks-strength: a barracks' strength is the number of villages connected to the barracks");
+    addParagraph("Stronghold-strength: a stronghold's strength is the sum of barracks-strengths of barracks"
                  " connected to the stronghold. ");
-    addParagraph("Undefended barrack: a barrack is undefended if it isn't in friendly territory. ");
+    addParagraph("Undefended barracks: a barracks is undefended if it is outside friendly territory. ");
 }
